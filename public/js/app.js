@@ -145,7 +145,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.initCamera();
     this.initScene();
-    this.initLighting();
     this.initControls();
     this.loadEnvironment();
     this.initRenderer();
@@ -154,20 +153,6 @@ __webpack_require__.r(__webpack_exports__);
     initCamera: function initCamera() {
       this.camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
       this.camera.position.y = 0;
-    },
-    initLighting: function initLighting() {
-      var directional = new three__WEBPACK_IMPORTED_MODULE_0__.DirectionalLight(0xEEEEEE, 4);
-      directional.position.set(0, 8, 0);
-      this.scene.add(directional);
-      var directional2 = new three__WEBPACK_IMPORTED_MODULE_0__.DirectionalLight(0xfffaed, 1);
-      directional2.position.set(-2, 8, 4);
-      this.scene.add(directional2);
-      var directional3 = new three__WEBPACK_IMPORTED_MODULE_0__.DirectionalLight(0xe6b17c, 1);
-      directional3.position.set(-2, 8, -4);
-      this.scene.add(directional3);
-      var directional4 = new three__WEBPACK_IMPORTED_MODULE_0__.DirectionalLight(0xfffaed, 1);
-      directional4.position.set(2, 8, 4);
-      this.scene.add(directional4);
     },
     initScene: function initScene() {
       this.scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();
@@ -193,6 +178,8 @@ __webpack_require__.r(__webpack_exports__);
       this.loader.load('exhibition.glb', function (gltf) {
         gltf.scene.traverse(function (child) {
           if (child.isMesh) {
+            console.log(child);
+
             _this2.objects.push(child);
           }
         });

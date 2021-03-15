@@ -16,7 +16,7 @@
         </div>
         <div class="nav-right">
             <li class="nav-item">
-                <a href="">Sign in</a>
+                <a href="{{ url('/login') }}">Sign in</a>
             </li>
             <li class="nav-item">
                 <a href="">

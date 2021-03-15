@@ -4,6 +4,7 @@
 @import "components/navbar";
 @import "components/lightbulb";
 @import "components/about";
+@import "components/auth";
 
 *{
     padding: 0;
@@ -11,6 +12,8 @@
     box-sizing: border-box;
     font-family: HelveticaNeue, sans-serif;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html{
@@ -54,13 +57,16 @@ body{
     text-decoration: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    margin-top: 2rem;
     background-color: transparent;
     color: $col-white;
     outline: 0;
     border: 2px solid $col-white;
     cursor: pointer;
     transition: 0.2s;
+    &.dark{
+        color: $col-dark;
+        border-color: $col-dark;
+    }
     &:hover{
         color: $col-brand;
         border: 2px solid $col-brand;

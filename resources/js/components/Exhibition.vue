@@ -55,7 +55,6 @@ export default {
     mounted() {
         this.initCamera();
         this.initScene();
-        this.initLighting();
         this.initControls();
         this.loadEnvironment();
         this.initRenderer();
@@ -64,20 +63,6 @@ export default {
         initCamera() {
             this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
             this.camera.position.y = 0;
-        },
-        initLighting() {
-            const directional = new THREE.DirectionalLight(0xEEEEEE, 4);
-            directional.position.set(0, 8, 0);
-            this.scene.add(directional);
-            const directional2 = new THREE.DirectionalLight(0xfffaed, 1);
-            directional2.position.set(-2, 8, 4);
-            this.scene.add(directional2);
-            const directional3 = new THREE.DirectionalLight(0xe6b17c, 1);
-            directional3.position.set(-2, 8, -4);
-            this.scene.add(directional3);
-            const directional4 = new THREE.DirectionalLight(0xfffaed, 1);
-            directional4.position.set(2, 8, 4);
-            this.scene.add(directional4);
         },
         initScene() {
             this.scene = new THREE.Scene();
@@ -99,6 +84,7 @@ export default {
             this.loader.load('exhibition.glb', (gltf) => {
                     gltf.scene.traverse(child => {
                         if (child.isMesh) {
+                            console.log(child);
                             this.objects.push(child);
                         }
                     });
