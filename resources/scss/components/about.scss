@@ -1,0 +1,92 @@
+.about {
+    z-index: 1;
+    height: 90vh;
+
+    .about-content {
+        width: 100%;
+        display: flex;
+        padding: 1rem 0;
+
+        p {
+            width: 40%;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: $col-white;
+        }
+
+        .atom-animation {
+            position: relative;
+            margin-left: 25%;
+            width: 400px;
+            height: 400px;
+
+            .center {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+            }
+            .moons{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-45%, -50%);
+                transform-origin: center center;
+                animation: orbit 5s infinite linear;
+                .moon {
+                    width: 50px;
+                    z-index: 999;
+                    transform-origin: center center;
+                    animation: particles 5s infinite linear;
+
+                    &.top-left {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &.top-right {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    &.bottom-left {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    &.bottom-right {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-45%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-45%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes particles {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

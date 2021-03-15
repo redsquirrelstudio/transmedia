@@ -1,0 +1,118 @@
+@import "variables";
+
+@import "components/scrollbar";
+@import "components/navbar";
+@import "components/lightbulb";
+@import "components/about";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: HelveticaNeue, sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    background-color: $col-dark;
+}
+
+body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.top{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, $col-dark 0%, $col-darker 100%);
+}
+
+#app{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.main-content{
+    position: absolute;
+    left: 0;
+    top: 100vh;
+    padding: 2rem 4rem;
+    width: 100%;
+    h2 {
+        color: $col-white;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 8rem 0 2rem 0;
+    }
+}
+
+.btn-primary{
+    display: inline-block;
+    align-items: flex-start;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    background-color: transparent;
+    color: $col-white;
+    outline: 0;
+    border: 2px solid $col-white;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+        color: $col-brand;
+        border: 2px solid $col-brand;
+        text-shadow: 0 2px 5px $col-light;
+        box-shadow: 0 2px 5px $col-light;
+        transition: 0.2s;
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+    position: absolute;
+    transition: opacity 1s;
+}
+.fade-slow-enter-active, .fade-slow-leave-active {
+    position: absolute;
+    transition: opacity 2s;
+}
+
+.fade-enter, .fade-leave-to,
+.fade-slow-enter, .fade-slow-leave-to{
+    opacity: 0;
+}
+
+.spinner{
+    animation: spin 1s infinite linear;
+}
+
+.loader{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $col-white;
+}
+
+.instructions{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.4);
+    color: $col-white;
+    padding: 2rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
