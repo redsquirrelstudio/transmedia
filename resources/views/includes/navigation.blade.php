@@ -13,11 +13,24 @@
             <li class="nav-item">
                 <a href="{{ url('/exhibition') }}">Virtual Exhibition</a>
             </li>
+            @auth
+                <li class="nav-item">
+                    <a href="{{ url('/my-page') }}">My Page</a>
+                </li>
+            @endauth
         </div>
         <div class="nav-right">
-            <li class="nav-item">
-                <a href="{{ url('/login') }}">Sign in</a>
-            </li>
+            @auth
+                <li class="nav-item">
+                    Welcome {{ auth()->user()->name }} -
+                    <a href="{{ url('/logout') }}">Sign out</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a href="{{ url('/login') }}">Sign in</a>
+                </li>
+            @endauth
+
             <li class="nav-item">
                 <a href="">
                     <i class="lab la-facebook-square"></i>

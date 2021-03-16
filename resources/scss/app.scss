@@ -76,6 +76,18 @@ body{
     }
 }
 
+.link-primary{
+    color: $col-white;
+    display: block;
+}
+
+.error{
+    margin-bottom: 0 !important;
+    color: red !important;
+    display: block;
+    margin: 0.5rem 0 0 0;
+}
+
 .fade-enter-active, .fade-leave-active {
     position: absolute;
     transition: opacity 1s;

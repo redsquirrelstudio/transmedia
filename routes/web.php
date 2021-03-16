@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index'])->name('page.index');
+Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
+Route::get('/my-page', [PageController::class, 'my_page'])->name('page.personal');
 
-Route::get('/exhibition', function() {
-   return view('exhibition');
-});
+Route::get('/login', [PageController::class, 'login'])->name('page.login');
+Route::get('/register', [PageController::class, 'register'])->name('page.register');
 
-Route::get('/login', function() {
-   return view('login');
-});
+
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');

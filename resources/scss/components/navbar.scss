@@ -26,6 +26,7 @@
         align-items: center;
         .nav-item{
             color: $col-white;
+            text-transform: uppercase;
             &.spaced-left{
                 margin-left: 6rem;
             }

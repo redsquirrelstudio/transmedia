@@ -15,6 +15,7 @@ class User extends Authenticatable
     protected $primaryKey = 'id';
     protected $fillable = [
         'name',
+        'year',
         'email',
         'password',
     ];
@@ -26,6 +27,7 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'verified' => 'boolean'
     ];
 
     public function page(): hasOne
