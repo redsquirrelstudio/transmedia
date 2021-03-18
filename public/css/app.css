@@ -26,6 +26,7 @@
   top: 0;
   width: 100%;
   z-index: 800;
+  background-color: inherit;
 }
 .navbar .nav-left {
   display: flex;
@@ -50,6 +51,7 @@
 }
 .navbar .nav-items .nav-item {
   color: #FFF;
+  mix-blend-mode: difference;
   text-transform: uppercase;
 }
 .navbar .nav-items .nav-item.spaced-left {
@@ -60,6 +62,7 @@
 }
 .navbar .nav-items .nav-item a, .navbar .nav-items .nav-item i {
   color: #FFF;
+  mix-blend-mode: difference;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -325,56 +328,6 @@
 .auth-card p a:hover {
   color: #59C6F2;
 }
-.auth-card .form-control {
-  width: 100%;
-  display: block;
-  margin: 1rem 0;
-  position: relative;
-}
-.auth-card .form-control span, .auth-card .form-control input {
-  width: 100%;
-  display: block;
-}
-.auth-card .form-control i {
-  color: #FFF;
-  position: absolute;
-  left: 0.5rem;
-  display: block;
-  top: 0.25rem;
-  margin: auto 0;
-  font-size: 1.5rem;
-}
-.auth-card .form-control i.select-icon {
-  top: 0.4rem;
-}
-.auth-card .form-control i.is-invalid {
-  color: red !important;
-}
-.auth-card .form-control input, .auth-card .form-control select {
-  border: 2px solid #FFF;
-  background-color: transparent;
-  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-  font-size: 1rem;
-  font-weight: lighter;
-  color: #FFF;
-  width: 100%;
-}
-.auth-card .form-control input.is-invalid, .auth-card .form-control select.is-invalid {
-  border-color: red !important;
-}
-.auth-card .form-control input::-moz-placeholder, .auth-card .form-control select::-moz-placeholder {
-  text-transform: capitalize;
-}
-.auth-card .form-control input:-ms-input-placeholder, .auth-card .form-control select:-ms-input-placeholder {
-  text-transform: capitalize;
-}
-.auth-card .form-control input::placeholder, .auth-card .form-control select::placeholder {
-  text-transform: capitalize;
-}
-.auth-card .form-control input:active, .auth-card .form-control input:focus, .auth-card .form-control input:-webkit-autofill, .auth-card .form-control select:active, .auth-card .form-control select:focus, .auth-card .form-control select:-webkit-autofill {
-  background-color: #040311;
-  outline: 0;
-}
 
 .side-img {
   position: absolute;
@@ -383,6 +336,150 @@
   height: 100vh;
   width: 70%;
   z-index: 1;
+}
+
+.profile .hero-image {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.profile .hero-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .hero-image .avatar {
+  position: absolute;
+  left: 4rem;
+  width: 250px;
+  height: 250px;
+  bottom: -125px;
+  border: 5px solid #FFF;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.profile .hero-image .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .profile-details {
+  padding: 1rem calc(6rem + 250px);
+}
+.profile .profile-details h2 {
+  font-size: 2.5rem;
+  color: #FFF;
+  font-weight: 300;
+}
+.profile .profile-details h2 small {
+  font-size: 1rem;
+}
+.profile .profile-details h4 {
+  font-size: 1.5rem;
+  color: #FFF;
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
+
+.edit-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+  background-color: #59C6F2;
+  color: #FFF;
+  padding: 1rem;
+  font-size: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+.edit-button:hover {
+  background-color: #040311;
+  transition: 0.2s;
+}
+
+.page-editor {
+  background-color: #FFF;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 500px;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
+  padding: 5rem 2rem;
+}
+.page-editor .editor-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-editor .editor-header h2, .page-editor .editor-header i {
+  color: #040311;
+  font-size: 1.5rem;
+}
+.page-editor .editor-header i {
+  cursor: pointer;
+  font-size: 2rem;
+}
+.page-editor .editor-header i:hover {
+  color: #59C6F2;
+}
+.page-editor hr {
+  margin: 1rem 0;
+}
+
+.heading {
+  padding: 8rem 4rem;
+  text-align: center;
+}
+.heading img {
+  width: 100px;
+  margin-bottom: 0.5rem;
+}
+.heading h2 {
+  font-size: 3rem;
+  color: #FFF;
+}
+.heading p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #FFF;
+}
+.heading .year-nav, .heading .course-nav {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.heading .year-nav a, .heading .course-nav a {
+  margin: 0 2rem;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  position: relative;
+}
+.heading .year-nav a::after, .heading .course-nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.heading .year-nav a:hover::after, .heading .year-nav a.is-active::after, .heading .course-nav a:hover::after, .heading .course-nav a.is-active::after {
+  visibility: visible;
+  transform: scaleX(1);
+  transition: all 0.3s ease-in-out;
+}
+.heading .course-nav a {
+  font-size: 1.5rem;
 }
 
 * {
@@ -455,6 +552,91 @@ body {
   transition: 0.2s;
 }
 
+.label {
+  margin-bottom: -0.5rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.form-control {
+  width: 100%;
+  display: block;
+  margin: 1rem 0;
+  position: relative;
+}
+.form-control span, .form-control input {
+  width: 100%;
+  display: block;
+}
+.form-control i {
+  color: #FFF;
+  position: absolute;
+  left: 0.5rem;
+  display: block;
+  top: 0.25rem;
+  margin: auto 0;
+  font-size: 1.5rem;
+}
+.form-control i.select-icon {
+  top: 0.4rem;
+}
+.form-control i.is-invalid {
+  color: red !important;
+}
+.form-control input, .form-control select, .form-control textarea {
+  border: 2px solid #FFF;
+  background-color: transparent;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #FFF;
+  width: 100%;
+  text-transform: capitalize;
+}
+.form-control input option, .form-control select option, .form-control textarea option {
+  text-transform: capitalize;
+}
+.form-control input.is-invalid, .form-control select.is-invalid, .form-control textarea.is-invalid {
+  border-color: red !important;
+}
+.form-control input::-moz-placeholder, .form-control select::-moz-placeholder, .form-control textarea::-moz-placeholder {
+  text-transform: capitalize;
+}
+.form-control input:-ms-input-placeholder, .form-control select:-ms-input-placeholder, .form-control textarea:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+.form-control input::placeholder, .form-control select::placeholder, .form-control textarea::placeholder {
+  text-transform: capitalize;
+}
+.form-control input:active, .form-control input:focus, .form-control input:-webkit-autofill, .form-control select:active, .form-control select:focus, .form-control select:-webkit-autofill, .form-control textarea:active, .form-control textarea:focus, .form-control textarea:-webkit-autofill {
+  background-color: #040311;
+  outline: 0;
+}
+.form-control textarea {
+  padding: 0.5rem;
+  resize: none;
+}
+.form-control.dark i {
+  color: #040311 !important;
+}
+.form-control.dark input, .form-control.dark select, .form-control.dark textarea {
+  border-color: #040311;
+  color: #040311;
+}
+.form-control.dark input::-moz-placeholder, .form-control.dark select::-moz-placeholder, .form-control.dark textarea::-moz-placeholder {
+  text-transform: capitalize;
+}
+.form-control.dark input:-ms-input-placeholder, .form-control.dark select:-ms-input-placeholder, .form-control.dark textarea:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+.form-control.dark input::placeholder, .form-control.dark select::placeholder, .form-control.dark textarea::placeholder {
+  text-transform: capitalize;
+}
+.form-control.dark input:active, .form-control.dark input:focus, .form-control.dark input:-webkit-autofill, .form-control.dark select:active, .form-control.dark select:focus, .form-control.dark select:-webkit-autofill, .form-control.dark textarea:active, .form-control.dark textarea:focus, .form-control.dark textarea:-webkit-autofill {
+  background-color: #9FC7DB;
+  outline: 0;
+}
+
 .link-primary {
   color: #FFF;
   display: block;
@@ -465,6 +647,14 @@ body {
   color: red !important;
   display: block;
   margin: 0.5rem 0 0 0;
+}
+
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: transform 0.5s;
+}
+
+.slide-left-enter, .slide-left-leave-to {
+  transform: translate(100%, 0);
 }
 
 .fade-enter-active, .fade-leave-active {

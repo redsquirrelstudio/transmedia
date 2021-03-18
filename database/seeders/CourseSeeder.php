@@ -17,19 +17,23 @@ class CourseSeeder extends Seeder
         DB::table('course')->insert([
             [
                 'name' => 'designer',
-                'plural' => 'designers'
+                'plural' => 'designers',
+                'slug' => 'designers',
             ],
             [
                 'name' => 'developer',
-                'plural' => 'developers'
+                'plural' => 'developers',
+                'slug' => 'developers',
             ],
             [
                 'name' => '3D artist',
-                'plural' => '3D artists'
+                'plural' => '3D artists',
+                'slug' => '3d-artists'
             ],
             [
                 'name' => 'computer aided design',
-                'plural' => 'computer aided designs'
+                'plural' => 'computer aided designs',
+                'slug' => 'cad'
             ],
         ]);
     }

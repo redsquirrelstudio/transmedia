@@ -35,50 +35,6 @@
             }
         }
     }
-    .form-control{
-        width: 100%;
-        display: block;
-        margin: 1rem 0;
-        position: relative;
-        span, input{
-            width: 100%;
-            display: block;
-        }
-        i{
-            color: $col-white;
-            position: absolute;
-            left: 0.5rem;
-            display: block;
-            top: 0.25rem;
-            margin: auto 0;
-            font-size: 1.5rem;
-            &.select-icon{
-                top: 0.4rem;
-            }
-            &.is-invalid{
-                color: red !important;
-            }
-        }
-        input, select{
-            border: 2px solid $col-white;
-            background-color: transparent;
-            padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-            font-size: 1rem;
-            font-weight: lighter;
-            color: $col-white;
-            width: 100%;
-            &.is-invalid{
-                border-color: red !important;
-            }
-            &::placeholder{
-                text-transform: capitalize;
-            }
-            &:active, &:focus, &:-webkit-autofill{
-                background-color: $col-darker;
-                outline: 0;
-            }
-        }
-    }
 }
 
 .side-img{

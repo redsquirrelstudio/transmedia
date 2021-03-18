@@ -1,0 +1,62 @@
+.profile{
+    .hero-image{
+        width: 100%;
+        height: 400px;
+        position: relative;
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar{
+            position: absolute;
+            left: 4rem;
+            width: 250px;
+            height: 250px;
+            bottom: -125px;
+            border: 5px solid $col-white;
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .profile-details{
+        padding: 1rem calc(6rem + 250px);
+        h2{
+            font-size: 2.5rem;
+            color: $col-white;
+            font-weight: 300;
+            small{
+                font-size: 1rem;
+            }
+        }
+        h4{
+            font-size: 1.5rem;
+            color: $col-white;
+            font-weight: 300;
+            margin-top: 0.2rem;
+        }
+    }
+}
+
+.edit-button{
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+    background-color: $col-brand;
+    color: $col-white;
+    padding: 1rem;
+    font-size: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: 0.2s;
+
+    &:hover{
+        background-color: $col-darker;
+        transition: 0.2s;
+    }
+}

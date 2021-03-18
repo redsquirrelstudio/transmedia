@@ -5,7 +5,7 @@
                 <a href="{{ url('/') }}">Transmedia {{ date('Y') }}</a>
             </li>
             <li class="nav-item">
-                <a href="">Students</a>
+                <a href="{{ url('/students') }}">Students</a>
             </li>
             <li class="nav-item">
                 <a href="">Event</a>

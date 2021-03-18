@@ -4,6 +4,7 @@
     top: 0;
     width: 100%;
     z-index: 800;
+    background-color: inherit;
     .nav-left{
         display: flex;
         align-items: center;
@@ -26,6 +27,7 @@
         align-items: center;
         .nav-item{
             color: $col-white;
+            mix-blend-mode: difference;
             text-transform: uppercase;
             &.spaced-left{
                 margin-left: 6rem;
@@ -35,6 +37,7 @@
             }
             a, i{
                 color: $col-white;
+                mix-blend-mode: difference;
                 text-transform: uppercase;
                 text-decoration: none;
                 cursor: pointer;

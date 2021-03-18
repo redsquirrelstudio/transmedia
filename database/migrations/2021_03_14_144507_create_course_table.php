@@ -17,6 +17,7 @@ class CreateCourseTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('plural');
+            $table->string('slug');
             $table->timestamps();
         });
     }
