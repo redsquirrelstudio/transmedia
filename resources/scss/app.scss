@@ -192,11 +192,18 @@ body{
 }
 
 .loader{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: $col-white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .load-text{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $col-white;
+        z-index: 999;
+    }
+
 }
 
 .instructions{
