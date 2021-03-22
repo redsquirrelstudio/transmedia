@@ -18,6 +18,7 @@
                         @endif
                     </h2>
                     <h4>
+                        {{ var_dump(auth()->user()->year) }}
                         @if(auth()->user()->year === 1)
                             1st Year
                         @elseif(auth()->user()->year === 2)
