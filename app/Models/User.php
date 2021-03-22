@@ -36,7 +36,7 @@ class User extends Authenticatable
         return $this->hasOne(Page::class);
     }
 
-    public function getCourse(): mixed
+    public function getCourse()
     {
         return $this->page->course;
     }
