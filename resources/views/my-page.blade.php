@@ -27,7 +27,9 @@
                         @else
                             MA
                         @endif
-                        {{ auth()->user()->getCourse()->name }}
+                        @if(auth()->user()->getCourse())
+                            {{ auth()->user()->getCourse()->name }}
+                        @endif
                     </h4>
                     <strong>
                         {{ auth()->user()->page->tagline }}
