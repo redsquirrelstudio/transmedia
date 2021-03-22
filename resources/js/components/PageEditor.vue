@@ -94,9 +94,9 @@ export default {
             })).then(res => {
                 if (res.data.success){
                     this.$emit('close');
-                    // setTimeout(() => {
-                    //     location.reload();
-                    // }, 200);
+                    setTimeout(() => {
+                        location.reload();
+                    }, 200);
                 }
             }).catch(err => {
                 console.error(err.message);
