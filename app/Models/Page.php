@@ -19,11 +19,11 @@ class Page extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo('App\Models\Page');
+        return $this->belongsTo(Page::class);
     }
 
     public function course(): BelongsTo
     {
-        return $this->belongsTo('App\Models\Course');
+        return $this->belongsTo(Course::class);
     }
 }

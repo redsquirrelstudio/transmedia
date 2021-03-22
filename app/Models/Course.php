@@ -16,6 +16,6 @@ class Course extends Model
 
     public function page(): HasMany
     {
-        return $this->hasMany('App\Models\Page');
+        return $this->hasMany(Page::class);
     }
 }

@@ -15,7 +15,7 @@
         <p class="label">Your Course</p>
         <label for="course_id" class="form-control dark">
             <i class="las la-tools select-icon"></i>
-            <select name="" id="course_id" v-model="details.course_id">
+            <select name="course_id" id="course_id" v-model="details.course_id">
                 <option :value="null" disabled>Which discipline are you?</option>
                 <option v-for="course in courses" :key="course.id" :value="course.id">
                     {{ course.name }}
@@ -37,12 +37,13 @@
             <textarea id="bio" name="bio" v-model="details.bio" placeholder="A bit about yourself..." maxlength="300" rows="7"></textarea>
         </label>
         <label for="submit" class="form-control dark">
-            <button class="btn-primary dark" type="submit" id="submit">Save Your Page</button>
+            <button class="btn-primary dark" type="submit" id="submit" @click.prevent="save">Save Your Page</button>
         </label>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: "PageEditor",
     props: {
@@ -52,6 +53,10 @@ export default {
         },
         courses: {
             type: Array,
+            required: true,
+        },
+        apiUrl: {
+            type: String,
             required: true,
         }
     },
@@ -64,6 +69,7 @@ export default {
         this.details = {
             name: this.user.name,
             course_id: this.user.page.course_id,
+            portfolio_url: this.user.page.portfolio_url,
             tagline: this.user.page.tagline,
             bio: this.user.page.bio,
         }
@@ -74,7 +80,27 @@ export default {
         },
         bio_remaining(){
             return this.details.bio ? 300 - this.details.bio.length : 300;
-
+        }
+    },
+    methods: {
+        save(){
+            axios.post(this.apiUrl, this.$makeForm({
+                'user_id': this.user.id,
+                'name': this.details.name,
+                'course_id': this.details.course_id,
+                'portfolio_url': this.details.portfolio_url,
+                'tagline': this.details.tagline,
+                'bio': this.details.bio
+            })).then(res => {
+                if (res.data.success){
+                    this.$emit('close');
+                    // setTimeout(() => {
+                    //     location.reload();
+                    // }, 200);
+                }
+            }).catch(err => {
+                console.error(err.message);
+            });
         }
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -30,8 +31,13 @@ class User extends Authenticatable
         'verified' => 'boolean'
     ];
 
-    public function page(): hasOne
+    public function page(): HasOne
     {
-        return $this->hasOne('App\Models\Page');
+        return $this->hasOne(Page::class);
+    }
+
+    public function getCourse(): Course
+    {
+        return $this->page->course;
     }
 }

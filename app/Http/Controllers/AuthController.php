@@ -46,8 +46,10 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         try {
-            $this->authorize_credentials($request);
-            return redirect('/');
+            if($this->authorize_credentials($request)){
+                return redirect('/');
+            }
+            return redirect()->back()->withErrors(['email' => 'These credentials are incorrect or do not exist in our records']);
         }
         catch(\Exception $e){
             return redirect()->back()->withErrors(['email' => 'These credentials are incorrect or do not exist in our records']);
