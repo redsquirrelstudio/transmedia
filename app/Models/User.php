@@ -28,7 +28,8 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'verified' => 'boolean'
+        'verified' => 'boolean',
+        'year' => 'integer',
     ];
 
     public function page(): HasOne
