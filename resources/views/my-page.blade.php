@@ -63,6 +63,6 @@
 
     <transition name="slide-left">
         <page-editor v-if="showEditor" @close="showEditor = false" api-url="{{ route('my_page.save') }}"
-                     :user="{{ auth()->user()->with('page')->first() }}" :courses="{{ $courses }}"></page-editor>
+                     :user="{{ auth()->user()->with('page') }}" :courses="{{ $courses }}"></page-editor>
     </transition>
 @endsection
