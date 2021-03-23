@@ -7,8 +7,10 @@
             <i class="las la-times" @click.prevent="$emit('close')"></i>
         </div>
         <hr>
+        <p class="label">Images</p>
         <div class="images">
-
+            <image-upload :insert="details.avatar" :size="30" label="Avatar" name="avatar" :api-url="uploadUrl" @upload="details.avatar = $event"></image-upload>
+            <image-upload :insert="details.hero" :size="60" label="Banner" name="hero" :api-url="uploadUrl" @upload="details.hero = $event"></image-upload>
         </div>
         <p class="label">Your name</p>
         <label for="name" class="form-control dark">
@@ -46,6 +48,7 @@
 </template>
 
 <script>
+import ImageUpload from "./ImageUpload";
 import axios from 'axios';
 export default {
     name: "PageEditor",
@@ -61,7 +64,14 @@ export default {
         apiUrl: {
             type: String,
             required: true,
+        },
+        uploadUrl: {
+            type: String,
+            required: true,
         }
+    },
+    components: {
+        ImageUpload,
     },
     data(){
         return {
@@ -75,6 +85,8 @@ export default {
             portfolio_url: this.user.page.portfolio_url,
             tagline: this.user.page.tagline,
             bio: this.user.page.bio,
+            avatar: this.user.page.avatar_url,
+            hero: this.user.page.banner_url
         }
     },
     computed: {
@@ -93,7 +105,9 @@ export default {
                 'course_id': this.details.course_id,
                 'portfolio_url': this.details.portfolio_url,
                 'tagline': this.details.tagline,
-                'bio': this.details.bio
+                'bio': this.details.bio,
+                'avatar': this.details.avatar,
+                'hero': this.details.hero,
             })).then(res => {
                 if (res.data.success){
                     this.$emit('close');

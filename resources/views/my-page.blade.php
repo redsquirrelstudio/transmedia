@@ -3,12 +3,20 @@
 @section('content')
     <div class="profile">
         <div class="hero-image">
-            <img src="https://via.placeholder.com/1920x400" alt="{{ $user->name }} hero">
+            @if($user->page->banner_image)
+                <img src="{{ $user->page->banner_image->file_url }}" alt="{{ $user->name }} hero">
+            @else
+                <img src="https://via.placeholder.com/1920x400" alt="{{ $user->name }} hero">
+            @endif
         </div>
         <div class="profile-main">
             <div class="profile-card">
                 <div class="avatar">
-                    <img src="https://via.placeholder.com/300" alt="{{ $user->name }}">
+                    @if($user->page->avatar_image)
+                        <img src="{{ $user->page->avatar_image->file_url }}" alt="{{ $user->name }}">
+                    @else
+                        <img src="https://via.placeholder.com/300" alt="{{ $user->name }}">
+                    @endif
                 </div>
                 <div class="profile-details">
                     <h2>
@@ -39,7 +47,7 @@
                     </p>
                 </div>
                 @if($user->page->portfolio_url)
-                    <a href="{{ $user->page->portfolio_url }}" target="_blank" class="visit-overlay" >
+                    <a href="{{ $user->page->portfolio_url }}" target="_blank" class="visit-overlay">
                         <div class="visit-text">
                             <i class="las la-external-link-alt"></i>
                             <h2>
@@ -63,6 +71,7 @@
 
     <transition name="slide-left">
         <page-editor v-if="showEditor" @close="showEditor = false" api-url="{{ route('my_page.save') }}"
+                     upload-url="{{ url('/') }}"
                      :user="{{ $user }}" :courses="{{ $courses }}"></page-editor>
     </transition>
 @endsection

@@ -74,6 +74,8 @@ class PageController extends Controller
         $page->tagline = $request->get('tagline');
         $page->bio = $request->get('bio');
         $page->portfolio_url = $request->get('portfolio_url');
+        $page->avatar_url = $request->get('avatar');
+        $page->banner_url = $request->get('hero');
         $page->save();
 
         return response([
