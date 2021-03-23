@@ -39,15 +39,15 @@
                     </p>
                 </div>
                 @if(auth()->user()->page->portfolio_url)
-                    <div class="visit-overlay">
-                        <a href="{{ auth()->user()->page->portfolio_url }}" target="_blank" class="visit-text">
+                    <a href="{{ auth()->user()->page->portfolio_url }}" target="_blank" class="visit-overlay" >
+                        <div class="visit-text">
                             <i class="las la-external-link-alt"></i>
                             <h2>
                                 Visit {{ explode(' ', auth()->user()->name)[0] }}{{ explode(' ', auth()->user()->name)[0][strlen(explode(' ', auth()->user()->name)[0]) - 1] === 's' ? "'" : "'s"}}
                                 Portfolio</h2>
                             <small>{{ parse_url(auth()->user()->page->portfolio_url)['host'] }}</small>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 @endif
             </div>
         </div>

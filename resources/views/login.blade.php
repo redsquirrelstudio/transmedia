@@ -15,11 +15,17 @@
                 <label for="email" class="form-control">
                     <i class="las la-envelope"></i>
                     <input id="email" type="email" name="email" placeholder="email address">
+                    @error('email')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
                 </label>
 
                 <label for="password" class="form-control">
                     <i class="las la-key"></i>
                     <input id="password" type="password" name="password" placeholder="password">
+                    @error('password')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
                 </label>
                 <a href="" class="link-primary">Forgotten your password?</a>
 

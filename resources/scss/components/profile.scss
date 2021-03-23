@@ -56,6 +56,7 @@
                 height: 100%;
                 transform: scale(0);
                 transform-origin: center calc(2rem + 100px);
+                box-shadow: 0 0 20px rgba(89, 198, 242, 0.9);
                 transition: all 0.2s;
                 .visit-text{
                     i{

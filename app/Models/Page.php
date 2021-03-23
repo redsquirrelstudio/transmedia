@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Page extends Model
 {
@@ -19,11 +22,26 @@ class Page extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(Page::class);
+        return $this->belongsTo(User::class);
     }
 
     public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
+    }
+
+    public function avatar_image(): HasOne
+    {
+        return $this->hasOne(Media::class, 'id', 'avatar_url');
+    }
+
+    public function banner_image(): HasOne
+    {
+        return $this->hasOne(Media::class, 'id', 'banner_url');
+    }
+
+    public function work(): BelongsToMany
+    {
+        return $this->belongsToMany(Media::class, 'page_work');
     }
 }

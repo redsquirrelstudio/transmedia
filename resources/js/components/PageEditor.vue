@@ -7,6 +7,9 @@
             <i class="las la-times" @click.prevent="$emit('close')"></i>
         </div>
         <hr>
+        <div class="images">
+
+        </div>
         <p class="label">Your name</p>
         <label for="name" class="form-control dark">
             <i class="las la-user"></i>
