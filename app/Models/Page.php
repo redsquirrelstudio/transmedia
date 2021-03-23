@@ -17,7 +17,8 @@ class Page extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar_url', 'portfolio_url', 'banner_url', 'work_urls'];
     protected $casts = [
-        'work_urls' => 'array'
+        'work_urls' => 'array',
+        'course_id' => 'integer'
     ];
 
     public function user(): BelongsTo

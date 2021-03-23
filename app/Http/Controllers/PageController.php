@@ -47,6 +47,7 @@ class PageController extends Controller
         $course_id = $course->id;
         $data = [];
         $students = User::with('page')->where('year', $year)->get();
+
         foreach($students as $student){
             if ($student->page->course_id === $course_id){
                 $data[] = $student;
