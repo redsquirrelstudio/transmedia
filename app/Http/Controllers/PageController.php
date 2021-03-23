@@ -62,10 +62,8 @@ class PageController extends Controller
         $request->validate([
             'user_id' => 'required',
             'name' => 'required',
-            'course_id' => 'required|exists:course,id',
-            'portfolio_url' => 'required|url',
-            'tagline' => 'required',
-            'bio' => 'required',
+            'course_id' => 'nullable|exists:course,id',
+            'portfolio_url' => 'nullable|url',
         ]);
 
         $user = User::find($request->get('user_id'));
