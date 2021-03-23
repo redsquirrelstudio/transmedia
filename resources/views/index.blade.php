@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content-block">
+    <div class="content-block screen">
         <div class="logo-container">
             <img class="logo" src="{{ asset('img/logo_clear.png') }}" alt="Transmedia 2021">
             <div class="background-circle">
