@@ -10,6 +10,7 @@
 @import "components/students";
 @import "components/image-upload";
 @import "components/footer";
+@import "components/student-card";
 
 *{
     padding: 0;
@@ -32,7 +33,7 @@ body{
 
 .top{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(0deg, $col-dark 0%, $col-darker 100%);
 }
 

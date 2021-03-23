@@ -1,0 +1,41 @@
+.student-card{
+    background-color: $col-white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover{
+        transform: translate(0, -5px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: 0.2s;
+    }
+    .avatar{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    h2{
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.2rem;
+        color: $col-darker;
+        text-align: center;
+    }
+    h4{
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        color: $col-darker;
+        text-align: center;
+    }
+    p{
+        color: $col-brand;
+        text-align: center;
+        font-weight: normal;
+    }
+}

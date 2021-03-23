@@ -35,5 +35,6 @@
                 @endforeach
             </nav>
         </div>
+        @include('includes/students')
     </div>
 @endsection

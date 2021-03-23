@@ -53,3 +53,10 @@
         }
     }
 }
+.students{
+    display: flex;
+    .student-card{
+        width: 12%;
+        margin: 0 1%;
+    }
+}

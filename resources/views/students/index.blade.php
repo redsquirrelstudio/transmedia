@@ -25,5 +25,6 @@
                 </a>
             </nav>
         </div>
+        @include('includes/students')
     </div>
 @endsection

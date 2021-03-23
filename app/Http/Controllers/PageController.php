@@ -32,7 +32,7 @@ class PageController extends Controller
 
     public function students(): View
     {
-        return view('students.index');
+        return view('students.index', ['students' => User::all()]);
     }
 
     public function year(int $year): View
@@ -45,11 +45,14 @@ class PageController extends Controller
     {
         $course = Course::where('slug', $course_slug)->first();
         $course_id = $course->id;
-        $students = User::with('page')->where('year', $year)->get()->toArray();
-        $students = array_filter($students, function ($student) use ($course_id) {
-            return $student['page']['course_id'] === $course_id;
-        });
-        return view('students.course', ['courses' => Course::all(), 'year' => $year, 'course_slug' => $course_slug, 'students' => $students]);
+        $data = [];
+        $students = User::with('page')->where('year', $year)->get();
+        foreach($students as $student){
+            if ($student->page->course_id === $course_id){
+                $data[] = $student;
+            }
+        }
+        return view('students.course', ['courses' => Course::all(), 'year' => $year, 'course_slug' => $course_slug, 'students' => $data]);
     }
 
     public function my_page(): View
