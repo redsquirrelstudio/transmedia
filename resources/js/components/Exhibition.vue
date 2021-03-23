@@ -90,7 +90,7 @@ export default {
             this.scene.add(this.controls.getObject());
         },
         loadEnvironment() {
-            this.loader = new GLTFLoader().setPath('https://staging.redsquirrel.studio/transmedia/public/models/');
+            this.loader = new GLTFLoader().setPath('models/');
             this.loader.load('exhibition.glb', (gltf) => {
                     gltf.scene.traverse(child => {
                         if (child.isMesh) {
