@@ -66,7 +66,7 @@ export default {
 
             form.append('image', file, file.name);
             form.append('description', this.name);
-            axios.post(this.apiUrl + '/api/upload/save', form, {
+            axios.post(this.apiUrl + '/api/media/save', form, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
