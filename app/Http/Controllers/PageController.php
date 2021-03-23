@@ -54,7 +54,7 @@ class PageController extends Controller
 
     public function my_page(): View
     {
-        return view('my-page', ['courses' => Course::all()]);
+        return view('my-page', ['user' => User::with(['page'])->find(auth()->id()),'courses' => Course::all()]);
     }
 
     public function store_my_page(Request $request): Response
