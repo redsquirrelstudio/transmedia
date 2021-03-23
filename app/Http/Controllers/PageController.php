@@ -72,19 +72,29 @@ class PageController extends Controller
 
         $user = User::find($request->get('user_id'));
         $page = $user->page;
-        $user->name = $request->get('name');
+        $user->name = $this->checkValue($request->get('name'));
         $user->save();
         $page->course_id = $request->get('course_id');
         $page->tagline = $request->get('tagline');
-        $page->bio = $request->get('bio');
-        $page->portfolio_url = $request->get('portfolio_url');
-        $page->avatar_url = $request->get('avatar');
-        $page->banner_url = $request->get('hero');
+        $page->bio = $this->checkValue($request->get('bio'));
+        $page->portfolio_url = $this->checkValue($request->get('portfolio_url'));
+        $page->avatar_url = $this->checkValue($request->get('avatar'));
+        $page->banner_url = $this->checkValue($request->get('hero'));
         $page->save();
 
         return response([
             'success' => true,
             'message' => 'Page saved'
         ]);
+    }
+
+    public function checkValue($value)
+    {
+        if ($value === 'null' || $value === null){
+            return null;
+        }
+        else{
+            return $value;
+        }
     }
 }
