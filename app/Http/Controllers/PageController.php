@@ -12,7 +12,7 @@ class PageController extends Controller
 {
     public function index(): View
     {
-        return view('index');
+        return view('index', ['students' => User::inRandomOrder()->limit(14)->get()]);
     }
 
     public function register(): View

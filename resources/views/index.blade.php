@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="top">
-        <animated-lightbulb
-            outlined="{{ asset('/img/logo_outline.svg') }}"
-            logo="{{ asset('/img/logo.svg') }}">
-        </animated-lightbulb>
+    <div class="content-block">
+        <div class="logo-container">
+            <img class="logo" src="{{ asset('img/logo_clear.png') }}" alt="Transmedia 2021">
+            <div class="background-circle">
+                <div class="border-circle"></div>
+            </div>
+        </div>
     </div>
-    <div id="about" class="main-content">
+    <div id="about" class="content-block">
         <div class="about">
             <h2>
                 About the Exhibition
@@ -27,21 +29,14 @@
                         Enter the Exhibition
                     </a>
                 </p>
-                <div class="atom-animation">
-                    <img class="center" src="{{ asset('/img/uni_logo.svg')  }}" alt="">
-                    <div class="moons">
-                        <img class="moon top-left" src="{{ asset('/img/design_logo.svg')  }}" alt="Designers">
-                        <img class="moon top-right" src="{{ asset('/img/threed_logo.svg')  }}" alt="3D Artists">
-                        <img class="moon bottom-left" src="{{ asset('/img/cad_logo.svg')  }}" alt="CAD">
-                        <img class="moon bottom-right" src="{{ asset('/img/dev_logo.svg')  }}" alt="Developers">
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="content-block">
+        <h2>Our Students</h2>
         <div class="students">
-            <h2>
-                Our Students
-            </h2>
+            @include('includes/students')
         </div>
     </div>
+
 @endsection
