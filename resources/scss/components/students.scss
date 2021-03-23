@@ -55,6 +55,7 @@
 }
 .students{
     display: flex;
+    flex-wrap: wrap;
     .student-card{
         width: 12%;
         margin: 0 1%;
