@@ -32,11 +32,14 @@
             @endauth
 
             <li class="nav-item">
-                <a href="">
+                <a href="https://www.facebook.com/transmediaexhibitionwinchester">
                     <i class="lab la-facebook-square"></i>
                 </a>
-                <a href="">
+                <a href="https://www.instagram.com/transmedia.winchester/">
                     <i class="lab la-instagram"></i>
+                </a>
+                <a href="https://twitter.com/TransmediaWinch">
+                    <i class="lab la-twitter-square"></i>
                 </a>
             </li>
         </div>
