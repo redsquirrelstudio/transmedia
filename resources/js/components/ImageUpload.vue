@@ -48,7 +48,7 @@ export default {
         }
     },
     created() {
-        if (this.insert) {
+        if (this.insert !== null) {
             axios.get(this.apiUrl + '/api/media/get/' + this.insert)
             .then(res => {
                 this.fileUrl = res.data;
