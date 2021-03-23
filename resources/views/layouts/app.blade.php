@@ -13,6 +13,7 @@
 <div id="app">
     @include('includes/navigation')
     @yield('content')
+    @include('includes/footer')
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 </body>

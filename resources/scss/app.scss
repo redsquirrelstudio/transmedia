@@ -9,6 +9,7 @@
 @import "components/page-editor";
 @import "components/students";
 @import "components/image-upload";
+@import "components/footer";
 
 *{
     padding: 0;
@@ -41,9 +42,7 @@ body{
 }
 
 .main-content{
-    position: absolute;
-    left: 0;
-    top: 100vh;
+    position: relative;
     padding: 2rem 4rem;
     width: 100%;
     h2 {

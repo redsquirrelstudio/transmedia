@@ -1,0 +1,18 @@
+.footer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: $col-white;
+    padding: 2rem 0;
+    background-color: $col-darker;
+    a{
+        text-decoration: none;
+        font-weight: bold;
+        color: $col-white;
+        transition: 0.2s;
+        &:hover{
+            color: $col-brand;
+            transition: 0.2s;
+        }
+    }
+}
