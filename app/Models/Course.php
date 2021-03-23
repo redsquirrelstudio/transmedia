@@ -12,7 +12,7 @@ class Course extends Model
 
     protected $table = 'course';
     protected $primaryKey = "id";
-    protected $fillable = ["name", "plural"];
+    protected $fillable = ["name", "plural", "slug"];
 
     public function page(): HasMany
     {
