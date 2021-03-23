@@ -35,7 +35,7 @@ body {
     position: relative;
     width: 100vw;
     scroll-snap-align: start;
-    .screen{
+    &.screen{
         min-height: 100vh;
     }
 }
