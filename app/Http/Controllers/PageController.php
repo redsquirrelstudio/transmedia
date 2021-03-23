@@ -74,8 +74,8 @@ class PageController extends Controller
         $page = $user->page;
         $user->name = $this->checkValue($request->get('name'));
         $user->save();
-        $page->course_id = $request->get('course_id');
-        $page->tagline = $request->get('tagline');
+        $page->course_id = $this->checkValue($request->get('course_id'));
+        $page->tagline = $this->checkValue($request->get('tagline'));
         $page->bio = $this->checkValue($request->get('bio'));
         $page->portfolio_url = $this->checkValue($request->get('portfolio_url'));
         $page->avatar_url = $this->checkValue($request->get('avatar'));
