@@ -15,18 +15,26 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('page.index');
-Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
-Route::get('/my-page', [PageController::class, 'my_page'])->name('page.personal');
-Route::get('/students', [PageController::class, 'students'])->name('page.studies');
-Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
-Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
+if(env('SHOW_LANDING')){
+    Route::get('/', function () {
+       return view('landing');
+    });
+}
+else{
+    Route::get('/', [PageController::class, 'index'])->name('page.index');
+    Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
+    Route::get('/my-page', [PageController::class, 'my_page'])->name('page.personal');
+    Route::get('/students', [PageController::class, 'students'])->name('page.studies');
+    Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
+    Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
 
 
-Route::get('/login', [PageController::class, 'login'])->name('page.login');
-Route::get('/register', [PageController::class, 'register'])->name('page.register');
+    Route::get('/login', [PageController::class, 'login'])->name('page.login');
+    Route::get('/register', [PageController::class, 'register'])->name('page.register');
 
 
-Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
-Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+}
+

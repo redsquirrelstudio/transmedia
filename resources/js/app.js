@@ -3,6 +3,8 @@ import AnimatedLightbulb from "./components/AnimatedLightbulb";
 import Exhibition from "./components/Exhibition";
 import PageEditor from "./components/PageEditor";
 import ImageUpload from "./components/ImageUpload";
+import MailForm from "./components/landing/MailForm";
+import Countdown from "./components/landing/Countdown";
 
 Vue.prototype.$makeForm = (object) => {
     let form = new FormData;
@@ -26,5 +28,7 @@ const app = new Vue({
         Exhibition,
         PageEditor,
         ImageUpload,
+        MailForm,
+        Countdown
     }
 });
