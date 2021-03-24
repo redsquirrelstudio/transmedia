@@ -1,37 +1,25 @@
 <template>
     <div>
         <transition-group name="fade">
-            <form ref="form" v-show="!sent" key="form"
-                  action="https://transmediawinchester.us1.list-manage.com/subscribe/post?u=0c295aac87ca7c2f04d4094ec&amp;id=6f6aca5480"
-                  method="post" id="mc-embedded-subscribe-form" target="_blank" novalidate class="mailing-signup">
-                <div class="half">
-                    <label for="FNAME">
+            <div v-show="!sent" key="form" class="mailing-signup">
+                <label for="name">
                         <span class="label">
-                            Your First Name
+                            Your Name
                         </span>
-                        <input required type="text" name="FNAME" placeholder="Your first name">
-                    </label>
-                </div>
-                <div class="half">
-                    <label for="LNAME">
-                        <span class="label">
-                            Your Last Name
-                        </span>
-                        <input required type="text" name="LNAME" placeholder="Your last name">
-                    </label>
-                </div>
+                    <input required id="name" type="text" name="name" v-model="name" placeholder="Your name">
+                </label>
 
-                <label for="EMAIL">
+                <label for="email">
                           <span class="label">
-                            Email Address
+                           Your Email Address
                         </span>
-                    <input required type="email" name="EMAIL" placeholder="Email Address">
+                    <input id="email" required type="email" name="email" v-model="email" placeholder="Email Address">
                 </label>
                 <button type="submit" @click.prevent="send">Subscribe</button>
-            </form>
+            </div>
             <div v-show="sent" class="thanks" key="thanks">
                 <p>
-                    Thank you, you'll now receive our emails!
+                    Welcome to the club 😎 <br> you'll now receive our emails!
                 </p>
             </div>
         </transition-group>
@@ -39,19 +27,36 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: "MailForm",
+    props: {
+        apiUrl:{
+            type: String,
+            required: true
+        }
+    },
     data() {
         return {
             sent: false,
+            name: '',
+            email: '',
         }
     },
     methods: {
         send() {
+            axios.post(this.apiUrl, this.$makeForm({
+                'name': this.name,
+                'email': this.email,
+            }))
+                .then(res => {
+                    this.sent = true;
+                })
+                .catch(err => {
+                    console.error(err.message);
+                })
             this.sent = true;
-            setTimeout(() => {
-                this.$refs.form.submit();
-            }, 1000);
         }
     }
 }

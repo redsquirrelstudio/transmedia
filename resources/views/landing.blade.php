@@ -43,14 +43,17 @@
     <div class="block light bordered">
         <div class="flex-container">
             <div class="half padded-left">
-                <h2>We'll Keep you posted</h2>
+                <h2>
+                    Join the DMD community mailing list!
+                </h2>
                 <p>
-                    Join the DMD community mailing list so you don't miss out on any event information.
+                    We'll share <strong>Transmedia Event</strong> info and all that good stuff!
                 </p>
                 <p>
-                    We'll send through updates and some amazing work from our students.
+                    DON'T BE A SQUARE - BE A BILLIONAIRE! <br>
+                    <small>In terms of Transmedia knowledge anyway.</small>
                 </p>
-                <mail-form></mail-form>
+                <mail-form api-url="{{ route('newsletter.subscribe') }}"></mail-form>
             </div>
             <div class="half">
                 <div class="robot">
