@@ -26,6 +26,7 @@
 import * as THREE from 'three';
 import LoadFill from "./LoadFill";
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader';
 import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockControls.js';
 
 export default {
@@ -91,6 +92,10 @@ export default {
         },
         loadEnvironment() {
             this.loader = new GLTFLoader().setPath('models/');
+            const draco = new DRACOLoader();
+            draco.setDecoderConfig({ type: 'js' });
+            draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+            this.loader.setDRACOLoader( draco );
             this.loader.load('exhibition.glb', (gltf) => {
                     gltf.scene.traverse(child => {
                         if (child.isMesh) {
