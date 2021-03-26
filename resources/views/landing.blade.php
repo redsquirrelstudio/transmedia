@@ -7,14 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transmedia 2021</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800;900&&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="landing" id="app">
-    <div>
+    <div class="video-container">
         <video autoplay muted loop class="video-background">
-            <source src="{{ asset('/video/transmedia.mp4') }}" type="video/mp4">
+            <source src="{{ asset('/video/transmedia_square.mp4') }}" type="video/mp4">
         </video>
+        <div class="video-title">
+            <h4>
+                Student Virtual Exhibition
+            </h4>
+            <h2>
+                Transmedia
+            </h2>
+            <h3>
+                {{ date('Y') }}
+            </h3>
+        </div>
     </div>
     <div class="block bordered">
         <div class="flex-container">
@@ -63,7 +75,8 @@
         </div>
     </div>
     <div class="block bordered">
-        <countdown start-time="{{ date('M j, Y H:m:s') }}" end-time="{{ date('M j, Y H:m:s', strtotime('06-05-2021 10:00:00')) }}"></countdown>
+        <countdown start-time="{{ date('M j, Y H:m:s') }}"
+                   end-time="{{ date('M j, Y H:m:s', strtotime('06-05-2021 10:00:00')) }}"></countdown>
     </div>
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
