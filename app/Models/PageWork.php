@@ -21,6 +21,6 @@ class PageWork extends Model
 
     public function media(): BelongsTo
     {
-        return $this->belongsTo(Media::class);
+        return $this->belongsTo(StudentMedia::class);
     }
 }

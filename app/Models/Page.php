@@ -33,16 +33,16 @@ class Page extends Model
 
     public function avatar_image(): HasOne
     {
-        return $this->hasOne(Media::class, 'id', 'avatar_url');
+        return $this->hasOne(StudentMedia::class, 'id', 'avatar_url');
     }
 
     public function banner_image(): HasOne
     {
-        return $this->hasOne(Media::class, 'id', 'banner_url');
+        return $this->hasOne(StudentMedia::class, 'id', 'banner_url');
     }
 
     public function work(): BelongsToMany
     {
-        return $this->belongsToMany(Media::class, 'page_work');
+        return $this->belongsToMany(StudentMedia::class, 'page_work');
     }
 }

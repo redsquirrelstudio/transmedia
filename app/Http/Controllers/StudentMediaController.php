@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Media;
+use App\Models\StudentMedia;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Storage;
 
-class MediaController extends Controller
+class StudentMediaController extends Controller
 {
     public function save(Request $request): Response
     {
@@ -19,7 +18,7 @@ class MediaController extends Controller
         $filename = $file->getClientOriginalName();
         $path = $request->file('image')->storeAs('uploads',   date("d_m_h").$filename);
 
-        $media = new Media([
+        $media = new StudentMedia([
            'description' => $request->get('description'),
            'file_name' => $filename,
            'file_url' => url($path),
@@ -33,6 +32,6 @@ class MediaController extends Controller
 
     public function get(int $id): string
     {
-        return Media::find($id)->file_url;
+        return StudentMedia::find($id)->file_url;
     }
 }
