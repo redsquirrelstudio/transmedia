@@ -14,10 +14,11 @@
 <body>
 <div id="app">
     @include('includes/navigation')
-    <div class="content-container">
+    <main class="screen-block scroll-container">
         @yield('content')
-    </div>
-    @include('includes/footer')
+        @include('includes/footer')
+    </main>
+
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 </body>

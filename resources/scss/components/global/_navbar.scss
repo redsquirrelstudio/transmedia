@@ -1,0 +1,33 @@
+.navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 5rem;
+    z-index: 999;
+
+    .navbar-items{
+        list-style: none;
+        display: flex;
+        &.left{
+            li{
+                margin-right: 2rem;
+            }
+        }
+        &.right{
+            li{
+                margin-left: 2rem;
+            }
+        }
+        li a{
+            color: $col-white;
+            text-decoration: none;
+            font-family: $font-copy;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            text-shadow: 0 5px 10px rgba(0,0,0,0.4);
+        }
+    }
+}

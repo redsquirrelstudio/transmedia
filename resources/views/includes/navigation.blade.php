@@ -1,47 +1,41 @@
 <nav class="navbar">
-    <ul class="nav-items">
-        <div class="nav-left">
-            <li class="nav-item">
-                <a href="{{ url('/') }}">Transmedia {{ date('Y') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/students') }}">Students</a>
-            </li>
-            <li class="nav-item">
-                <a href="">Event</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/exhibition') }}">Virtual Exhibition</a>
-            </li>
-            @auth
-                <li class="nav-item">
-                    <a href="{{ url('/my-page') }}">My Page</a>
-                </li>
-            @endauth
-        </div>
-        <div class="nav-right">
-            @auth
-                <li class="nav-item">
-                    Welcome {{ auth()->user()->name }} -
-                    <a href="{{ url('/logout') }}">Sign out</a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a href="{{ url('/login') }}">Sign in</a>
-                </li>
-            @endauth
-
-            <li class="nav-item">
-                <a href="https://www.facebook.com/transmediaexhibitionwinchester">
-                    <i class="lab la-facebook-square"></i>
-                </a>
-                <a href="https://www.instagram.com/transmedia.winchester/">
-                    <i class="lab la-instagram"></i>
-                </a>
-                <a href="https://twitter.com/TransmediaWinch">
-                    <i class="lab la-twitter-square"></i>
-                </a>
-            </li>
-        </div>
+    <ul class="navbar-items left">
+        <li>
+            <a href="">
+                Transmedia {{ date('Y') }}
+            </a>
+        </li>
+        <li>
+            <a href="">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="">
+                2021 Projects
+            </a>
+        </li>
+        <li>
+            <a href="">
+                Students
+            </a>
+        </li>
+        <li>
+            <a href="">
+                Virtual Exhibition
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-items right">
+        <li>
+            <a href="">
+                Shop
+            </a>
+        </li>
+        <li>
+            <a href="">
+                Contact
+            </a>
+        </li>
     </ul>
 </nav>

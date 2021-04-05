@@ -1,10 +1,11 @@
 import Vue from 'vue';
-import AnimatedLightbulb from "./components/AnimatedLightbulb";
 import Exhibition from "./components/Exhibition";
 import PageEditor from "./components/PageEditor";
 import ImageUpload from "./components/ImageUpload";
 import MailForm from "./components/landing/MailForm";
 import Countdown from "./components/landing/Countdown";
+
+import HeroSlider from "./components/siders/HeroSlider";
 
 Vue.prototype.$makeForm = (object) => {
     let form = new FormData;
@@ -24,11 +25,11 @@ const app = new Vue({
         }
     },
     components: {
-        AnimatedLightbulb,
         Exhibition,
         PageEditor,
         ImageUpload,
         MailForm,
-        Countdown
+        Countdown,
+        HeroSlider,
     }
 });

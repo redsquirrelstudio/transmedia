@@ -1,7 +1,16 @@
 @import "variables";
 
+//Global
+@import "components/global/navbar";
+
+//Page elements
+@import "components/page-elements/homepage";
+
+//Sliders
+@import "components/sliders/hero-slider";
+
 @import "components/scrollbar";
-@import "components/navbar";
+
 @import "components/about";
 @import "components/auth";
 @import "components/profile";
@@ -24,206 +33,82 @@
 
 html {
     background-color: $col-darker;
+    width: 100%;
 }
 
 body {
     width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 p{
     font-family: 'Roboto', sans-serif;
 }
 
-.content-block {
-    padding: 4rem 0;
-    position: relative;
-    width: 100vw;
-    scroll-snap-align: start;
-    &.screen{
-        min-height: 100vh;
+.scroll-container{
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    height: 100vh;
+    .scroll-anchor{
+        scroll-snap-align: start;
     }
 }
 
-
-.logo-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-
-    img {
+.btn-c2a {
+    position: relative;
+    padding: 1.5rem 2rem;
+    border: 4px solid $col-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $col-white;
+    display: inline-block;
+    margin: 5rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
+        border: 4px solid transparent;
+        transition: 0.2s;
     }
-
-    .background-circle {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transform-origin: center center;
-        width: 130%;
-        height: 130%;
-        background-color: $col-dark;
-        border-radius: 50%;
-        z-index: -1;
-        animation: grow 0.5s ease-in;
-
-
+    &:hover{
+        border: 4px solid transparent;
+        &::before{
+            border: 4px solid $col-white;
+            background-color: rgba(64, 116, 137, 0.2);
+            transform: translate(10px, 10px);
+            transition: 0.2s;
+        }
+        &::after{
+            border: 4px solid $col-white;
+            background-color: rgba(69, 77, 103, 0.2);
+            transform: translate(-10px, -10px);
+            transition: 0.2s;
+        }
     }
 }
 
-#app {
-    width: 100vw;
+.screen-block{
+    width: 100%;
     min-height: 100vh;
 }
 
-h2 {
-    color: $col-white;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 2rem;
-    padding: 8rem 0 2rem 0;
-    text-align: center;
-}
-
-.btn-primary {
-    display: inline-block;
-    align-items: flex-start;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: transparent;
-    color: $col-white;
-    outline: 0;
-    border: 2px solid $col-white;
-    cursor: pointer;
-    transition: 0.2s;
-
-    &.dark {
-        color: $col-dark;
-        border-color: $col-dark;
-    }
-
-    &:hover {
-        color: $col-brand;
-        border: 2px solid $col-brand;
-        text-shadow: 0 2px 5px $col-light;
-        box-shadow: 0 2px 5px $col-light;
-        transition: 0.2s;
-    }
-}
-
-.label {
-    margin-bottom: -0.5rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
-
-.form-control {
-    width: 100%;
-    display: block;
-    margin: 1rem 0;
+.tinted{
     position: relative;
-
-    span, input {
-        width: 100%;
-        display: block;
-    }
-
-    i {
-        color: $col-white;
+    &::after{
+        content: '';
         position: absolute;
-        left: 0.5rem;
-        display: block;
-        top: 0.25rem;
-        margin: auto 0;
-        font-size: 1.5rem;
-
-        &.select-icon {
-            top: 0.4rem;
-        }
-
-        &.is-invalid {
-            color: red !important;
-        }
-    }
-
-    select {
-        text-transform: capitalize;
-    }
-
-    input, select, textarea {
-        border: 2px solid $col-white;
-        background-color: transparent;
-        padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-        font-size: 1rem;
-        font-weight: lighter;
-        color: $col-white;
+        left: 0;
+        top: 0;
         width: 100%;
-
-        option {
-            text-transform: capitalize;
-        }
-
-        &.is-invalid {
-            border-color: red !important;
-        }
-
-        &::placeholder {
-            text-transform: capitalize;
-        }
-
-        &:active, &:focus, &:-webkit-autofill {
-            background-color: $col-darker;
-            outline: 0;
-        }
+        height: 100%;
+        background-color: rgba(69, 77, 103, 0.5);
+        z-index: 1;
     }
-
-    textarea {
-        padding: 0.5rem;
-        resize: none;
-    }
-
-    &.dark {
-        i {
-            color: $col-darker !important;
-        }
-
-        input, select, textarea {
-            &::placeholder {
-                text-transform: capitalize;
-            }
-
-            &:active, &:focus, &:-webkit-autofill {
-                background-color: $col-light;
-                outline: 0;
-            }
-
-            border-color: $col-darker;
-            color: $col-darker;
-        }
-    }
-}
-
-.link-primary {
-    color: $col-white;
-    display: block;
-}
-
-.border-circle {
-    width: 800px;
-    height: 800px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
-    border-radius: 50%;
-    border: 5px dashed $col-dark;
-    animation: rotate 20s infinite linear;
 }
 
 .error {
