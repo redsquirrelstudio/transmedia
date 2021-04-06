@@ -6,11 +6,12 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "ENV_FILE=.\/.env.production npm run production",
+        "prod": "ENV_FILE=./.env.production npm run production",
         "production": "mix --production"
     },
     "devDependencies": {
         "axios": "^0.21.1",
+        "craftable": "^2.1.3",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -18,12 +19,12 @@
         "sass": "^1.32.6",
         "sass-loader": "^8.0.2",
         "vue-loader": "15.9.5",
-        "vue-template-compiler": "^2.6.12",
-        "craftable": "^2.1.3"
+        "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
         "mix-env-file": "^0.1.1",
         "three": "^0.126.1",
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-observe-visibility": "^1.0.0"
     }
 }

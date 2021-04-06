@@ -1,11 +1,18 @@
 import Vue from 'vue';
+import VueObserveVisibility from 'vue-observe-visibility'
+
 import Exhibition from "./components/Exhibition";
 import PageEditor from "./components/PageEditor";
 import ImageUpload from "./components/ImageUpload";
 import MailForm from "./components/landing/MailForm";
 import Countdown from "./components/landing/Countdown";
+import Animated from "./components/Animated";
 
-import HeroSlider from "./components/siders/HeroSlider";
+import HeroSlider from "./components/sliders/HeroSlider";
+import StudentSlider from "./components/sliders/StudentSlider";
+
+Vue.use(VueObserveVisibility);
+
 
 Vue.prototype.$makeForm = (object) => {
     let form = new FormData;
@@ -31,5 +38,7 @@ const app = new Vue({
         MailForm,
         Countdown,
         HeroSlider,
+        StudentSlider,
+        Animated,
     }
 });

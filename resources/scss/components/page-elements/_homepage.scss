@@ -63,7 +63,176 @@
             font-size: 3rem;
             font-weight: lighter;
             color: $col-white;
+        }
+    }
+}
 
+.carousel-block{
+    &.pushed{
+        margin-top: -10rem;
+    }
+    .title{
+        text-align: right;
+        h2{
+            color: $col-white;
+            font-size: 7rem;
+            text-align: right;
+            padding: 15rem 5rem 5rem 0;
+            display: inline-block;
+            margin-left: auto;
+            width: 70%;
+            font-weight: bold;
+            &.dark-background{
+                background-color: $col-dark;
+            }
+        }
+    }
+    .carousel-container{
+        width: 100%;
+        display: flex;
+        .filters{
+            width: 30%;
+            padding-left: 5rem;
+            h2{
+                color: $col-white;
+                font-weight: bold;
+                padding-bottom: 1rem;
+                display: block;
+            }
+            .btn-c2a{
+                font-size: 1rem;
+            }
+            a:not(.btn-c2a){
+                color: $col-white;
+                display: block;
+                text-decoration: none;
+                opacity: 0.6;
+                font-family: $font-copy;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                transition: 0.2s;
+                &:hover{
+                    opacity: 1;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+
+}
+
+.course-block{
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem 5rem;
+    .course{
+        padding: 0 4rem;
+        h4{
+            font-weight: lighter;
+            text-transform: uppercase;
+            color: $col-white;
+        }
+        h2{
+            text-transform: uppercase;
+            color: $col-white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        p{
+            color: $col-white;
+        }
+        .btn-c2a{
+            font-size: 1rem;
+        }
+    }
+}
+
+.merch-block{
+    display: flex;
+    justify-content: space-between;
+    padding: 15rem 5rem;
+    .merch-image{
+        width: 60%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .message{
+        transition: 0.2s;
+        width: 40%;
+        border-left: 2px solid $col-white;
+        padding-left: 5rem;
+        h2{
+            font-size: 6rem;
+            text-transform: uppercase;
+            color: $col-white;
+        }
+        h4{
+            font-size: 1.5rem;
+            color: $col-white;
+            text-transform: uppercase;
+            margin: 1rem 0 2rem 0;
+            font-weight: lighter;
+        }
+        p{
+            margin: 2rem 0 0 0;
+            font-size: 1.5rem;
+            color: $col-white;
+            font-family: $font-copy;
+        }
+        .btn-c2a{
+            margin-bottom: 0;
+            font-weight: lighter;
+        }
+    }
+}
+
+.feed-block{
+    display: flex;
+    padding: 20rem 5rem 10rem 5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .message{
+        width: 30%;
+        border-left: 2px solid $col-white;
+        padding-left: 5rem;
+        h2{
+            font-size: 4rem;
+            text-transform: uppercase;
+            color: $col-white;
+            margin-bottom: 2rem;
+        }
+        h4{
+            font-size: 1.5rem;
+            color: $col-white;
+            text-transform: uppercase;
+            font-weight: lighter;
+        }
+        p{
+            margin: 2rem 0 0 0;
+            font-size: 1.5rem;
+            color: $col-white;
+            font-family: $font-copy;
+        }
+        .btn-c2a{
+            margin-bottom: 0;
+            font-weight: lighter;
+        }
+        .socials{
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            a{
+                display: block;
+                margin-right: 1rem;
+                i{
+                    color: $col-white;
+                    font-size: 3rem;
+                }
+            }
         }
     }
 }

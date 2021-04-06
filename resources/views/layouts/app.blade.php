@@ -21,5 +21,6 @@
 
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 </body>
 </html>

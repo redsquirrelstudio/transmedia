@@ -24,7 +24,8 @@ else{
     Route::get('/', [PageController::class, 'index'])->name('page.index');
     Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
     Route::get('/my-page', [PageController::class, 'my_page'])->name('page.personal');
-    Route::get('/students', [PageController::class, 'students'])->name('page.studies');
+    Route::get('/students', [PageController::class, 'students'])->name('page.students');
+    Route::get('/students/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
     Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
     Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
 
@@ -36,6 +37,7 @@ else{
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
 }
 
 

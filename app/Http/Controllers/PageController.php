@@ -12,7 +12,7 @@ class PageController extends Controller
 {
     public function index(): View
     {
-        return view('index', ['students' => User::inRandomOrder()->limit(14)->get()]);
+        return view('index', ['students' => User::whereHas('page.avatar_image')->with('page')->with('page.course')->with('page.avatar_image')->inRandomOrder()->limit(10)->get()]);
     }
 
     public function register(): View
@@ -35,6 +35,11 @@ class PageController extends Controller
         return view('students.index', ['students' => User::all()]);
     }
 
+    public function student_course(string $course_slug): View
+    {
+        return view('students.index', ['students' => User::all()]);
+    }
+
     public function year(int $year): View
     {
         $students = User::with('page')->where('year', $year)->get();
@@ -48,8 +53,8 @@ class PageController extends Controller
         $data = [];
         $students = User::with('page')->where('year', $year)->get();
 
-        foreach($students as $student){
-            if ($student->page->course_id === $course_id){
+        foreach ($students as $student) {
+            if ($student->page->course_id === $course_id) {
                 $data[] = $student;
             }
         }
@@ -58,7 +63,7 @@ class PageController extends Controller
 
     public function my_page(): View
     {
-        return view('my-page', ['user' => User::with(['page'])->find(auth()->id()),'courses' => Course::all()]);
+        return view('my-page', ['user' => User::with(['page'])->find(auth()->id()), 'courses' => Course::all()]);
     }
 
     public function store_my_page(Request $request): Response
@@ -90,10 +95,9 @@ class PageController extends Controller
 
     public function checkValue($value)
     {
-        if ($value === 'null' || $value === null){
+        if ($value === 'null' || $value === null) {
             return null;
-        }
-        else{
+        } else {
             return $value;
         }
     }
