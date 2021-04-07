@@ -1,3 +1,6 @@
+<div class="screen-block scroll-anchor">
+    <img class="wave-top" src="{{ asset('/images/wave_top.svg') }}" alt="wave">
+</div>
 <footer class="footer">
     <div class="footer-left">
         <div class="footer-links">
@@ -15,6 +18,9 @@
             </a>
             <a href="">
                 Shop
+            </a>
+            <a href="">
+                Student Login
             </a>
         </div>
         <div class="footer-links">

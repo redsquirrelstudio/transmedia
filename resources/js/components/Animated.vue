@@ -15,7 +15,7 @@ export default {
     props: {
         transition: {
             type: String,
-            default: 'fade-fast'
+            default: 'fade-up'
         }
     },
     data() {

@@ -51,7 +51,7 @@
                                     <th is='sortable' :column="'forbidden'">{{ trans('admin.admin-user.columns.forbidden') }}</th>
                                     <th is='sortable' :column="'language'">{{ trans('admin.admin-user.columns.language') }}</th>
                                     <th is='sortable' :column="'last_login_at'">{{ trans('admin.admin-user.columns.last_login_at') }}</th>
-
+                                    
                                     <th></th>
                                 </tr>
                             </thead>
@@ -75,7 +75,7 @@
                                     </td>
                                     <td >@{{ item.language }}</td>
                                     <td >@{{ item.last_login_at | datetime }}</td>
-
+                                    
                                     <td>
                                         <div class="row no-gutters">
                                             @can('admin.admin-user.impersonal-login')

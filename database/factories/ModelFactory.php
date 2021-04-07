@@ -33,3 +33,21 @@ $factory->define(App\Models\User::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\FeaturedProject::class, static function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'user_id' => $faker->sentence,
+        'description' => $faker->text(),
+        'banner' => $faker->sentence,
+        'main_image' => $faker->sentence,
+        'image_1' => $faker->sentence,
+        'image_2' => $faker->sentence,
+        'image_3' => $faker->sentence,
+        'youtube_url' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

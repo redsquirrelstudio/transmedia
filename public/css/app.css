@@ -190,6 +190,7 @@
   width: 40%;
   border-left: 2px solid #FFF;
   padding-left: 5rem;
+  min-height: 650px;
 }
 .merch-block .message h2 {
   font-size: 6rem;
@@ -1318,6 +1319,15 @@ p {
 .fade-fast-enter, .fade-fast-leave-to,
 .fade-slow-enter, .fade-slow-leave-to {
   opacity: 0;
+}
+
+.fade-up-enter, .fade-up-leave-to {
+  opacity: 0;
+  transform: translate(0, 5rem);
+}
+
+.fade-up-enter-active, .fade-up-leave-active {
+  transition: all 0.5s;
 }
 
 .spinner {

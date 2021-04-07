@@ -15,7 +15,7 @@ class Page extends Model
 
     protected $table = 'page';
     protected $primaryKey = 'id';
-    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar_url', 'portfolio_url', 'banner_url', 'work_urls'];
+    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar', 'portfolio_url', 'banner'];
     protected $casts = [
         'work_urls' => 'array',
         'course_id' => 'integer'
@@ -33,16 +33,12 @@ class Page extends Model
 
     public function avatar_image(): HasOne
     {
-        return $this->hasOne(StudentMedia::class, 'id', 'avatar_url');
+        return $this->hasOne(StudentMedia::class, 'id', 'avatar');
     }
 
     public function banner_image(): HasOne
     {
-        return $this->hasOne(StudentMedia::class, 'id', 'banner_url');
+        return $this->hasOne(StudentMedia::class, 'id', 'banner');
     }
 
-    public function work(): BelongsToMany
-    {
-        return $this->belongsToMany(StudentMedia::class, 'page_work');
-    }
 }

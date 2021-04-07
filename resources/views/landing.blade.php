@@ -32,7 +32,7 @@
         <div class="flex-container">
             <div class="half">
                 <div class="image-circle">
-                    <img src="{{ asset('/img/west_downs_birdseye.jpg') }}" alt="">
+                    <img src="{{ asset('/images/west_downs_birdseye.jpg') }}" alt="">
                 </div>
             </div>
             <div class="half padded-right">
@@ -69,7 +69,7 @@
             </div>
             <div class="half">
                 <div class="robot">
-                    <img src="{{ asset('/img/robot_outline.png') }}" alt="Transmedia Robot">
+                    <img src="{{ asset('/images/robot_outline.png') }}" alt="Transmedia Robot">
                 </div>
             </div>
         </div>

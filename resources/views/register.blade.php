@@ -62,7 +62,7 @@
                 </label>
             </form>
         </div>
-        <img class="side-img" src="{{ asset('/img/west_downs.jpg') }}" alt="">
+        <img class="side-img" src="{{ asset('/images/west_downs.jpg') }}" alt="">
     </div>
 
 @endsection

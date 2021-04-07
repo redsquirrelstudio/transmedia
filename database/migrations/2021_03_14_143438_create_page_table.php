@@ -18,11 +18,10 @@ class CreatePageTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('course_id')->nullable();
             $table->string('tagline')->nullable();
-            $table->string('avatar_url')->nullable();
+            $table->bigInteger('avatar')->nullable();
             $table->longText('bio')->nullable();
             $table->string('portfolio_url')->nullable();
-            $table->string('banner_url')->nullable();
-            $table->longText('work_urls')->nullable();
+            $table->bigInteger('banner')->nullable();
             $table->timestamps();
         });
     }

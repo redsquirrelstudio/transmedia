@@ -168,6 +168,16 @@ p{
     opacity: 0;
 }
 
+.fade-up-enter, .fade-up-leave-to{
+    opacity: 0;
+    transform: translate(0, 5rem);
+}
+
+
+.fade-up-enter-active, .fade-up-leave-active {
+    transition: all 0.5s;
+}
+
 .spinner {
     animation: spin 1s infinite linear;
 }

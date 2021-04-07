@@ -17,7 +17,7 @@
         subtitle: 'Our Hall Of Fame',
         link_text: 'Get Started',
         link_href: '/',
-        src: '{{ asset('/img/west_downs_birdseye.jpg') }}',
+        src: '{{ asset('/images/west_downs_birdseye.jpg') }}',
         type: 'image',
         },
         {
@@ -162,66 +162,11 @@
                 </div>
                 <student-slider :students="{{ $students }}">
                     <template v-slot:arrow>
-                        <img class="arrow" src="{{ asset('/img/arrow_right.svg') }}" alt="->">
+                        <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
                 </student-slider>
             </div>
         </div>
     </div>
-    <div class="screen-block scroll-anchor">
-        <img class="wave-bottom" src="{{ asset('img/wave_bottom.svg') }}" alt="wave">
-        <div class="merch-block">
-            <div class="message">
-                <h2>Shop <br> Merch</h2>
-                <h4>For everyone</h4>
-                <p>
-                    Designed, Created, Manufactured by our <br>
-                    2nd year students
-                </p>
-                <a href="" class="btn-c2a">
-                    Shop Now
-                </a>
-            </div>
-            <div class="merch-image">
-                <animated>
-                    <template v-slot:subject>
-                        <img src="{{ asset('/img/merch_examples.png') }}" alt="Merch">
-                    </template>
-                </animated>
-            </div>
-        </div>
-    </div>
-    <div class="screen-block brand-background scroll-anchor">
-        <div class="feed-block">
-            <iframe src="//lightwidget.com/widgets/9bef9d893d945d219edf554554d02e53.html" scrolling="no"
-                    allowtransparency="true" class="lightwidget-widget"
-                    style="width:60%;border:0;overflow:hidden;"></iframe>
-            <div class="message">
-                <h4>Social Media</h4>
-                <h2>Let's <br> Connect</h2>
-                <p>
-                    Join us on our social media platforms <br>
-                    for all the fun stuff
-                </p>
-                <div class="socials">
-                    <a href="https://www.instagram.com/transmedia.winchester" target="_blank">
-                        <i class="lab la-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/transmediaexhibitionwinchester" target="_blank">
-                        <i class="lab la-facebook-square"></i>
-                    </a>
-                    <a href="" target="_blank">
-                        <i class="lab la-youtube"></i>
-                    </a>
-                    <a href="https://twitter.com/TransmediaWinch" target="_blank">
-                        <i class="lab la-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-    </div>
-    <div class="screen-block scroll-anchor">
-        <img class="wave-top" src="{{ asset('img/wave_top.svg') }}" alt="wave">
-    </div>
 @endsection
