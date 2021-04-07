@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Brackets\Media\HasMedia\AutoProcessMediaTrait;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
@@ -37,13 +38,34 @@ class FeaturedProject extends Model implements HasMedia
         'user_id'
     ];
 
-    protected $appends = ['resource_url'];
+    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media'];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute()
     {
         return url('/admin/featured-projects/' . $this->getKey());
+    }
+
+    public function getBannerMediaAttribute(): string
+    {
+        $banners = $this->getMedia('banners');
+        return $banners[0]->getFullUrl();
+    }
+
+    public function getThumbnailMediaAttribute(): array
+    {
+        $thumbs = $this->getMedia('thumbnails');#
+        $urls = [];
+        foreach($thumbs as $thumb){
+            $urls[] = $thumb->getFullUrl();
+        }
+        return $urls;
     }
 
     public function registerMediaCollections(): void

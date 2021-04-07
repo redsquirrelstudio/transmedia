@@ -31,11 +31,11 @@ return [
     ],
 
     'user' => [
-        'title' => 'Users',
+        'title' => 'Students',
 
         'actions' => [
-            'index' => 'User',
-            'create' => 'New User',
+            'index' => 'Students',
+            'create' => 'New Student',
             'edit' => 'Edit :name',
         ],
 
@@ -44,9 +44,9 @@ return [
             'name' => 'Name',
             'year' => 'Year',
             'email' => 'Email',
-            'email_verified_at' => 'Email verified at',
             'password' => 'Password',
             'verified' => 'Verified',
+            'created_at' => 'Created at',
 
         ],
     ],

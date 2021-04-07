@@ -1,7 +1,7 @@
 <template>
     <div style="width: 100%; height: 100%;" v-observe-visibility="{
         callback: visibilityChanged,
-        throttle: 500,
+        throttle: 100,
         }">
         <transition :name="transition">
             <slot name="subject" v-if="show"></slot>

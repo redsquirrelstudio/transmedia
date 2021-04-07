@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FeaturedProject;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Models\Course;
@@ -12,7 +13,17 @@ class PageController extends Controller
 {
     public function index(): View
     {
-        return view('index', ['students' => User::whereHas('page.avatar_image')->with('page')->with('page.course')->with('page.avatar_image')->inRandomOrder()->limit(10)->get()]);
+        return view('index', [
+            'students' => User::whereHas('page.avatar_image')
+                ->with(['page', 'page.course', 'page.avatar_image'])
+                ->inRandomOrder()
+                ->limit(10)
+                ->get(),
+            'projects' => FeaturedProject::inRandomOrder()
+                ->with('user')
+                ->limit(10)
+                ->get()
+        ]);
     }
 
     public function register(): View

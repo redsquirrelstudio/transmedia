@@ -33,23 +33,27 @@ export default {
             }
         }
     },
-    data(){
-        return{
+    data() {
+        return {
             slides: [],
             interval: null,
         }
     },
-    mounted(){
+    mounted() {
         this.slides = this.students;
-        this.interval = setInterval(() => {
-            let popped = this.slides.pop();
-            setTimeout(() => {
-                this.slides.unshift(popped);
-            }, 100);
-        }, 5000);
+        if (this.slides.length > 4) {
+            this.interval = setInterval(() => {
+                let popped = this.slides.pop();
+                setTimeout(() => {
+                    this.slides.unshift(popped);
+                }, 100);
+            }, 5000);
+        }
     },
     beforeDestroy() {
-        clearInterval(this.interval);
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
     }
 }
 </script>

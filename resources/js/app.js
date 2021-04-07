@@ -10,6 +10,7 @@ import Animated from "./components/Animated";
 
 import HeroSlider from "./components/sliders/HeroSlider";
 import StudentSlider from "./components/sliders/StudentSlider";
+import ProjectSlider from "./components/sliders/ProjectSlider";
 
 Vue.use(VueObserveVisibility);
 
@@ -39,6 +40,7 @@ const app = new Vue({
         Countdown,
         HeroSlider,
         StudentSlider,
+        ProjectSlider,
         Animated,
     }
 });
