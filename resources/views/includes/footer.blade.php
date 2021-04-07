@@ -19,7 +19,7 @@
             <a href="">
                 Shop
             </a>
-            <a href="">
+            <a href="{{ url('/login') }}">
                 Student Login
             </a>
         </div>
@@ -29,7 +29,7 @@
             </a>
             <div class="with-header">
                 <p>Contact</p>
-                <a href="">info@transmediawinchester.co.uk</a>
+                <a href="mailto:info@transmediawinchester.co.uk">info@transmediawinchester.co.uk</a>
             </div>
         </div>
     </div>

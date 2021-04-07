@@ -18,6 +18,23 @@
 .navbar .navbar-items.right li {
   margin-left: 2rem;
 }
+.navbar .navbar-items li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 3px;
+  background-color: #FFF;
+  width: 0;
+  transition: 0.2s;
+}
+.navbar .navbar-items li:hover::after, .navbar .navbar-items.active::after {
+  width: 100%;
+  transition: 0.2s;
+}
+.navbar .navbar-items li {
+  position: relative;
+}
 .navbar .navbar-items li a {
   color: #FFF;
   text-decoration: none;

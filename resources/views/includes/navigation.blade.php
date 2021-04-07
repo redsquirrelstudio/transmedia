@@ -1,7 +1,7 @@
 <nav class="navbar">
     <ul class="navbar-items left">
         <li>
-            <a href="">
+            <a href="{{ url('/') }}">
                 Transmedia {{ date('Y') }}
             </a>
         </li>
