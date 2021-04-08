@@ -2,9 +2,11 @@
 
 //Global
 @import "components/global/navbar";
+@import "components/global/footer";
 
 //Page elements
 @import "components/page-elements/homepage";
+@import "components/page-elements/mypage";
 
 //Sliders
 @import "components/sliders/hero-slider";
@@ -18,7 +20,7 @@
 @import "components/page-editor";
 @import "components/students";
 @import "components/image-upload";
-@import "components/footer";
+
 @import "components/student-card";
 @import "components/landing";
 

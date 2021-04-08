@@ -2,7 +2,11 @@
     <ul class="navbar-items left">
         <li>
             <a href="{{ url('/') }}">
-                Transmedia {{ date('Y') }}
+                @auth
+                    Welcome {{ auth()->user()->name }}
+                @else
+                    Transmedia {{ date('Y') }}
+                @endauth
             </a>
         </li>
         <li>
@@ -27,6 +31,11 @@
         </li>
     </ul>
     <ul class="navbar-items right">
+        <li>
+            <a href="{{ url('/my-page') }}">
+                My Page
+            </a>
+        </li>
         <li>
             <a href="">
                 Shop

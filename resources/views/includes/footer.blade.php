@@ -19,9 +19,15 @@
             <a href="">
                 Shop
             </a>
-            <a href="{{ url('/login') }}">
-                Student Login
-            </a>
+            @auth
+                <a href="{{ url('/logout') }}">
+                    Logout
+                </a>
+            @else
+                <a href="{{ url('/login') }}">
+                    Student Login
+                </a>
+            @endauth
         </div>
         <div class="footer-links">
             <a href="">
