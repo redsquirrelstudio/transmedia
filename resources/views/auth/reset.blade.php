@@ -6,7 +6,7 @@
             <div class="image-large">
                 <img src="{{ asset('/images/robot_outline.png') }}" alt="Robot">
             </div>
-            <form class="auth-form" method="post" action="{{ route('auth.register') }}">
+            <form class="auth-form" method="post" action="{{ route('password.reset') }}">
                 @csrf
                 <h2>
                     Reset your password
@@ -28,7 +28,7 @@
                 <p class="error">{{ $message }}</p>
                 @enderror
 
-                <float-input name="password_confirmation" icon="las la-lock" label="Confirm New Password" type="password_confirmation"></float-input>
+                <float-input name="password_confirmation" icon="las la-lock" label="Confirm New Password" type="hidden"></float-input>
 
                 <button type="submit" class="btn-c2a">Update Password</button>
             </form>
