@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "spatie/laravel-image-optimizer": "^1.6",
         "spatie/laravel-newsletter": "^4.9"
     },
     "require-dev": {

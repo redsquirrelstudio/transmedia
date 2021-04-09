@@ -155,15 +155,31 @@
         }
     }
 }
+.thanks{
+    position: relative;
+    text-align: center;
+    color: $col-white;
+    p{
+        color: $col-white;
+    }
+}
 
 .mailing-signup {
+    position: relative;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
+
+
     .half {
         width: 48% !important;
+    }
+
+    .btn-c2a{
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 
     label {
@@ -190,22 +206,7 @@
         }
     }
 
-    button {
-        margin: 2rem 0;
-        padding: 1rem 2rem;
-        background-color: transparent;
-        border: 2px solid $col-white;
-        color: $col-white;
-        outline: 0;
-        cursor: pointer;
-        transition: 0.2s;
 
-        &:hover {
-            background-color: $col-darker;
-            color: $col-white;
-            transition: 0.2s;
-        }
-    }
 }
 
 @media only screen and (max-width: 1168px) {

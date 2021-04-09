@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,17 @@ if(env('SHOW_LANDING')){
 }
 else{
     Route::get('/', [PageController::class, 'index'])->name('page.index');
+
     Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
-    Route::get('/my-page', [PageController::class, 'my_page'])->name('page.personal');
+
+    Route::get('/my-page', [StudentController::class, 'my_page'])->name('page.personal');
+    Route::post('/my-page/save', [StudentController::class, 'store_my_page'])->name('mypage.save');
+    Route::get('/student/{student_id}', [StudentController::class, 'student'])->name('page.student');
+    Route::get('/student/project/create/{user_id}', [StudentController::class, 'create_project'])->name('project.create');
+    Route::post('/student/project/save/{project_id}', [StudentController::class, 'save_project'])->name('project.save');
+    Route::get('/student/project/delete/{project_id}', [StudentController::class, 'delete_project'])->name('project.delete');
+
+
     Route::get('/students', [PageController::class, 'students'])->name('page.students');
     Route::get('/students/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
     Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
@@ -32,11 +42,13 @@ else{
 
     Route::get('/login', [PageController::class, 'login'])->name('page.login');
     Route::get('/register', [PageController::class, 'register'])->name('page.register');
-
+    Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
+    Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
 
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::post('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
 
 }
 

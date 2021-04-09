@@ -15,7 +15,7 @@ class Page extends Model
 
     protected $table = 'page';
     protected $primaryKey = 'id';
-    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar', 'portfolio_url', 'banner'];
+    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar', 'portfolio_url', 'instagram_url', 'banner'];
     protected $casts = [
         'work_urls' => 'array',
         'course_id' => 'integer'

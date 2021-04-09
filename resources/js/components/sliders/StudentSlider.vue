@@ -1,7 +1,7 @@
 <template>
     <div class="carousel-wrapper">
         <transition-group name="carousel-slide" tag="div" class="carousel">
-            <div class="slide" v-for="student in slides" :key="student.id">
+            <a :href="student.page_url" class="slide" v-for="student in slides" :key="student.id">
                 <img :src="student.page.avatar_image.file_url" :alt="student.name">
                 <div class="overlay">
                     <h3>
@@ -16,7 +16,7 @@
                         {{ student.page.tagline }}
                     </p>
                 </div>
-            </div>
+            </a>
         </transition-group>
         <slot name="arrow"></slot>
     </div>

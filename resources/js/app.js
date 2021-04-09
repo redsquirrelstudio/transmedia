@@ -6,7 +6,10 @@ import PageEditor from "./components/PageEditor";
 import ImageUpload from "./components/ImageUpload";
 import MailForm from "./components/landing/MailForm";
 import Countdown from "./components/landing/Countdown";
-import Animated from "./components/Animated";
+
+import Animated from "./components/animations/Animated";
+import HoverIcon from "./components/animations/HoverIcon";
+import FloatInput from "./components/animations/FloatInput";
 
 import HeroSlider from "./components/sliders/HeroSlider";
 import StudentSlider from "./components/sliders/StudentSlider";
@@ -42,5 +45,7 @@ const app = new Vue({
         StudentSlider,
         ProjectSlider,
         Animated,
+        HoverIcon,
+        FloatInput,
     }
 });

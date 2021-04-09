@@ -31,11 +31,13 @@
         </li>
     </ul>
     <ul class="navbar-items right">
+        @auth
         <li>
             <a href="{{ url('/my-page') }}">
                 My Page
             </a>
         </li>
+        @endauth
         <li>
             <a href="">
                 Shop

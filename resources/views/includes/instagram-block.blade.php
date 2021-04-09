@@ -17,9 +17,6 @@
                 <a href="https://www.facebook.com/transmediaexhibitionwinchester" target="_blank">
                     <i class="lab la-facebook-square"></i>
                 </a>
-                <a href="" target="_blank">
-                    <i class="lab la-youtube"></i>
-                </a>
                 <a href="https://twitter.com/TransmediaWinch" target="_blank">
                     <i class="lab la-twitter"></i>
                 </a>

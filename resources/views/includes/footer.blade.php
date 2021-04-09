@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="footer-right">
-
+        <mail-form api-url="{{ route('newsletter.subscribe') }}"></mail-form>
     </div>
     <div class="copyright">
         © Transmedia Winchester {{ date('Y') }}

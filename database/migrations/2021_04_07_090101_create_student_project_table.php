@@ -15,14 +15,10 @@ class CreateStudentProjectTable extends Migration
     {
         Schema::create('student_project', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->bigInteger('user_id');
             $table->longText('description')->nullable();
-            $table->bigInteger('banner')->nullable();
-            $table->bigInteger('main_image')->nullable();
-            $table->bigInteger('image_1')->nullable();
-            $table->bigInteger('image_2')->nullable();
-            $table->bigInteger('image_3')->nullable();
+            $table->bigInteger('image')->nullable();
             $table->string('youtube_url')->nullable();
             $table->timestamps();
         });

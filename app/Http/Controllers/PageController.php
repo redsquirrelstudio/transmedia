@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\FeaturedProject;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Models\Course;
 use App\Models\User;
-use Illuminate\Http\Response;
 
 class PageController extends Controller
 {
@@ -28,12 +26,22 @@ class PageController extends Controller
 
     public function register(): View
     {
-        return view('register');
+        return view('auth.register');
     }
 
     public function login(): View
     {
-        return view('login');
+        return view('auth.login');
+    }
+
+    public function forgot(): View
+    {
+        return view('auth.forgot');
+    }
+
+    public function reset(string $token): View
+    {
+        return view('auth.reset', ['token' => $token]);
     }
 
     public function exhibition(): View
@@ -70,46 +78,5 @@ class PageController extends Controller
             }
         }
         return view('students.course', ['courses' => Course::all(), 'year' => $year, 'course_slug' => $course_slug, 'students' => $data]);
-    }
-
-    public function my_page(): View
-    {
-        return view('my-page', ['user' => User::with(['page'])->find(auth()->id()), 'courses' => Course::all()]);
-    }
-
-    public function store_my_page(Request $request): Response
-    {
-        $request->validate([
-            'user_id' => 'required',
-            'name' => 'required',
-            'course_id' => 'nullable|exists:course,id',
-            'portfolio_url' => 'nullable|url',
-        ]);
-
-        $user = User::find($request->get('user_id'));
-        $page = $user->page;
-        $user->name = $this->checkValue($request->get('name'));
-        $user->save();
-        $page->course_id = $this->checkValue($request->get('course_id'));
-        $page->tagline = $this->checkValue($request->get('tagline'));
-        $page->bio = $this->checkValue($request->get('bio'));
-        $page->portfolio_url = $this->checkValue($request->get('portfolio_url'));
-        $page->avatar_url = $this->checkValue($request->get('avatar'));
-        $page->banner_url = $this->checkValue($request->get('hero'));
-        $page->save();
-
-        return response([
-            'success' => true,
-            'message' => 'Page saved'
-        ]);
-    }
-
-    public function checkValue($value)
-    {
-        if ($value === 'null' || $value === null) {
-            return null;
-        } else {
-            return $value;
-        }
     }
 }

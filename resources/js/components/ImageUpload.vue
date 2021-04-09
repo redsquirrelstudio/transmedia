@@ -1,16 +1,20 @@
 <template>
-    <div class="image-upload" :style="`width: ${size}%;`">
-        <transition name="slide-left" mode="out-in">
-            <div v-if="!fileUrl" @click="$refs['file'].click()" class="placeholder" key="placeholder">
-                <i class="las la-cloud-upload-alt"></i>
-                <p>Upload {{ label }}</p>
+    <div class="image-upload">
+        <div class="overlay" @click="$refs['file'].click()">
+            <i :class="icon"></i>
+        </div>
+        <transition name="slide-up" mode="out-in">
+            <div v-if="!fileUrl" :class="`placeholder ${error ? 'error' : ''}`" key="placeholder">
+                <div class="message">
+                    <i class="las la-cloud-upload-alt"></i>
+                    <p>Upload {{ label }} <br> (Max 500kb)</p>
+                </div>
             </div>
-            <div v-else @click="$refs['file'].click()" class="image" :key="fileUrl">
+            <div v-else class="image" :key="fileUrl">
                 <img :src="fileUrl"/>
             </div>
         </transition>
-        <input ref="file" type="file" accept="image" class="invisible" v-on:change="generateUrl">
-        <input ref="media_id" type="text" :name="name" class="invisible" v-model="media_id">
+        <input ref="file" type="file" accept="image/*" :name="name" class="invisible" v-on:change="generateUrl">
     </div>
 </template>
 
@@ -20,10 +24,6 @@ import axios from 'axios';
 export default {
     name: "ImageUpload",
     props: {
-        size: {
-            type: Number,
-            default: 25,
-        },
         name: {
             type: String,
             required: true,
@@ -32,53 +32,41 @@ export default {
             type: String,
             default: 'Image',
         },
-        apiUrl: {
-            type: String,
-            required: true,
-        },
         insert: {
             type: String,
             default: null,
+        },
+        icon: {
+            type: String,
+            default: 'las la-edit'
         }
     },
     data() {
         return {
             fileUrl: null,
             media_id: null,
+            error: false,
         }
     },
     created() {
         if (this.insert !== null) {
-            axios.get(this.apiUrl + '/api/media/get/' + this.insert)
-            .then(res => {
-                this.fileUrl = res.data;
-            })
+            this.fileUrl = this.insert;
         }
     },
     methods: {
         generateUrl(e) {
+            this.error = false;
             const file = e.target.files[0];
-            this.fileUrl = URL.createObjectURL(file);
-            this.uploadMedia(file);
+            console.log(file.size);
+            if (file.size > 2000000){
+                this.error = true;
+                this.$refs['file'].value = null;
+                alert('Images cannot exceed 500kb in file size, please optimise your image');
+            }
+            else{
+                this.fileUrl = URL.createObjectURL(file);
+            }
         },
-        uploadMedia(file) {
-            let form = new FormData();
-
-            form.append('image', file, file.name);
-            form.append('description', this.name);
-            axios.post(this.apiUrl + '/api/media/save', form, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                }
-            )   .then(res => {
-                    this.media_id = res.data.media_id;
-                    this.$emit('upload', this.media_id);
-                })
-                .catch(err => {
-                    console.error(err.message);
-                });
-        }
     },
 }
 </script>

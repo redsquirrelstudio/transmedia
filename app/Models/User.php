@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -31,14 +32,14 @@ class User extends Authenticatable
         'year' => 'integer',
     ];
 
-    protected $appends = ['resource_url'];
+    protected $appends = ['resource_url', 'page_url'];
 
     public function page(): HasOne
     {
         return $this->hasOne(Page::class);
     }
 
-    public function getCourse()
+    public function getCourse(): Course
     {
         return $this->page->course;
     }
@@ -46,5 +47,15 @@ class User extends Authenticatable
     public function getResourceUrlAttribute(): string
     {
         return url('/admin/users/'.$this->getKey());
+    }
+
+    public function getPageUrlAttribute(): string
+    {
+        return route('page.student', $this->id);
+    }
+
+    public function projects(): HasMany
+    {
+        return $this->hasMany(StudentProject::class);
     }
 }
