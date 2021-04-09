@@ -28,7 +28,9 @@
                         @elseif($student->year === 4)
                             MA
                         @endif
-                        {{ $student->page->course->name }}; <br>
+                        @if($student->page->course_id)
+                            {{ $student->page->course->name }}; <br>
+                        @endif
                         {{ $student->page->tagline }}
                     </h4>
                 </div>
@@ -52,7 +54,7 @@
                     <hover-icon open-class="las la-envelope-open" close-class="las la-envelope"></hover-icon>
                 </a>
                 @if($student->page->instagram_url)
-                    <a target="_blank"  href="{{ $student->page->instagram_url }}">
+                    <a target="_blank" href="{{ $student->page->instagram_url }}">
                         <hover-icon open-class="las la-caret-square-right" close-class="lab la-instagram"></hover-icon>
                     </a>
                 @endif
