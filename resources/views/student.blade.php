@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="screen-block scroll-anchor">
+    <div class="screen-block">
         <div class="student-profile">
             <div class="banner">
                 @if($student->page->banner_image)
@@ -69,7 +69,7 @@
         </div>
     </div>
     @foreach($student->projects as $key => $project)
-        <div id="{{ $project->id }}" class="project-block scroll-anchor">
+        <div id="{{ $project->id }}" class="project-block">
             <h2>
                 {{ $project->title }}
             </h2>
