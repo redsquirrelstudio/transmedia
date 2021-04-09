@@ -12,7 +12,9 @@
             </div>
             <div class="profile-details">
                 <div class="avatar">
-                    <img src="{{ $student->page->avatar_image->file_url }}" alt="">
+                    @if($student->page->avatar_image)
+                        <img src="{{ $student->page->avatar_image->file_url }}" alt="">
+                    @endif
                 </div>
                 <div class="details">
                     <h2>
