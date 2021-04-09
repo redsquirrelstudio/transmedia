@@ -8,11 +8,23 @@
     <title>Transmedia 2021</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800;900&&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800;900&&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-<div class="landing" id="app">
+<div class="landing scroll-container" id="app">
     <div class="video-container">
+        @auth
+            <a href="{{ route('auth.logout') }}" class="student-login">
+                LOGOUT
+            </a>
+        @else
+            <a href="{{ route('page.login') }}" class="student-login">
+                STUDENT LOGIN
+            </a>
+        @endif
+
         <video autoplay muted loop class="video-background">
             <source src="{{ asset('/video/transmedia_square.mp4') }}" type="video/mp4">
         </video>
@@ -56,7 +68,7 @@
         <div class="flex-container">
             <div class="half padded-left">
                 <h2>
-                    Join the DMD community mailing list!
+                    Join the DMD community <br>mailing list!
                 </h2>
                 <p>
                     We'll share <strong>Transmedia Event</strong> info and all that good stuff!

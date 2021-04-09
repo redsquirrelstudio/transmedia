@@ -49,7 +49,13 @@ class AuthController extends Controller
         ]);
         try {
             if($this->authorize_credentials($request)){
-                return redirect('/');
+                if (env('SHOW_LANDING')){
+                    return redirect('/my-page');
+                }
+                else{
+                    return redirect('/');
+                }
+
             }
             return redirect()->back()->withErrors(['email' => 'These credentials are incorrect or do not exist in our records']);
         }

@@ -16,82 +16,80 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-if(env('SHOW_LANDING')){
+
+if (env('SHOW_LANDING')) {
     Route::get('/', function () {
-       return view('landing');
+        return view('landing');
     });
-}
-else{
+} else {
     Route::get('/', [PageController::class, 'index'])->name('page.index');
-
-    Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
-
-    Route::get('/my-page', [StudentController::class, 'my_page'])->name('page.personal');
-    Route::post('/my-page/save', [StudentController::class, 'store_my_page'])->name('mypage.save');
-    Route::get('/student/{student_id}', [StudentController::class, 'student'])->name('page.student');
-    Route::get('/student/project/create/{user_id}', [StudentController::class, 'create_project'])->name('project.create');
-    Route::post('/student/project/save/{project_id}', [StudentController::class, 'save_project'])->name('project.save');
-    Route::get('/student/project/delete/{project_id}', [StudentController::class, 'delete_project'])->name('project.delete');
-
-
-    Route::get('/students', [PageController::class, 'students'])->name('page.students');
-    Route::get('/students/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
-    Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
-    Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
-
-
-    Route::get('/login', [PageController::class, 'login'])->name('page.login');
-    Route::get('/register', [PageController::class, 'register'])->name('page.register');
-    Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
-    Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
-    Route::post('/reset-password', [AuthController::class, 'reset'])->name('auth.reset');
-
-    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
-    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
-    Route::post('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
-
 }
 
+Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
+
+Route::get('/my-page', [StudentController::class, 'my_page'])->name('page.personal');
+Route::post('/my-page/save', [StudentController::class, 'store_my_page'])->name('mypage.save');
+Route::get('/student/{student_id}', [StudentController::class, 'student'])->name('page.student');
+Route::get('/student/project/create/{user_id}', [StudentController::class, 'create_project'])->name('project.create');
+Route::post('/student/project/save/{project_id}', [StudentController::class, 'save_project'])->name('project.save');
+Route::get('/student/project/delete/{project_id}', [StudentController::class, 'delete_project'])->name('project.delete');
+
+
+Route::get('/students', [PageController::class, 'students'])->name('page.students');
+Route::get('/students/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
+Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
+Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
+
+
+Route::get('/login', [PageController::class, 'login'])->name('page.login');
+Route::get('/register', [PageController::class, 'register'])->name('page.register');
+Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
+Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
+Route::post('/reset-password', [AuthController::class, 'reset'])->name('auth.reset');
+
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::post('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
 
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
-            Route::get('/',                                             'AdminUsersController@index')->name('index');
-            Route::get('/create',                                       'AdminUsersController@create')->name('create');
-            Route::post('/',                                            'AdminUsersController@store')->name('store');
-            Route::get('/{adminUser}/impersonal-login',                 'AdminUsersController@impersonalLogin')->name('impersonal-login');
-            Route::get('/{adminUser}/edit',                             'AdminUsersController@edit')->name('edit');
-            Route::post('/{adminUser}',                                 'AdminUsersController@update')->name('update');
-            Route::delete('/{adminUser}',                               'AdminUsersController@destroy')->name('destroy');
-            Route::get('/{adminUser}/resend-activation',                'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function () {
+            Route::get('/', 'AdminUsersController@index')->name('index');
+            Route::get('/create', 'AdminUsersController@create')->name('create');
+            Route::post('/', 'AdminUsersController@store')->name('store');
+            Route::get('/{adminUser}/impersonal-login', 'AdminUsersController@impersonalLogin')->name('impersonal-login');
+            Route::get('/{adminUser}/edit', 'AdminUsersController@edit')->name('edit');
+            Route::post('/{adminUser}', 'AdminUsersController@update')->name('update');
+            Route::delete('/{adminUser}', 'AdminUsersController@destroy')->name('destroy');
+            Route::get('/{adminUser}/resend-activation', 'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
         });
     });
 });
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::get('/profile',                                      'ProfileController@editProfile')->name('edit-profile');
-        Route::post('/profile',                                     'ProfileController@updateProfile')->name('update-profile');
-        Route::get('/password',                                     'ProfileController@editPassword')->name('edit-password');
-        Route::post('/password',                                    'ProfileController@updatePassword')->name('update-password');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::get('/profile', 'ProfileController@editProfile')->name('edit-profile');
+        Route::post('/profile', 'ProfileController@updateProfile')->name('update-profile');
+        Route::get('/password', 'ProfileController@editPassword')->name('edit-password');
+        Route::post('/password', 'ProfileController@updatePassword')->name('update-password');
     });
 });
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('users')->name('users/')->group(static function() {
-            Route::get('/',                                             'UserController@index')->name('index');
-            Route::get('/create',                                       'UserController@create')->name('create');
-            Route::post('/',                                            'UserController@store')->name('store');
-            Route::get('/{user}/edit',                                  'UserController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'UserController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{user}',                                      'UserController@update')->name('update');
-            Route::delete('/{user}',                                    'UserController@destroy')->name('destroy');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::prefix('users')->name('users/')->group(static function () {
+            Route::get('/', 'UserController@index')->name('index');
+            Route::get('/create', 'UserController@create')->name('create');
+            Route::post('/', 'UserController@store')->name('store');
+            Route::get('/{user}/edit', 'UserController@edit')->name('edit');
+            Route::post('/bulk-destroy', 'UserController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{user}', 'UserController@update')->name('update');
+            Route::delete('/{user}', 'UserController@destroy')->name('destroy');
         });
     });
 });
@@ -99,41 +97,41 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
-            Route::get('/',                                             'AdminUsersController@index')->name('index');
-            Route::get('/create',                                       'AdminUsersController@create')->name('create');
-            Route::post('/',                                            'AdminUsersController@store')->name('store');
-            Route::get('/{adminUser}/impersonal-login',                 'AdminUsersController@impersonalLogin')->name('impersonal-login');
-            Route::get('/{adminUser}/edit',                             'AdminUsersController@edit')->name('edit');
-            Route::post('/{adminUser}',                                 'AdminUsersController@update')->name('update');
-            Route::delete('/{adminUser}',                               'AdminUsersController@destroy')->name('destroy');
-            Route::get('/{adminUser}/resend-activation',                'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function () {
+            Route::get('/', 'AdminUsersController@index')->name('index');
+            Route::get('/create', 'AdminUsersController@create')->name('create');
+            Route::post('/', 'AdminUsersController@store')->name('store');
+            Route::get('/{adminUser}/impersonal-login', 'AdminUsersController@impersonalLogin')->name('impersonal-login');
+            Route::get('/{adminUser}/edit', 'AdminUsersController@edit')->name('edit');
+            Route::post('/{adminUser}', 'AdminUsersController@update')->name('update');
+            Route::delete('/{adminUser}', 'AdminUsersController@destroy')->name('destroy');
+            Route::get('/{adminUser}/resend-activation', 'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
         });
     });
 });
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::get('/profile',                                      'ProfileController@editProfile')->name('edit-profile');
-        Route::post('/profile',                                     'ProfileController@updateProfile')->name('update-profile');
-        Route::get('/password',                                     'ProfileController@editPassword')->name('edit-password');
-        Route::post('/password',                                    'ProfileController@updatePassword')->name('update-password');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::get('/profile', 'ProfileController@editProfile')->name('edit-profile');
+        Route::post('/profile', 'ProfileController@updateProfile')->name('update-profile');
+        Route::get('/password', 'ProfileController@editPassword')->name('edit-password');
+        Route::post('/password', 'ProfileController@updatePassword')->name('update-password');
     });
 });
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('featured-projects')->name('featured-projects/')->group(static function() {
-            Route::get('/',                                             'FeaturedProjectController@index')->name('index');
-            Route::get('/create',                                       'FeaturedProjectController@create')->name('create');
-            Route::post('/',                                            'FeaturedProjectController@store')->name('store');
-            Route::get('/{featuredProject}/edit',                       'FeaturedProjectController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'FeaturedProjectController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{featuredProject}',                           'FeaturedProjectController@update')->name('update');
-            Route::delete('/{featuredProject}',                         'FeaturedProjectController@destroy')->name('destroy');
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+        Route::prefix('featured-projects')->name('featured-projects/')->group(static function () {
+            Route::get('/', 'FeaturedProjectController@index')->name('index');
+            Route::get('/create', 'FeaturedProjectController@create')->name('create');
+            Route::post('/', 'FeaturedProjectController@store')->name('store');
+            Route::get('/{featuredProject}/edit', 'FeaturedProjectController@edit')->name('edit');
+            Route::post('/bulk-destroy', 'FeaturedProjectController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{featuredProject}', 'FeaturedProjectController@update')->name('update');
+            Route::delete('/{featuredProject}', 'FeaturedProjectController@destroy')->name('destroy');
         });
     });
 });
