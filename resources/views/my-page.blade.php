@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('mypage.save') }}" method="post" class="screen-block scroll-anchor"
+    <form action="{{ route('mypage.save') }}" method="post" class="screen-block"
           enctype="multipart/form-data">
         @csrf
         <input name="user_id" type="hidden" value="{{ $user->id }}">
@@ -75,7 +75,7 @@
         </button>
     </form>
     @foreach($user->projects as $key => $project)
-        <form id="{{ $project->id }}" method="post" action="{{ route('project.save', $project->id) }}" class="project-block scroll-anchor"
+        <form id="{{ $project->id }}" method="post" action="{{ route('project.save', $project->id) }}" class="project-block"
               enctype="multipart/form-data">
             @csrf
             <h2>
