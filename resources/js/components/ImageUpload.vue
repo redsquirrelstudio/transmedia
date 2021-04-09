@@ -61,7 +61,7 @@ export default {
             if (file.size > 2000000){
                 this.error = true;
                 this.$refs['file'].value = null;
-                alert('Images cannot exceed 500kb in file size, please optimise your image');
+                alert('Images cannot exceed 2MB in file size, please optimise your image');
             }
             else{
                 this.fileUrl = URL.createObjectURL(file);
