@@ -27,12 +27,12 @@ class UpdateUser extends FormRequest
     {
         return [
             'name' => ['sometimes', 'string'],
-            'year' => ['sometimes', 'string'],
+            'year' => ['sometimes', ''],
             'email' => ['sometimes', 'email', 'string'],
             'email_verified_at' => ['nullable', 'date'],
             'password' => ['sometimes', 'confirmed', 'min:7', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9]).*$/', 'string'],
             'verified' => ['sometimes', 'boolean'],
-            
+
         ];
     }
 
