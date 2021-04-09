@@ -39,7 +39,7 @@ class User extends Authenticatable
         return $this->hasOne(Page::class);
     }
 
-    public function getCourse(): Course
+    public function getCourse(): ?Course
     {
         return $this->page->course;
     }
