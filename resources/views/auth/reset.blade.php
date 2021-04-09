@@ -6,7 +6,7 @@
             <div class="image-large">
                 <img src="{{ asset('/images/robot_outline.png') }}" alt="Robot">
             </div>
-            <form class="auth-form" method="post" action="{{ route('password.reset') }}">
+            <form class="auth-form" method="post" action="{{ route('auth.reset') }}">
                 @csrf
                 <h2>
                     Reset your password

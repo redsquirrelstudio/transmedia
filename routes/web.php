@@ -43,7 +43,8 @@ else{
     Route::get('/login', [PageController::class, 'login'])->name('page.login');
     Route::get('/register', [PageController::class, 'register'])->name('page.register');
     Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
-    Route::post('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
+    Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
+    Route::post('/reset-password', [AuthController::class, 'reset'])->name('auth.reset');
 
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
