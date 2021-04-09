@@ -3,6 +3,7 @@
 /public/storage
 /public/models
 /public/media
+/public/uploads
 /storage/*.key
 /vendor
 .env
