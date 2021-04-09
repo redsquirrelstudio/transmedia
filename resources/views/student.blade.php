@@ -7,13 +7,15 @@
                 @if($student->page->banner_image)
                     <img src="{{ $student->page->banner_image->file_url }}" alt="{{ $student->name }} hero">
                 @else
-                    <img src="https://via.placeholder.com/1920x400" alt="{{ $student->name }} hero">
+                    <img src="{{ asset('/images/banner_default.jpg') }}" alt="{{ $student->name }} hero">
                 @endif
             </div>
             <div class="profile-details">
                 <div class="avatar">
                     @if($student->page->avatar_image)
-                        <img src="{{ $student->page->avatar_image->file_url }}" alt="">
+                        <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }} avatar">
+                    @else
+                        <img src="{{ asset('/images/avatar_default.jpg') }}" alt="{{ $student->name }} avatar">
                     @endif
                 </div>
                 <div class="details">
