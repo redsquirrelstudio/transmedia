@@ -28,7 +28,7 @@
                 <p class="error">{{ $message }}</p>
                 @enderror
 
-                <float-input name="password_confirmation" icon="las la-lock" label="Confirm New Password" type="hidden"></float-input>
+                <float-input name="password_confirmation" icon="las la-lock" label="Confirm New Password" type="password"></float-input>
 
                 <button type="submit" class="btn-c2a">Update Password</button>
             </form>
