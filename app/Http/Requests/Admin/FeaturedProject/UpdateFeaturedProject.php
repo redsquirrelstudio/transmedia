@@ -27,7 +27,7 @@ class UpdateFeaturedProject extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'user_id' => ['nullable', ''],
+            'user_id' => ['nullable'],
             'description' => ['nullable', 'string'],
             'youtube_url' => ['nullable', 'string|url'],
         ];
