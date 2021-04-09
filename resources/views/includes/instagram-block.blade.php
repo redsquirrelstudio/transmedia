@@ -1,6 +1,6 @@
 <div class="screen-block brand-background scroll-anchor">
     <div class="feed-block">
-        <iframe src="//lightwidget.com/widgets/9bef9d893d945d219edf554554d02e53.html" scrolling="no"
+        <iframe src="https://cdn.lightwidget.com/widgets/9bef9d893d945d219edf554554d02e53.html" scrolling="no"
                 allowtransparency="true" class="lightwidget-widget"
                 style="width:60%;border:0;overflow:hidden;"></iframe>
         <div class="message">
