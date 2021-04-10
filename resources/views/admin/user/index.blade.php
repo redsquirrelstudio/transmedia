@@ -82,11 +82,13 @@
                                         <td>@{{ item.name }}</td>
                                         <td>@{{ item.year }}</td>
                                         <td>@{{ item.email }}</td>
-                                        <td>@{{ item.verified }}</td>
                                         <td>@{{ item.created_at | datetime }}</td>
 
                                         <td>
                                             <div class="row no-gutters">
+                                                <div class="col-auto">
+                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.page_url" title="Go To Page" role="button"><i class="fas fa-external-link-alt"></i></a>
+                                                </div>
                                                 <div class="col-auto">
                                                     <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
                                                 </div>
