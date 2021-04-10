@@ -72,31 +72,33 @@
             </div>
         </div>
     </div>
-    <div class="screen-block scroll-anchor">
-        <div class="carousel-block">
-            <div class="title">
-                <h2>{{ date('Y') }} Projects</h2>
-            </div>
-            <div class="carousel-container">
-                <div class="filters">
-                    <h2>Digital Media Department</h2>
-                    <a href="{{ route('page.course', 'designers') }}">Digital Media Design</a>
-                    <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
-                    <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
-                    <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
-                    <a href="{{ route('page.students') }}" class="btn-c2a">
-                        View All
-                    </a>
+    @if($projects->count() > 0)
+        <div class="screen-block scroll-anchor">
+            <div class="carousel-block">
+                <div class="title">
+                    <h2>{{ date('Y') }} Projects</h2>
                 </div>
-                <project-slider :projects="{{ $projects }}">
-                    <template v-slot:arrow>
-                        <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
-                    </template>
-                </project-slider>
-            </div>
+                <div class="carousel-container">
+                    <div class="filters">
+                        <h2>Digital Media Department</h2>
+                        <a href="{{ route('page.course', 'designers') }}">Digital Media Design</a>
+                        <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
+                        <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
+                        <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
+                        <a href="{{ route('page.students') }}" class="btn-c2a">
+                            View All
+                        </a>
+                    </div>
+                    <project-slider :projects="{{ $projects }}">
+                        <template v-slot:arrow>
+                            <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
+                        </template>
+                    </project-slider>
+                </div>
 
+            </div>
         </div>
-    </div>
+    @endif
     <div class="screen-block">
         <div class="course-block scroll-anchor">
             <div class="course">
