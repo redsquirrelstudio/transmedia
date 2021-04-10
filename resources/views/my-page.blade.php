@@ -26,6 +26,9 @@
                     <h2>
                         <input type="text" name="name" value="{{ $user->name }}" placeholder="Your Name">
                     </h2>
+                    @error('name')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
                     <h4>
                         @if($user->year === 1)
                             1st Year
@@ -65,8 +68,14 @@
                     </textarea>
                     <input name="portfolio_url" placeholder="Portfolio Url" type="text" class="url-input"
                            value="{{ $user->page->portfolio_url }}">
+                    @error('portfolio_url')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
                     <input name="instagram_url" placeholder="Instagram Url" type="text" class="url-input"
                            value="{{ $user->page->instagram_url }}">
+                    @error('instagram_url')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -75,7 +84,8 @@
         </button>
     </form>
     @foreach($user->projects as $key => $project)
-        <form id="{{ $project->id }}" method="post" action="{{ route('project.save', $project->id) }}" class="project-block"
+        <form id="{{ $project->id }}" method="post" action="{{ route('project.save', $project->id) }}"
+              class="project-block"
               enctype="multipart/form-data">
             @csrf
             <h2>
