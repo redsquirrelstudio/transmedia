@@ -94,10 +94,15 @@
         }
     }
     .error{
-        color: red;
         margin: -1rem 0 1rem 0;
-        display: block;
     }
+}
+
+.error{
+    color: red;
+    margin: 0.5rem 0;
+    display: block;
+    font-size: 0.5rem;
 }
 
 @media only screen and (max-width: 900px) {
