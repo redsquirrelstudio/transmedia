@@ -9,8 +9,8 @@
                 @endauth
             </a>
         </li>
-        <li>
-            <a href="">
+        <li @if(request()->routeIs('page.about')) class="active" @endif>
+            <a href="{{ url('/about') }}">
                 About
             </a>
         </li>
@@ -32,7 +32,7 @@
     </ul>
     <ul class="navbar-items right">
         @auth
-            <li>
+            <li @if(request()->routeIs('page.personal')) class="active" @endif>
                 <a href="{{ url('/my-page') }}">
                     My Page
                 </a>

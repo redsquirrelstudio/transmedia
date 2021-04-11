@@ -29,7 +29,7 @@
             display: none;
         }
 
-        li::after:not(.hamburger-container) {
+        li:not(.hamburger-container)::after {
             content: '';
             position: absolute;
             left: 0;
@@ -40,7 +40,7 @@
             transition: 0.2s;
         }
 
-        li:hover, &.active {
+        li:hover, li.active {
             &::after {
                 width: 100%;
                 transition: 0.2s;
@@ -70,6 +70,12 @@
             li:not(.navbar-brand):not(.hamburger-container) {
                 display: none;
             }
+            &.left, &.right{
+                li{
+                    margin: 0;
+                }
+            }
+
             .hamburger-container{
                 display: block;
             }
