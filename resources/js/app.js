@@ -4,6 +4,8 @@ import VueObserveVisibility from 'vue-observe-visibility'
 import Exhibition from "./components/Exhibition";
 import PageEditor from "./components/PageEditor";
 import ImageUpload from "./components/ImageUpload";
+import MobileNavbar from "./components/MobileNavbar";
+
 import MailForm from "./components/landing/MailForm";
 import Countdown from "./components/landing/Countdown";
 
@@ -32,7 +34,7 @@ const app = new Vue({
     'el': '#app',
     data(){
         return{
-            showEditor: false,
+            showMobile: false,
         }
     },
     components: {
@@ -40,6 +42,7 @@ const app = new Vue({
         PageEditor,
         ImageUpload,
         MailForm,
+        MobileNavbar,
         Countdown,
         HeroSlider,
         StudentSlider,

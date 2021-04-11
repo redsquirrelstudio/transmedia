@@ -46,6 +46,7 @@
                     font-family: $font-brand;
                     font-weight: bold;
                     text-shadow: 0 5px 10px rgba(0,0,0,0.8);
+                    white-space: nowrap;
                 }
 
                 h2 {
@@ -99,6 +100,27 @@
                 &::after{
                     transform: translate(-50%, -50%) scale(0.8);
                     transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-slider {
+        .slide-trolley {
+            .slide{
+                .caption {
+                    h1 {
+                        font-size: 2.2rem;
+                    }
+                    h2 {
+                        font-size: 1.5rem;
+                        margin-top: 0.5rem;
+                    }
+                    .btn-c2a{
+                        font-size: 1rem;
+                    }
                 }
             }
         }

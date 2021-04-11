@@ -3,6 +3,7 @@
 //Global
 @import "components/global/navbar";
 @import "components/global/footer";
+@import "components/global/mobile-navbar";
 
 //Page elements
 @import "components/page-elements/homepage";
@@ -37,12 +38,12 @@
 
 html {
     background-color: $col-darker;
-    width: 100%;
+    width: 100vw;
 }
 
 body {
-    width: 100vw;
-    overflow: hidden;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 p{
@@ -50,8 +51,6 @@ p{
 }
 
 .scroll-container{
-    overflow-y: scroll;
-    height: 100vh;
     .scroll-anchor{
         scroll-snap-align: start;
     }

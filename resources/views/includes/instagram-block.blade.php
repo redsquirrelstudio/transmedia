@@ -2,7 +2,7 @@
     <div class="feed-block">
         <iframe src="https://cdn.lightwidget.com/widgets/9bef9d893d945d219edf554554d02e53.html" scrolling="no"
                 allowtransparency="true" class="lightwidget-widget"
-                style="width:60%;border:0;overflow:hidden;"></iframe>
+                style="border:0;overflow:hidden;"></iframe>
         <div class="message">
             <h4>Social Media</h4>
             <h2>Let's <br> Connect</h2>

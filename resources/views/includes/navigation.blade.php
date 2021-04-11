@@ -1,6 +1,6 @@
 <nav class="navbar">
     <ul class="navbar-items left">
-        <li>
+        <li class="navbar-brand">
             <a href="{{ url('/') }}">
                 @auth
                     Welcome {{ auth()->user()->name }}
@@ -32,11 +32,11 @@
     </ul>
     <ul class="navbar-items right">
         @auth
-        <li>
-            <a href="{{ url('/my-page') }}">
-                My Page
-            </a>
-        </li>
+            <li>
+                <a href="{{ url('/my-page') }}">
+                    My Page
+                </a>
+            </li>
         @endauth
         <li>
             <a href="">
@@ -48,5 +48,13 @@
                 Contact
             </a>
         </li>
+        <li class="hamburger-container">
+            <button @click="showMobile = !showMobile" :class="`hamburger hamburger--spin ${showMobile ? 'is-active' : ''}`" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+        </li>
     </ul>
 </nav>
+<mobile-navbar></mobile-navbar>
