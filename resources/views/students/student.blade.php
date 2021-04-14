@@ -5,7 +5,7 @@
         <div class="student-profile">
             <div class="banner">
                 @if($student->page->banner_image)
-                    <img src="{{ $student->page->banner_image->file_url }}" alt="{{ $student->name }} hero">
+                    <img v-lazy="'{{ $student->page->banner_image->file_url }}'" alt="{{ $student->name }} hero">
                 @else
                     <img src="{{ asset('/images/banner_default.jpg') }}" alt="{{ $student->name }} hero">
                 @endif
@@ -13,7 +13,7 @@
             <div class="profile-details">
                 <div class="avatar">
                     @if($student->page->avatar_image)
-                        <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }} avatar">
+                        <img v-lazy="'{{ $student->page->avatar_image->file_url }}'" alt="{{ $student->name }} avatar">
                     @else
                         <img src="{{ asset('/images/avatar_default.jpg') }}" alt="{{ $student->name }} avatar">
                     @endif
@@ -44,7 +44,7 @@
                     @foreach($student->projects as $project)
                         @if($project->image)
                             <a href="#{{ $project->id }}" class="project-thumbnail">
-                                <img src="{{ $project->image_url->file_url }}" alt="{{ $project->title }}">
+                                <img v-lazy="'{{ $project->image_url->file_url }}'" alt="{{ $project->title }}">
                             </a>
                         @endif
                     @endforeach
