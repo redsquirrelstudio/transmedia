@@ -22,7 +22,7 @@ import ProjectSlider from "./components/sliders/ProjectSlider";
 Vue.use(VueObserveVisibility);
 Vue.use(VueLazyload, {
     preLoad: 1.3,
-    error: 'dist/error.png',
+    error: 'dist/error.jpg',
     loading: 'assets/loading.gif',
     attempt: 1
 });

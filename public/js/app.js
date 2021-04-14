@@ -2977,7 +2977,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_14__.default.use(vue_observe_visibility__WEBPACK_IMPORTED_MODULE_0__.default);
 vue__WEBPACK_IMPORTED_MODULE_14__.default.use(vue_lazyload__WEBPACK_IMPORTED_MODULE_1__.default, {
   preLoad: 1.3,
-  error: 'dist/error.png',
+  error: 'dist/error.jpg',
   loading: 'assets/loading.gif',
   attempt: 1
 });
