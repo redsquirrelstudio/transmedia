@@ -6,20 +6,20 @@
             <img src="{{ asset('/images/wave_top.svg') }}" class="wave-top" />
             <h4>Digital Media Department</h4>
             <h2>Meet Our Students</h2>
-            <div class="course-links">
-                <a href="#designers" class="course-link">
+            <div class="block-links">
+                <a href="#designers" class="block-link">
                     <img src="{{ asset('/images/design_ident.jpg') }}" alt="Designers">
                     <h4>Designers</h4>
                 </a>
-                <a href="#developers" class="course-link">
+                <a href="#developers" class="block-link">
                     <img src="{{ asset('/images/dev_ident.jpg') }}" alt="Developers">
                     <h4>Developers</h4>
                 </a>
-                <a href="#cad" class="course-link">
+                <a href="#cad" class="block-link">
                     <img src="{{ asset('/images/cad_ident.jpg') }}" alt="CAD">
                     <h4>Computer Aided Designers</h4>
                 </a>
-                <a href="#3d" class="course-link">
+                <a href="#3d" class="block-link">
                     <img src="{{ asset('/images/3d_ident.jpg') }}" alt="3D">
                     <h4>3D Artists</h4>
                 </a>
@@ -33,10 +33,13 @@
             </div>
             <div class="carousel-container">
                 <div class="filters uppercase">
-                    <a href="">Year One</a>
-                    <a href="">Year Two</a>
-                    <a href="">Year Three</a>
-                    <a href="">MA</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'designers', 'year' => 1]) }}">Year One</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'designers', 'year' => 2]) }}">Year Two</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'designers', 'year' => 3]) }}">Year Three</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'designers', 'year' => 4]) }}">MA</a>
+                    <a href="{{ route('students.course', 'designers') }}" class="btn-c2a">
+                        View All
+                    </a>
                 </div>
 
                 <student-slider :students="{{ json_encode($students['designers']) }}">
@@ -59,10 +62,13 @@
                     </template>
                 </student-slider>
                 <div class="filters uppercase">
-                    <a href="">Year One</a>
-                    <a href="">Year Two</a>
-                    <a href="">Year Three</a>
-                    <a href="">MA</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'developers', 'year' => 1]) }}">Year One</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'developers', 'year' => 2]) }}">Year Two</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'developers', 'year' => 3]) }}">Year Three</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'developers', 'year' => 4]) }}">MA</a>
+                    <a href="{{ route('students.course', 'developers') }}" class="btn-c2a">
+                        View All
+                    </a>
                 </div>
             </div>
         </div>
@@ -74,10 +80,13 @@
             </div>
             <div class="carousel-container">
                 <div class="filters uppercase">
-                    <a href="">Year One</a>
-                    <a href="">Year Two</a>
-                    <a href="">Year Three</a>
-                    <a href="">MA</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'cad', 'year' => 1]) }}">Year One</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'cad', 'year' => 2]) }}">Year Two</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'cad', 'year' => 3]) }}">Year Three</a>
+                    <a href="{{ route('students.year', ['course_slug' => 'cad', 'year' => 4]) }}">MA</a>
+                    <a href="{{ route('students.course', 'cad') }}" class="btn-c2a">
+                        View All
+                    </a>
                 </div>
 
                 <student-slider :students="{{ json_encode($students['cad']) }}">
@@ -100,10 +109,13 @@
                     </template>
                 </student-slider>
                 <div class="filters uppercase">
-                    <a href="">Year One</a>
-                    <a href="">Year Two</a>
-                    <a href="">Year Three</a>
-                    <a href="">MA</a>
+                    <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 1]) }}">Year One</a>
+                    <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 2]) }}">Year Two</a>
+                    <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 3]) }}">Year Three</a>
+                    <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 4]) }}">MA</a>
+                    <a href="{{ route('students.course', '3d-artists') }}" class="btn-c2a">
+                        View All
+                    </a>
                 </div>
             </div>
         </div>

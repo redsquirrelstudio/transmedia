@@ -21,7 +21,7 @@ class StudentController extends Controller
             foreach ($course->page as $page) {
                 $user = $page->user()->with(['page', 'page.avatar_image'])->first();
                 if (isset($user['page']['avatar_image'])){
-                    $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image'])->first();
+                    $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image', 'page.course'])->first();
                 }
             }
             $students = array_merge($students, [$course->slug => $category]);
@@ -29,12 +29,36 @@ class StudentController extends Controller
         return view('students.index', ['students' => $students]);
     }
 
-    public function student(int $student_id): View
+    public function student(int $student_id)
     {
         if ($student_id === auth()->id()) {
             return redirect('/my-page');
         } else {
             return view('students.student', ['student' => User::find($student_id), 'courses' => Course::all()]);
+        }
+    }
+
+    public function students_course(string $course_slug)
+    {
+        $course = Course::with('page', 'page.user','page.avatar_image', 'page.course')->where('slug', $course_slug)->first();
+        if (!$course){
+            return redirect('/students');
+        }
+        else{
+            return view('students.course',
+                ['course' => $course]);
+        }
+    }
+
+    public function students_year(string $course_slug, int $year)
+    {
+        $course = Course::with(['page', 'page.user', 'page.avatar_image', 'page.course'])->where('slug', $course_slug)->first();
+        if (!$course){
+            return redirect('/students');
+        }
+        else{
+            return view('students.course',
+                ['course' => $course, 'year' => $year]);
         }
     }
 

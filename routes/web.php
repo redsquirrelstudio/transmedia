@@ -40,9 +40,8 @@ Route::group(['middleware' => 'auth'], function(){
 Route::group(['prefix' => 'students'], function(){
     Route::get('/', [StudentController::class, 'index'])->name('students.index');
     Route::get('/{student_id}', [StudentController::class, 'student'])->name('students.student');
-    Route::get('/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
-    Route::get('/year/{year}', [PageController::class, 'year'])->name('page.years');
-    Route::get('/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
+    Route::get('/course/{course_slug}', [StudentController::class, 'students_course'])->name('students.course');
+    Route::get('/course/{course_slug}/year/{year}', [StudentController::class, 'students_year'])->name('students.year');
 });
 
 
