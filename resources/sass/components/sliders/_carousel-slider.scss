@@ -20,6 +20,10 @@
         justify-content: flex-end;
         .slide{
             padding: 0.5rem 0.5rem 0.5rem 0;
+            .overlay{
+                left: initial;
+                right: 0.5rem;
+            }
         }
     }
     .slide{
