@@ -74,6 +74,15 @@
     }
     .title{
         text-align: right;
+        &.left{
+            text-align: left;
+            h2{
+                margin-left: initial;
+                margin-right: auto;
+                text-align: left;
+                padding: 15rem 0 5rem 5rem;
+            }
+        }
         h2{
             color: $col-white;
             font-size: 7rem;
@@ -81,7 +90,7 @@
             padding: 15rem 5rem 5rem 0;
             display: inline-block;
             margin-left: auto;
-            width: 70%;
+            min-width: 70%;
             font-weight: bold;
             &.dark-background{
                 background-color: $col-dark;
@@ -102,6 +111,9 @@
             }
             .btn-c2a{
                 font-size: 1rem;
+            }
+            &.uppercase:not(.btn-c2a){
+                text-transform: uppercase;
             }
             a:not(.btn-c2a){
                 color: $col-white;

@@ -1,0 +1,54 @@
+.students-header{
+    width: 100%;
+    padding: 15rem 5rem;
+    position: relative;
+    height: 100vh;
+    h2{
+        font-size: 6rem;
+        color: $col-white;
+    }
+    h4{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $col-white;
+        font-weight: lighter;
+    }
+    .back-plate{
+        width: 60%;
+        position: absolute;
+        left: 0;
+        bottom: -5rem;
+        height: 25rem;
+        z-index: -1;
+        background-color: $col-brand;
+    }
+    .course-links{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+        .course-link{
+            max-width: 20%;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+            img{
+                width: 100%;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                transition: 0.2s;
+            }
+            h4{
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+            &:hover{
+                transform: translate(0, -10px);
+                transition: 0.2s;
+                img{
+                    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+}

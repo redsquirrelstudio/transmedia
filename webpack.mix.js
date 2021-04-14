@@ -21,7 +21,7 @@ mix
   .sass("resources/sass/admin/admin.scss", "public/css")
   .vue();
 
-mix.browserSync('http://localhost/transmedia/public');
+mix.browserSync('http://transmedia.local');
 
 if (mix.inProduction()) {
   mix.version();

@@ -281,6 +281,15 @@
 .carousel-block .title {
   text-align: right;
 }
+.carousel-block .title.left {
+  text-align: left;
+}
+.carousel-block .title.left h2 {
+  margin-left: initial;
+  margin-right: auto;
+  text-align: left;
+  padding: 15rem 0 5rem 5rem;
+}
 .carousel-block .title h2 {
   color: #FFF;
   font-size: 7rem;
@@ -288,7 +297,7 @@
   padding: 15rem 5rem 5rem 0;
   display: inline-block;
   margin-left: auto;
-  width: 70%;
+  min-width: 70%;
   font-weight: bold;
 }
 .carousel-block .title h2.dark-background {
@@ -310,6 +319,9 @@
 }
 .carousel-block .carousel-container .filters .btn-c2a {
   font-size: 1rem;
+}
+.carousel-block .carousel-container .filters.uppercase:not(.btn-c2a) {
+  text-transform: uppercase;
 }
 .carousel-block .carousel-container .filters a:not(.btn-c2a) {
   color: #FFF;
@@ -837,6 +849,61 @@
 .project-block .project-content .description textarea:active, .project-block .project-content .description textarea:focus {
   border: 2px solid #407489;
   outline: 0;
+}
+
+.students-header {
+  width: 100%;
+  padding: 15rem 5rem;
+  position: relative;
+  height: 100vh;
+}
+.students-header h2 {
+  font-size: 6rem;
+  color: #FFF;
+}
+.students-header h4 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: lighter;
+}
+.students-header .back-plate {
+  width: 60%;
+  position: absolute;
+  left: 0;
+  bottom: -5rem;
+  height: 25rem;
+  z-index: -1;
+  background-color: #407489;
+}
+.students-header .course-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+.students-header .course-links .course-link {
+  max-width: 20%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.students-header .course-links .course-link img {
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+.students-header .course-links .course-link h4 {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.students-header .course-links .course-link:hover {
+  transform: translate(0, -10px);
+  transition: 0.2s;
+}
+.students-header .course-links .course-link:hover img {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
 }
 
 .about-spacer {

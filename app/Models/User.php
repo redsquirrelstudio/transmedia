@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function getPageUrlAttribute(): string
     {
-        return route('page.student', $this->id);
+        return route('students.student', $this->id);
     }
 
     public function projects(): HasMany

@@ -37,11 +37,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
-Route::get('/student/{student_id}', [StudentController::class, 'student'])->name('page.student');
-Route::get('/students', [PageController::class, 'students'])->name('page.students');
-Route::get('/students/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
-Route::get('/students/year/{year}', [PageController::class, 'year'])->name('page.years');
-Route::get('/students/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
+Route::group(['prefix' => 'students'], function(){
+    Route::get('/', [StudentController::class, 'index'])->name('students.index');
+    Route::get('/{student_id}', [StudentController::class, 'student'])->name('students.student');
+    Route::get('/course/{course_slug}', [PageController::class, 'students_course'])->name('page.course');
+    Route::get('/year/{year}', [PageController::class, 'year'])->name('page.years');
+    Route::get('/year/{year}/course/{course_slug}', [PageController::class, 'course'])->name('page.courses');
+});
+
 
 Route::get('/login', [PageController::class, 'login'])->name('page.login');
 Route::get('/login-redirect', function(){

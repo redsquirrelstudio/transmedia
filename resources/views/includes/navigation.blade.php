@@ -19,8 +19,8 @@
                 2021 Projects
             </a>
         </li>
-        <li>
-            <a href="">
+        <li @if(request()->route()->getPrefix() === '/students') class="active" @endif>
+            <a href="{{ url('/students') }}">
                 Students
             </a>
         </li>

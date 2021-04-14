@@ -12,12 +12,29 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function student(int $student_id)
+    public function index(): View
+    {
+        $students = [];
+        $courses = Course::with(['page', 'page.user'])->get();
+        foreach ($courses as $course) {
+            $category = [];
+            foreach ($course->page as $page) {
+                $user = $page->user()->with(['page', 'page.avatar_image'])->first();
+                if (isset($user['page']['avatar_image'])){
+                    $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image'])->first();
+                }
+            }
+            $students = array_merge($students, [$course->slug => $category]);
+        }
+        return view('students.index', ['students' => $students]);
+    }
+
+    public function student(int $student_id): View
     {
         if ($student_id === auth()->id()) {
             return redirect('/my-page');
         } else {
-            return view('student', ['student' => User::find($student_id), 'courses' => Course::all()]);
+            return view('students.student', ['student' => User::find($student_id), 'courses' => Course::all()]);
         }
     }
 
@@ -49,10 +66,10 @@ class StudentController extends Controller
         $page->bio = $this->checkValue($request->get('bio'));
         $page->portfolio_url = $this->checkValue($request->get('portfolio_url'));
         $page->instagram_url = $this->checkValue($request->get('instagram_url'));
-        if($request->file('avatar')){
+        if ($request->file('avatar')) {
             $page->avatar = $media->save($request->file('avatar'), 'avatar');
         }
-        if($request->file('banner')) {
+        if ($request->file('banner')) {
             $page->banner = $media->save($request->file('banner'), 'hero');
         }
         $page->save();
@@ -72,9 +89,9 @@ class StudentController extends Controller
     public function create_project(int $user_id): RedirectResponse
     {
         $user = User::find($user_id);
-        if ($user->projects->count() < 3){
+        if ($user->projects->count() < 3) {
             $new_project = new StudentProject([
-               'user_id' => $user->id,
+                'user_id' => $user->id,
             ]);
             $new_project->save();
         }
@@ -92,8 +109,8 @@ class StudentController extends Controller
         $project = StudentProject::find($project_id);
         $project->title = $request->get('title');
         $project->description = $request->get('description');
-        if ($request->file('image')){
-            $project->image = $media->save($request->file('image'), 'project-'.$project->id.'-image');
+        if ($request->file('image')) {
+            $project->image = $media->save($request->file('image'), 'project-' . $project->id . '-image');
         }
         $project->save();
         return redirect('/my-page');
@@ -103,7 +120,7 @@ class StudentController extends Controller
     {
         $project = StudentProject::find($project_id);
         $media = new StudentMediaService();
-        if ($project->image){
+        if ($project->image) {
             $media->delete($project->image);
         }
         $project->delete();

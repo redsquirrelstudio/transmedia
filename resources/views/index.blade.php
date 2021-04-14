@@ -85,7 +85,7 @@
                         <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
                         <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
                         <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
-                        <a href="{{ route('page.students') }}" class="btn-c2a">
+                        <a href="{{ route('students.index') }}" class="btn-c2a">
                             View All
                         </a>
                     </div>
@@ -175,7 +175,7 @@
                     <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
                     <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
                     <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
-                    <a href="{{ route('page.students') }}" class="btn-c2a">
+                    <a href="{{ route('students.index') }}" class="btn-c2a">
                         View All
                     </a>
                 </div>
