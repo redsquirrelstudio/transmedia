@@ -13,12 +13,12 @@
         },
         {
         id: 2,
-        title: 'Virtual Exhibition',
-        subtitle: 'Our Hall Of Fame',
-        link_text: 'Get Started',
+        title: '2021 Projects',
+        subtitle: 'Highlights from the year',
+        link_text: 'View Projects',
         link_href: '/',
-        src: '{{ asset('/images/west_downs_birdseye.jpg') }}',
-        type: 'image',
+        src: '{{ asset('/video/alutech_show_reel.mp4') }}',
+        type: 'video',
         },
         {
         id: 3,
@@ -81,10 +81,10 @@
                 <div class="carousel-container">
                     <div class="filters">
                         <h2>Digital Media Department</h2>
-                        <a href="{{ route('page.course', 'designers') }}">Digital Media Design</a>
-                        <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
-                        <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
-                        <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
+                        <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
+                        <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
+                        <a href="{{ route('students.course', '3d-artists') }}">3D Environments and Visualisation</a>
+                        <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                         <a href="{{ route('students.index') }}" class="btn-c2a">
                             View All
                         </a>
@@ -171,10 +171,10 @@
             <div class="carousel-container">
                 <div class="filters">
                     <h2>Digital Media Department</h2>
-                    <a href="{{ route('page.course', 'designers') }}">Digital Media Design</a>
-                    <a href="{{ route('page.course', 'developers') }}">Digital Media Development</a>
-                    <a href="{{ route('page.course', '3d-artists') }}">3D Environments and Visualisation</a>
-                    <a href="{{ route('page.course', 'cad') }}">Computer Aided Design</a>
+                    <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
+                    <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
+                    <a href="{{ route('students.course', '3d-artists') }}">3D Environments and Visualisation</a>
+                    <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                     <a href="{{ route('students.index') }}" class="btn-c2a">
                         View All
                     </a>
