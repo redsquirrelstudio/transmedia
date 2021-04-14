@@ -1,6 +1,6 @@
 <template>
     <div class="carousel-wrapper">
-        <transition-group name="carousel-slide" tag="div" class="carousel">
+        <transition-group name="carousel-slide" tag="div" :class="`carousel ${left ? 'left' : ''}`">
             <a :href="student.page_url" class="slide" v-for="student in slides" :key="student.id">
                 <img :src="student.page.avatar_image.file_url" :alt="student.name">
                 <div class="overlay">
@@ -31,6 +31,10 @@ export default {
             default() {
                 return [];
             }
+        },
+        left: {
+            type: Boolean,
+            default: false
         }
     },
     data() {
@@ -43,10 +47,19 @@ export default {
         this.slides = this.students;
         if (this.slides.length > 4) {
             this.interval = setInterval(() => {
-                let popped = this.slides.pop();
-                setTimeout(() => {
-                    this.slides.unshift(popped);
-                }, 100);
+                if (this.left){
+                    let popped = this.slides.shift();
+                    setTimeout(() => {
+                        this.slides.push(popped);
+                    }, 100);
+                }
+                else{
+                    let popped = this.slides.pop();
+                    setTimeout(() => {
+                        this.slides.unshift(popped);
+                    }, 100);
+                }
+
             }, 5000);
         }
     },

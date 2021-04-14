@@ -53,7 +53,7 @@
                 <h2>Developers</h2>
             </div>
             <div class="carousel-container">
-                <student-slider :students="{{ json_encode($students['developers']) }}">
+                <student-slider left :students="{{ json_encode($students['developers']) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
@@ -94,7 +94,7 @@
                 <h2>3D Artists</h2>
             </div>
             <div class="carousel-container">
-                <student-slider :students="{{ json_encode($students['3d-artists']) }}">
+                <student-slider left :students="{{ json_encode($students['3d-artists']) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>

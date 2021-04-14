@@ -2892,6 +2892,10 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return [];
       }
+    },
+    left: {
+      type: Boolean,
+      "default": false
     }
   },
   data: function data() {
@@ -2907,11 +2911,19 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.slides.length > 4) {
       this.interval = setInterval(function () {
-        var popped = _this.slides.pop();
+        if (_this.left) {
+          var popped = _this.slides.shift();
 
-        setTimeout(function () {
-          _this.slides.unshift(popped);
-        }, 100);
+          setTimeout(function () {
+            _this.slides.push(popped);
+          }, 100);
+        } else {
+          var _popped = _this.slides.pop();
+
+          setTimeout(function () {
+            _this.slides.unshift(_popped);
+          }, 100);
+        }
       }, 5000);
     }
   },
@@ -59833,7 +59845,7 @@ var render = function() {
       _c(
         "transition-group",
         {
-          staticClass: "carousel",
+          class: "carousel " + (_vm.left ? "left" : ""),
           attrs: { name: "carousel-slide", tag: "div" }
         },
         _vm._l(_vm.slides, function(student) {
