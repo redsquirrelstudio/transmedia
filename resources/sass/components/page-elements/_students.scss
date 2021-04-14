@@ -16,6 +16,11 @@
         a{
             color: $col-darker;
             text-decoration: none;
+            transition: 0.2s;
+            &:hover{
+                color: $col-white;
+                transition: 0.2s;
+            }
         }
     }
     .back-plate{

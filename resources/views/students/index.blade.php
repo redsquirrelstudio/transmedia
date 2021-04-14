@@ -8,19 +8,19 @@
             <h2>Meet Our Students</h2>
             <div class="block-links">
                 <a href="#designers" class="block-link">
-                    <img src="{{ asset('/images/design_ident.jpg') }}" alt="Designers">
+                    <img v-lazy="'{{ asset('/images/design_ident.jpg') }}'" alt="Designers">
                     <h4>Designers</h4>
                 </a>
                 <a href="#developers" class="block-link">
-                    <img src="{{ asset('/images/dev_ident.jpg') }}" alt="Developers">
+                    <img v-lazy="'{{ asset('/images/dev_ident.jpg') }}'" alt="Developers">
                     <h4>Developers</h4>
                 </a>
                 <a href="#cad" class="block-link">
-                    <img src="{{ asset('/images/cad_ident.jpg') }}" alt="CAD">
+                    <img v-lazy="'{{ asset('/images/cad_ident.jpg') }}'" alt="CAD">
                     <h4>Computer Aided Designers</h4>
                 </a>
                 <a href="#3d" class="block-link">
-                    <img src="{{ asset('/images/3d_ident.jpg') }}" alt="3D">
+                    <img v-lazy="'{{ asset('/images/3d_ident.jpg') }}'" alt="3D">
                     <h4>3D Artists</h4>
                 </a>
             </div>

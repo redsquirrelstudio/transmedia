@@ -25,8 +25,8 @@
                 @foreach($course->page()->inRandomOrder()->get() as $page)
                     @if(!isset($year) || $page->user->year === $year)
                         <a href="{{ route('students.student', $page->user->id) }}" class="block-link">
-                            <img src="{{ $page->avatar_image->file_url ?? asset('/images/avatar_default.jpg') }}"
-                                 alt="">
+                            <img v-lazy="'{{ $page->avatar_image->file_url ?? asset('/images/avatar_default.jpg') }}'"
+                                 alt="{{ $page->user->name }} avatar">
                             <div class="overlay">
                                 {{ $page->user->name }}
                             </div>
@@ -35,7 +35,5 @@
                 @endforeach
             </div>
         </div>
-    </div>
-
     </div>
 @endsection

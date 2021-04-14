@@ -1,5 +1,7 @@
 import Vue from 'vue';
-import VueObserveVisibility from 'vue-observe-visibility'
+
+import VueObserveVisibility from 'vue-observe-visibility';
+import VueLazyload from 'vue-lazyload';
 
 import Exhibition from "./components/Exhibition";
 import PageEditor from "./components/PageEditor";
@@ -18,6 +20,12 @@ import StudentSlider from "./components/sliders/StudentSlider";
 import ProjectSlider from "./components/sliders/ProjectSlider";
 
 Vue.use(VueObserveVisibility);
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: 'dist/error.png',
+    loading: 'assets/loading.gif',
+    attempt: 1
+});
 
 
 Vue.prototype.$makeForm = (object) => {

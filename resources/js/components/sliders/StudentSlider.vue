@@ -2,7 +2,7 @@
     <div class="carousel-wrapper">
         <transition-group name="carousel-slide" tag="div" :class="`carousel ${left ? 'left' : ''}`">
             <a :href="student.page_url" class="slide" v-for="student in slides" :key="student.id">
-                <img :src="student.page.avatar_image.file_url" :alt="student.name">
+                <img v-lazy="student.page.avatar_image.file_url" :alt="student.name">
                 <div class="overlay">
                     <h3>
                         <span v-if="student.year === 1">1st Year </span>

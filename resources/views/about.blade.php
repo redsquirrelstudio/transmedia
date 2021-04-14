@@ -64,6 +64,7 @@
                         minus obcaecati pariatur quos. Aut expedita iste non quasi recusandae repellendus! Dolorum est
                         incidunt sint soluta tempore.
                     </p>
+                    <a class="btn-c2a" href="{{ route('students.course', 'designers') }}">Meet our developers</a>
                 </div>
             </div>
         </div>
@@ -79,6 +80,7 @@
                         minus obcaecati pariatur quos. Aut expedita iste non quasi recusandae repellendus! Dolorum est
                         incidunt sint soluta tempore.
                     </p>
+                    <a class="btn-c2a" href="{{ route('students.course', 'developers') }}">Meet our designers</a>
                 </div>
             </div>
         </div>
@@ -104,6 +106,7 @@
                         minus obcaecati pariatur quos. Aut expedita iste non quasi recusandae repellendus! Dolorum est
                         incidunt sint soluta tempore.
                     </p>
+                    <a class="btn-c2a" href="{{ route('students.course', 'cad') }}">Meet our Computer aided designers</a>
                 </div>
             </div>
         </div>
@@ -119,6 +122,7 @@
                         minus obcaecati pariatur quos. Aut expedita iste non quasi recusandae repellendus! Dolorum est
                         incidunt sint soluta tempore.
                     </p>
+                    <a class="btn-c2a" href="{{ route('students.course', '3d-artists') }}">Meet our 3D Artists</a>
                 </div>
             </div>
         </div>
