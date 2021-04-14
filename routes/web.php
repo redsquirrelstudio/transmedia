@@ -23,9 +23,9 @@ if (env('SHOW_LANDING')) {
     });
 } else {
     Route::get('/', [PageController::class, 'index'])->name('page.index');
-    Route::get('/about', [PageController::class, 'about'])->name('page.about');
-}
 
+}
+Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
 
 Route::group(['middleware' => 'auth'], function(){
