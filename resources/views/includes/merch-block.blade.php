@@ -2,11 +2,11 @@
     <img class="wave-bottom" src="{{ asset('/images/wave_bottom.svg') }}" alt="wave">
     <div class="merch-block">
         <div class="message">
-            <h2>Shop <br> Merch</h2>
+            <h2>Merchandise </h2>
             <h4>For everyone</h4>
             <p>
-                Designed, Created, Manufactured by our <br>
-                2nd year students
+                Designed, Created, Manufactured by our 2nd year students’
+                own clothing brand ‘STiTCH’,<br> specifically for this year’s Transmedia Exhibition.
             </p>
             <a href="" class="btn-c2a">
                 Shop Now

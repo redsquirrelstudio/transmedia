@@ -5,10 +5,10 @@
                 style="border:0;overflow:hidden;"></iframe>
         <div class="message">
             <h4>Social Media</h4>
-            <h2>Let's <br> Connect</h2>
+            <h2>Follow <br> Us</h2>
             <p>
                 Join us on our social media platforms <br>
-                for all the fun stuff
+                for updates and the best work our students have to offer.
             </p>
             <div class="socials">
                 <a href="https://www.instagram.com/transmedia.winchester" target="_blank">

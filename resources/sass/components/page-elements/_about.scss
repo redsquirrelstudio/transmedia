@@ -11,6 +11,7 @@
             .indented{
                 .content{
                     padding-right: 0;
+                    font-size: 1rem;
                 }
             }
         }
@@ -73,9 +74,12 @@
                     white-space: nowrap;
                 }
                 p{
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     color: $col-white;
                     font-family: $font-copy;
+                }
+                .btn-c2a{
+                    font-size: 1rem;
                 }
             }
         }
@@ -126,7 +130,7 @@
                         font-size: 2rem;
                     }
                     p{
-                        font-size: 1.5rem;
+                        font-size: 1rem;
                     }
 
                 }

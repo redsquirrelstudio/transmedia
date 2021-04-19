@@ -50,16 +50,17 @@
             <div class="half padded-right">
                 <h2>The Digital Media Department, <br> University of Winchester</h2>
                 <p>
-                    The Transmedia Exhibition is an annual end of year show for Digital Media Courses where students can
-                    showcase their best work.
+                    The Transmedia Exhibition is our annual End of Year Exhibition, covering all of our Digital Media
+                    programmes, our platform to showcase our best work.
                 </p>
                 <p>
-                    This year, we are proudly presenting our work in a virtual gallery space.
+                    Please join us on the 6th May 2021, when we can proudly introduce you to our amazing virtual gallery
+                    and our individual student portfolios which will be found on this website.
                 </p>
                 <p>
-                    Please join us on the <strong>6th May 2021</strong> as we would like to introduce you to best
-                    examples of Digital
-                    Design, Development, CAD and 3D art the University of Winchester Students have to offer.
+                    You will also be able to watch our 3rd year cohort present their business ideas to a panel of judges
+                    in ‘Pitch Your Project’, via Teams. There will be two awards the 3rd years will be competing for:
+                    ‘The Best Pitch 2021’ and ‘The Most Commercially Viable Business Idea 2021’.
                 </p>
             </div>
         </div>
@@ -71,7 +72,7 @@
                     Join the DMD community <br>mailing list!
                 </h2>
                 <p>
-                    We'll share <strong>Transmedia Event</strong> info and all that good stuff!
+                    We'll share <strong>Transmedia Event & Pitch your project</strong> info if you sign up!
                 </p>
                 <p>
                     DON'T BE A SQUARE - BE A BILLIONAIRE! <br>

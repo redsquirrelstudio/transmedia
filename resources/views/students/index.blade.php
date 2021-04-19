@@ -19,9 +19,13 @@
                     <img v-lazy="'{{ asset('/images/cad_ident.jpg') }}'" alt="CAD">
                     <h4>Computer Aided Designers</h4>
                 </a>
-                <a href="#3d" class="block-link">
+                <a href="#3d-design" class="block-link">
                     <img v-lazy="'{{ asset('/images/3d_ident.jpg') }}'" alt="3D">
-                    <h4>3D Artists</h4>
+                    <h4>3D Visualisation Artists</h4>
+                </a>
+                <a href="#3d-dev" class="block-link">
+                    <img v-lazy="'{{ asset('/images/3d_ident.jpg') }}'" alt="3D">
+                    <h4>3D Environments Developers</h4>
                 </a>
             </div>
         </div>
@@ -99,8 +103,8 @@
     </div>
     <div class="screen-block scroll-anchor" >
         <div class="carousel-block">
-            <div class="title left" id="3d">
-                <h2>3D Artists</h2>
+            <div class="title left" id="3d-design">
+                <h2>3D Visualisation Artists</h2>
             </div>
             <div class="carousel-container">
                 <student-slider left :students="{{ json_encode($students['3d-artists']) }}">

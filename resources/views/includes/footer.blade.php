@@ -17,7 +17,7 @@
                 Students
             </a>
             <a href="">
-                Shop
+                MERCHANDISE
             </a>
             @auth
                 <a href="{{ url('/logout') }}">
@@ -34,7 +34,6 @@
                 Contact Us
             </a>
             <div class="with-header">
-                <p>Contact</p>
                 <a href="mailto:info@transmediawinchester.co.uk">info@transmediawinchester.co.uk</a>
             </div>
         </div>
