@@ -23,7 +23,7 @@
                     <img v-lazy="'{{ asset('/images/3d_ident.jpg') }}'" alt="3D">
                     <h4>3D Visualisation Artists</h4>
                 </a>
-                <a href="#3d-dev" class="block-link">
+                <a href="#3d-devs" class="block-link">
                     <img v-lazy="'{{ asset('/images/3ddev_ident.jpg') }}'" alt="3D">
                     <h4>3D Environments Developers</h4>
                 </a>
@@ -124,7 +124,7 @@
     </div>
     <div class="screen-block scroll-anchor">
         <div class="carousel-block">
-            <div class="title" id="cad">
+            <div class="title" id="3d-devs">
                 <h2>3D Environments Developers</h2>
             </div>
             <div class="carousel-container">
