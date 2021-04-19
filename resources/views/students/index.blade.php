@@ -46,7 +46,7 @@
                     </a>
                 </div>
 
-                <student-slider :students="{{ json_encode($students['designers']) }}">
+                <student-slider :students="{{ json_encode(shuffle($students['designers'])) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
@@ -60,7 +60,7 @@
                 <h2>Developers</h2>
             </div>
             <div class="carousel-container">
-                <student-slider left :students="{{ json_encode($students['developers']) }}">
+                <student-slider left :students="{{ json_encode(shuffle($students['developers'])) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
@@ -91,7 +91,7 @@
                     </a>
                 </div>
 
-                <student-slider :students="{{ json_encode($students['cad']) }}">
+                <student-slider :students="{{ json_encode(shuffle($students['cad'])) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
@@ -105,7 +105,7 @@
                 <h2>3D Visualisation Artists</h2>
             </div>
             <div class="carousel-container">
-                <student-slider left :students="{{ json_encode($students['3d-artists']) }}">
+                <student-slider left :students="{{ json_encode(shuffle($students['3d-artists'])) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
@@ -137,7 +137,7 @@
                     </a>
                 </div>
 
-                <student-slider :students="{{ json_encode($students['3d-devs']) }}">
+                <student-slider :students="{{ json_encode(shuffle($students['3d-devs'])) }}">
                     <template v-slot:arrow>
                         <img class="arrow" src="{{ asset('/images/arrow_right.svg') }}" alt="->">
                     </template>
