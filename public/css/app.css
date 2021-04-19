@@ -892,6 +892,10 @@
   padding: 2rem 0;
   flex-wrap: wrap;
 }
+.students-header .block-links.small .block-link {
+  width: 300px;
+  height: 300px;
+}
 .students-header .block-links .block-link {
   width: 400px;
   height: 400px;

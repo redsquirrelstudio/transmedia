@@ -206,7 +206,7 @@
                         major aspect in each of our three years, with our work assessed via our online portfolios,
                         building on this each year to produce a valuable professional portfolio for future employers.
                     </p>
-                    <a class="btn-c2a" href="{{ route('students.course', 'cad') }}">Meet our 3D Environment (Game & Heritage) Developers </a>
+                    <a class="btn-c2a" href="{{ route('students.course', '3d-devs') }}">Meet our 3D Environment (Game & Heritage) Developers </a>
                 </div>
             </div>
         </div>

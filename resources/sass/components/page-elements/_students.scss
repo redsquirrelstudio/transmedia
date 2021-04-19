@@ -37,6 +37,12 @@
         display: flex;
         padding: 2rem 0;
         flex-wrap: wrap;
+        &.small{
+            .block-link {
+                width: 300px;
+                height: 300px;
+            }
+        }
         .block-link{
             width: 400px;
             height: 400px;
