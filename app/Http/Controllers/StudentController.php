@@ -24,7 +24,7 @@ class StudentController extends Controller
                     $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image', 'page.course'])->first();
                 }
             }
-            $students = array_merge($students, [$course->slug => shuffle($category)]);
+            $students = array_merge($students, [$course->slug => $category]);
         }
         return view('students.index', ['students' => $students]);
     }
