@@ -8,6 +8,14 @@
         bottom: 5rem;
         width: 250px;
     }
+    .arrow.left{
+        position: absolute;
+        right: 1rem;
+        left: auto;
+        bottom: 5rem;
+        width: 250px;
+        transform: scaleX(-1);
+    }
 }
 .carousel{
     background-color: $col-dark;
