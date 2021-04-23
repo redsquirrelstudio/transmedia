@@ -44,12 +44,15 @@
                         Hi there!
                     </h2>
                     <p>
-                        We are Digital Media Students, proudly presenting <br>
-                        our annual end of the year show. <br><br>
-                        Covid stopped the world but not us :) <br>
-                        We produced work, both individual modules and
-                        client projects. <br><br>
-                        Please take a look and get in touch!
+                        The Transmedia Exhibition is our annual End of Year Exhibition, covering all of our Digital
+                        Media programmes, our platform to showcase our best work. <br><br>
+
+                        Please join us on the 6th May 2021, when we can proudly introduce you to our amazing virtual
+                        gallery and our individual student portfolios which will be found on this website. <br><br>
+
+                        You will also be able to watch our 3rd year cohort present their business ideas to a panel of
+                        judges in ‘Pitch Your Project’, via Teams. There will be two awards the 3rd years will be
+                        competing for: ‘The Best Pitch 2021’ and ‘The Most Commercially Viable Business Idea 2021’. <br><br>
                     </p>
                     <a href="" class="btn-c2a">
                         Find Out More

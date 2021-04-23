@@ -3,7 +3,7 @@
     margin-top: 10rem;
     .video-block{
         position: relative;
-        width: 50%;
+        min-width: 50%;
         padding: 10rem 5rem 15rem 5rem;
         background-color: $col-dark;
         z-index: 2;
@@ -22,9 +22,11 @@
         .indent{
             color: $col-white;
             margin-left: 10rem;
-            margin-right: 15rem;
+            margin-right: 5rem;
+            min-width: 50%;
+            padding-bottom: 10rem;
             h2{
-                font-size: 5rem;
+                font-size: 4rem;
                 margin-bottom: 2rem;
                 white-space: nowrap;
             }
