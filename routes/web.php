@@ -17,27 +17,29 @@ use App\Http\Controllers\StudentController;
 */
 
 
-if (env('SHOW_LANDING')) {
+if (Options::get('show-live')) {
+    Route::get('/', [PageController::class, 'index'])->name('page.index');
+} else {
     Route::get('/', function () {
         return view('landing');
     });
-} else {
-    Route::get('/', [PageController::class, 'index'])->name('page.index');
 }
 
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/my-page', [StudentController::class, 'my_page'])->name('page.personal');
-    Route::post('/my-page/save', [StudentController::class, 'store_my_page'])->name('mypage.save');
-    Route::get('/student/project/create/{user_id}', [StudentController::class, 'create_project'])->name('project.create');
-    Route::post('/student/project/save/{project_id}', [StudentController::class, 'save_project'])->name('project.save');
-    Route::get('/student/project/delete/{project_id}', [StudentController::class, 'delete_project'])->name('project.delete');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::group(['middleware' => 'auth'], function () {
+    if (Options::get('student-login')) {
+        Route::get('/my-page', [StudentController::class, 'my_page'])->name('page.personal');
+        Route::post('/my-page/save', [StudentController::class, 'store_my_page'])->name('mypage.save');
+        Route::get('/student/project/create/{user_id}', [StudentController::class, 'create_project'])->name('project.create');
+        Route::post('/student/project/save/{project_id}', [StudentController::class, 'save_project'])->name('project.save');
+        Route::get('/student/project/delete/{project_id}', [StudentController::class, 'delete_project'])->name('project.delete');
+        Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    }
 });
 
-Route::group(['prefix' => 'students'], function(){
+Route::group(['prefix' => 'students'], function () {
     Route::get('/', [StudentController::class, 'index'])->name('students.index');
     Route::get('/{student_id}', [StudentController::class, 'student'])->name('students.student');
     Route::get('/course/{course_slug}', [StudentController::class, 'students_course'])->name('students.course');
@@ -45,18 +47,21 @@ Route::group(['prefix' => 'students'], function(){
 });
 
 
-Route::get('/login', [PageController::class, 'login'])->name('page.login');
-Route::get('/login-redirect', function(){
-    return redirect('/login');
-})->name('login');
-Route::get('/register', [PageController::class, 'register'])->name('page.register');
-Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
-Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
-Route::post('/reset-password', [AuthController::class, 'reset'])->name('auth.reset');
+if (Options::get('student-login')) {
+    Route::get('/login', [PageController::class, 'login'])->name('page.login');
+    Route::get('/login-redirect', function () {
+        return redirect('/login');
+    })->name('login');
 
-Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
-Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
+    Route::get('/register', [PageController::class, 'register'])->name('page.register');
+    Route::get('/forgot', [PageController::class, 'forgot'])->name('page.forgot');
+    Route::get('/reset-password/{token}', [PageController::class, 'reset'])->name('password.reset');
+    Route::post('/reset-password', [AuthController::class, 'reset'])->name('auth.reset');
+
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
+}
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -123,6 +128,8 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         Route::post('/profile', 'ProfileController@updateProfile')->name('update-profile');
         Route::get('/password', 'ProfileController@editPassword')->name('edit-password');
         Route::post('/password', 'ProfileController@updatePassword')->name('update-password');
+
+        Route::get('/settings/toggle/{key}', 'SettingsController@toggle')->name('settings.toggle');
     });
 });
 

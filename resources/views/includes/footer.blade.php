@@ -19,15 +19,17 @@
             <a href="">
                 MERCHANDISE
             </a>
-            @auth
-                <a href="{{ url('/logout') }}">
-                    Logout
-                </a>
-            @else
-                <a href="{{ url('/login') }}">
-                    Student Login
-                </a>
-            @endauth
+            @if(Options::get('student-login'))
+                @auth
+                    <a href="{{ url('/logout') }}">
+                        Logout
+                    </a>
+                @else
+                    <a href="{{ url('/login') }}">
+                        Student Login
+                    </a>
+                @endauth
+            @endif
         </div>
         <div class="footer-links">
             <a href="">

@@ -15,14 +15,16 @@
 <body>
 <div class="landing scroll-container" id="app">
     <div class="video-container">
-        @auth
-            <a href="{{ route('auth.logout') }}" class="student-login">
-                LOGOUT
-            </a>
-        @else
-            <a href="{{ route('page.login') }}" class="student-login">
-                STUDENT LOGIN
-            </a>
+        @if(Options::get('student-login'))
+            @auth
+                <a href="{{ route('auth.logout') }}" class="student-login">
+                    LOGOUT
+                </a>
+            @else
+                <a href="{{ route('page.login') }}" class="student-login">
+                    STUDENT LOGIN
+                </a>
+            @endif
         @endif
 
         <video autoplay muted loop class="video-background">

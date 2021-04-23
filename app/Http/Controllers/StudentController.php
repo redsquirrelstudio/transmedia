@@ -9,6 +9,7 @@ use App\Services\StudentMediaService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use PhpOption\Option;
 
 class StudentController extends Controller
 {
@@ -31,7 +32,7 @@ class StudentController extends Controller
 
     public function student(int $student_id)
     {
-        if ($student_id === auth()->id()) {
+        if ($student_id === auth()->id() && Option::get('student-login')) {
             return redirect('/my-page');
         } else {
             return view('students.student', ['student' => User::find($student_id), 'courses' => Course::all()]);
