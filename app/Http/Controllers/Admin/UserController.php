@@ -155,6 +155,8 @@ class UserController extends Controller
      */
     public function destroy(DestroyUser $request, User $user)
     {
+        $page = $user->page;
+        $page->delete();
         $user->delete();
 
         if ($request->ajax()) {
@@ -177,9 +179,12 @@ class UserController extends Controller
             collect($request->data['ids'])
                 ->chunk(1000)
                 ->each(static function ($bulkChunk) {
-                    User::whereIn('id', $bulkChunk)->delete();
-
-                    // TODO your code goes here
+                    $users = User::whereIn('id', $bulkChunk)->get();
+                    foreach($users as $user){
+                        $page = $user->page;
+                        $page->delete();
+                        $user->delete();
+                    }
                 });
         });
 
