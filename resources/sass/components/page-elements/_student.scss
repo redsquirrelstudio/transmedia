@@ -214,15 +214,22 @@
     text-align: right;
 }
 
+.projects-title{
+    padding: 0 10%;
+    color: $col-white;
+    font-size: 4rem;
+}
+
 .project-block{
     width: 100%;
     min-height: 50vh;
     position: relative;
-    padding: 10rem 10% 0 10%;
+    padding: 5rem 10% 0 10%;
     h2{
         width: 100%;
         color: $col-white;
         font-size: 3rem;
+        padding-bottom: 2rem;
         input{
             width: 100%;
             font-size: 3rem;
@@ -246,8 +253,8 @@
             flex-direction: row-reverse;
         }
         .project-image{
-            width: 35%;
-            border: 10px solid $col-brand;
+            width: 50%;
+            box-shadow: -10px 10px 15px rgba(0,0,0,0.3);
             img{
                 width: 100%;
                 height: 100%;

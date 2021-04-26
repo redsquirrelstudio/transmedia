@@ -70,6 +70,12 @@
             </div>
         </div>
     </div>
+    @if($student->projects->count() > 0)
+        <h2 class="projects-title">
+            {{ explode(' ', $student->name)[0] }}{{ explode(' ', $student->name)[0][strlen(explode(' ', $student->name)[0]) - 1] === 's' ? "'" : "'s"  }}
+            Projects
+        </h2>
+    @endif
     @foreach($student->projects as $key => $project)
         <div id="{{ $project->id }}" class="project-block">
             <h2>
