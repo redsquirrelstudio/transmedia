@@ -47,6 +47,8 @@ return [
             'password' => 'Password',
             'verified' => 'Verified',
             'created_at' => 'Created at',
+            'page_views' => 'Page Views',
+            'portfolio_views' => 'Portfolio Views',
 
         ],
     ],

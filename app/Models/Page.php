@@ -15,10 +15,12 @@ class Page extends Model
 
     protected $table = 'page';
     protected $primaryKey = 'id';
-    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar', 'portfolio_url', 'instagram_url', 'banner'];
+    protected $fillable = ['user_id', 'course_id', 'tagline', 'bio', 'avatar', 'portfolio_url', 'instagram_url', 'banner', 'page_views', 'portfolio_views'];
     protected $casts = [
         'work_urls' => 'array',
-        'course_id' => 'integer'
+        'course_id' => 'integer',
+        'page_views' => 'integer',
+        'portfolio_views' => 'integer'
     ];
 
     public function user(): BelongsTo

@@ -33,7 +33,7 @@ class User extends Authenticatable
         'year' => 'integer',
     ];
 
-    protected $appends = ['resource_url', 'page_url'];
+    protected $appends = ['resource_url', 'page_url', 'page_views', 'portfolio_views'];
 
     public function page(): HasOne
     {
@@ -53,6 +53,16 @@ class User extends Authenticatable
     public function getPageUrlAttribute(): string
     {
         return route('students.student', $this->id);
+    }
+
+    public function getPageViewsAttribute(): int
+    {
+        return $this->page->page_views;
+    }
+
+    public function getPortfolioViewsAttribute(): int
+    {
+        return $this->page->portfolio_views;
     }
 
     public function projects(): HasMany

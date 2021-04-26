@@ -53,7 +53,8 @@
                                         <th is='sortable' :column="'name'">{{ trans('admin.user.columns.name') }}</th>
                                         <th is='sortable' :column="'year'">{{ trans('admin.user.columns.year') }}</th>
                                         <th is='sortable' :column="'email'">{{ trans('admin.user.columns.email') }}</th>
-                                        <th is='sortable' :column="'verified'">{{ trans('admin.user.columns.verified') }}</th>
+                                        <th is='sortable' :column="'page_views'">{{ trans('admin.user.columns.page_views') }}</th>
+                                        <th is='sortable' :column="'portfolio_views'">{{ trans('admin.user.columns.portfolio_views') }}</th>
                                         <th is='sortable' :column="'created_at'">{{ trans('admin.user.columns.created_at') }}</th>
 
                                         <th></th>
@@ -82,6 +83,8 @@
                                         <td>@{{ item.name }}</td>
                                         <td>@{{ item.year }}</td>
                                         <td>@{{ item.email }}</td>
+                                        <td>@{{ item.page_views }}</td>
+                                        <td>@{{ item.portfolio_views }}</td>
                                         <td>@{{ item.created_at | datetime }}</td>
 
                                         <td>

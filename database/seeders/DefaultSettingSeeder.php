@@ -30,6 +30,11 @@ class DefaultSettingSeeder extends Seeder
                 'key' => 'show-live',
                 'value' => null,
                 'enabled' => false,
+            ],
+            [
+                'key' => 'count-views',
+                'value' => null,
+                'enabled' => false,
             ]
         ]);
     }

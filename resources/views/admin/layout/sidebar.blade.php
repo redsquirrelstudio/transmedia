@@ -42,6 +42,15 @@
                     Show Live Stream
                 </a>
             </li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('admin/settings/toggle/count-views') }}">
+                    @if(Options::get('count-views'))
+                        <i style="color: #3ac25e;" class="nav-icon fa fa-toggle-on"></i>
+                    @else
+                        <i style="color: #cc3700;" class="nav-icon fa fa-toggle-off"></i>
+                    @endif
+                    Count Views
+                </a>
+            </li>
             {{-- Do not delete me :) I'm also used for auto-generation menu items --}}
             {{--<li class="nav-item"><a class="nav-link" href="{{ url('admin/configuration') }}"><i class="nav-icon icon-settings"></i> {{ __('Configuration') }}</a></li>--}}
         </ul>

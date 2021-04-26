@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['prefix' => 'students'], function () {
     Route::get('/', [StudentController::class, 'index'])->name('students.index');
     Route::get('/{student_id}', [StudentController::class, 'student'])->name('students.student');
+    Route::get('/portfolio/{student_id}', [StudentController::class, 'student_portfolio'])->name('students.portfolio');
+
     Route::get('/course/{course_slug}', [StudentController::class, 'students_course'])->name('students.course');
     Route::get('/course/{course_slug}/year/{year}', [StudentController::class, 'students_year'])->name('students.year');
 });

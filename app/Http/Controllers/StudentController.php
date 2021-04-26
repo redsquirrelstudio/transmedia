@@ -9,7 +9,6 @@ use App\Services\StudentMediaService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use PhpOption\Option;
 
 class StudentController extends Controller
 {
@@ -35,7 +34,18 @@ class StudentController extends Controller
         if ($student_id === auth()->id() && Option::get('student-login')) {
             return redirect('/my-page');
         } else {
-            return view('students.student', ['student' => User::find($student_id), 'courses' => Course::all()]);
+            $student = User::find($student_id);
+            if ($student){
+                if (\Options::get('count-views')){
+                    $page = $student->page;
+                    $page->page_views++;
+                    $page->save();
+                }
+                return view('students.student', ['student' => $student, 'courses' => Course::all()]);
+            }
+            else{
+                abort(404);
+            }
         }
     }
 
@@ -151,4 +161,21 @@ class StudentController extends Controller
         $project->delete();
         return redirect('/my-page');
     }
+
+    public function student_portfolio(int $student_id)
+    {
+        $student = User::find($student_id);
+        if ($student){
+            if (\Options::get('count-views')){
+                $page = $student->page;
+                $page->portfolio_views++;
+                $page->save();
+            }
+            return redirect()->away($student->page->portfolio_url);
+        }
+        else{
+            abort(404);
+        }
+    }
+
 }

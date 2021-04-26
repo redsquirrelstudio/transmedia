@@ -63,7 +63,7 @@
                     </a>
                 @endif
                 @if($student->page->portfolio_url)
-                    <a target="_blank" href="{{ $student->page->portfolio_url }}">
+                    <a target="_blank" href="{{ route('students.portfolio', $student->id) }}">
                         <hover-icon open-class="las la-laptop-code" close-class="las la-laptop"></hover-icon>
                     </a>
                 @endif
