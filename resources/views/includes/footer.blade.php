@@ -45,6 +45,6 @@
     </div>
     <div class="copyright">
         © Transmedia Winchester {{ date('Y') }}
-        <a href="https://redsquirrel.studio">Crafted By Red Squirrel Studio</a>
+        <a target="_blank" href="https://redsquirrel.studio">Crafted By Red Squirrel Studio</a>
     </div>
 </footer>
