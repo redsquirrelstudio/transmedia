@@ -40,5 +40,17 @@
         text-align: center;
         color: $col-white;
         padding-bottom: 5rem;
+        a{
+            display: block;
+            font-size: 0.8rem;
+            color: #8d8d8d;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            transition: 0.2s;
+            &:hover{
+                transition: 0.2s;
+                color: #FFF;
+            }
+        }
     }
 }
