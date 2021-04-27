@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    @if(Options::get('show-stream'))
+    @if(Options::get('show-stream') && env('YOUTUBE_EMBED_ID'))
         <div class="hero-slider">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel={{ env('YOUTUBE_CHANNEL_ID') }}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ env('YOUTUBE_EMBED_ID') }}"
+                    title="YouTube video player" frameborder="0" controls="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
         </div>
     @else
         <hero-slider :slides="[
