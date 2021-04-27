@@ -1,35 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-    <hero-slider :slides="[
-        {
-        id: 1,
-        title: 'Virtual Exhibition',
-        subtitle: 'Our Hall Of Fame',
-        link_text: 'Get Started',
-        link_href: '/',
-        src: '{{ asset('/video/transmedia_virtual_expo.mp4') }}',
-        type: 'video',
-        },
-        {
-        id: 2,
-        title: '2021 Projects',
-        subtitle: 'Highlights from the year',
-        link_text: 'View Projects',
-        link_href: '/',
-        src: '{{ asset('/video/alutech_show_reel.mp4') }}',
-        type: 'video',
-        },
-        {
-        id: 3,
-        title: 'Virtual Exhibition',
-        subtitle: 'Our Hall Of Fame',
-        link_text: 'Get Started',
-        link_href: '/',
-        src: 'https://source.unsplash.com/random',
-        type: 'image',
-        }
-        ]"></hero-slider>
+    @if(Options::get('show-stream'))
+        <div class="hero-slider">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel={{ env('YOUTUBE_CHANNEL_ID') }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    @else
+        <hero-slider :slides="[
+            {
+            id: 1,
+            title: 'Virtual Exhibition',
+            subtitle: 'Our Hall Of Fame',
+            link_text: 'Get Started',
+            link_href: '/',
+            src: '{{ asset('/video/transmedia_virtual_expo.mp4') }}',
+            type: 'video',
+            },
+            {
+            id: 2,
+            title: '2021 Projects',
+            subtitle: 'Highlights from the year',
+            link_text: 'View Projects',
+            link_href: '/',
+            src: '{{ asset('/video/alutech_show_reel.mp4') }}',
+            type: 'video',
+            },
+            {
+            id: 3,
+            title: 'Virtual Exhibition',
+            subtitle: 'Our Hall Of Fame',
+            link_text: 'Get Started',
+            link_href: '/',
+            src: 'https://source.unsplash.com/random',
+            type: 'image',
+            }
+            ]"></hero-slider>
+    @endif
+
     <div class="screen-block">
         <div class="welcome-block scroll-anchor">
             <div class="video-block">
