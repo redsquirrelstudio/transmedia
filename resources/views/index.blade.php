@@ -79,7 +79,7 @@
             <div class="caption">
                 <h1>We are with you live</h1>
                 <h2>Thursday 06.05.2021</h2>
-                <a href="" class="btn-c2a">
+                <a href="{{ route('page.schedule') }}" class="btn-c2a">
                     Find Out More
                 </a>
             </div>

@@ -29,6 +29,11 @@ class PageController extends Controller
         return view('about');
     }
 
+    public function schedule(): View
+    {
+        return view('schedule');
+    }
+
     public function register(): View
     {
         return view('auth.register');

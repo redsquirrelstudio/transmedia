@@ -1,0 +1,14 @@
+.schedule-heading{
+    padding: 10rem 5rem;
+    h1{
+        color: $col-white;
+        font-size: 3rem;
+        text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+    p{
+        font-size: 1.8rem;
+        color: $col-white;
+        padding: 1rem 0;
+        max-width: 50%;
+    }
+}

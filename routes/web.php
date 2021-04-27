@@ -27,6 +27,7 @@ if (Options::get('show-live')) {
 
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/exhibition', [PageController::class, 'exhibition'])->name('page.exhibition');
+Route::get('/schedule', [PageController::class, 'schedule'])->name('page.schedule');
 
 Route::group(['middleware' => 'auth'], function () {
     if (Options::get('student-login')) {
