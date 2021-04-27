@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\FeaturedProject\IndexFeaturedProject;
 use App\Http\Requests\Admin\FeaturedProject\StoreFeaturedProject;
 use App\Http\Requests\Admin\FeaturedProject\UpdateFeaturedProject;
 use App\Models\FeaturedProject;
+use App\Models\FeaturedProjectUser;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -37,7 +38,7 @@ class FeaturedProjectController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'user_id', 'youtube_url'],
+            ['id', 'title', 'youtube_url'],
 
             // set columns to searchIn
             ['id', 'title', 'description', 'youtube_url']
@@ -79,8 +80,19 @@ class FeaturedProjectController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
+        $users = $sanitized['user_id'];
+        unset($sanitized['user_id']);
+
         // Store the FeaturedProject
         $featuredProject = FeaturedProject::create($sanitized);
+
+        foreach($users as $user){
+            $link = new FeaturedProjectUser([
+                'user_id' => $user,
+                'featured_project_id' => $featuredProject->id
+            ]);
+            $link->save();
+        }
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/featured-projects'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
@@ -134,6 +146,19 @@ class FeaturedProjectController extends Controller
 
         // Update changed values FeaturedProject
         $featuredProject->update($sanitized);
+
+        $users = $sanitized['user_id'];
+        unset($sanitized['user_id']);
+
+        FeaturedProjectUser::where('featured_project_id', $featuredProject->id)->delete();
+
+        foreach($users as $user){
+            $link = new FeaturedProjectUser([
+                'user_id' => $user,
+                'featured_project_id' => $featuredProject->id
+            ]);
+            $link->save();
+        }
 
         if ($request->ajax()) {
             return [

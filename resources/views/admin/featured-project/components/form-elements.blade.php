@@ -17,7 +17,7 @@
     <label for="user_id" class="col-form-label text-md-right"
            :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.featured-project.columns.user_id') }}</label>
     <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <multiselect v-model="user" label="name" :options="{{ \App\Models\User::all()->toJson() }}"
+        <multiselect v-model="user" label="name" :options="{{ \App\Models\User::all()->toJson() }}" multiple
                      track-by="id" placeholder="Select a student" :searchable="true"></multiselect>
         <div v-if="errors.has('user_id')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('user_id')
             }}

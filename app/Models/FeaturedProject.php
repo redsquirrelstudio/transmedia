@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\MediaLibrary\HasMedia;
 use Brackets\Media\HasMedia\AutoProcessMediaTrait;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
@@ -23,7 +24,6 @@ class FeaturedProject extends Model implements HasMedia
 
     protected $fillable = [
         'title',
-        'user_id',
         'description',
         'youtube_url',
     ];
@@ -34,15 +34,11 @@ class FeaturedProject extends Model implements HasMedia
         'updated_at',
     ];
 
-    protected $casts = [
-        'user_id'
-    ];
-
     protected $appends = ['resource_url', 'banner_media', 'thumbnail_media'];
 
-    public function user(): BelongsTo
+    public function user(): BelongsToMany
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'featured_project_user');
     }
 
     /* ************************ ACCESSOR ************************* */
