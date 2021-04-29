@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,12 @@ Route::group(['prefix' => 'students'], function () {
 
     Route::get('/course/{course_slug}', [StudentController::class, 'students_course'])->name('students.course');
     Route::get('/course/{course_slug}/year/{year}', [StudentController::class, 'students_year'])->name('students.year');
+});
+
+Route::group(['prefix' => 'projects'], function() {
+   Route::get('/', [ProjectController::class, 'index'])->name('projects.index');
+    Route::get('/{project_id}', [ProjectController::class, 'single'])->name('projects.single');
+
 });
 
 

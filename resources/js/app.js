@@ -18,6 +18,7 @@ import FloatInput from "./components/animations/FloatInput";
 import HeroSlider from "./components/sliders/HeroSlider";
 import StudentSlider from "./components/sliders/StudentSlider";
 import ProjectSlider from "./components/sliders/ProjectSlider";
+import ThumbnailSlider from "./components/sliders/ThumbnailSlider";
 
 Vue.use(VueObserveVisibility);
 Vue.use(VueLazyload, {
@@ -55,8 +56,10 @@ const app = new Vue({
         HeroSlider,
         StudentSlider,
         ProjectSlider,
+        ThumbnailSlider,
         Animated,
         HoverIcon,
         FloatInput,
+
     }
 });

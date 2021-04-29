@@ -35,6 +35,11 @@
             margin: 4rem 0 0 0;
             padding: 0 0 0 5rem;
 
+            p{
+                color: $col-white;
+                font-size: 1.5rem;
+                margin-top: 2rem;
+            }
             h2{
                 width: 100%;
                 color: $col-white;
@@ -61,6 +66,15 @@
                 font-weight: normal;
                 color: $col-white;
                 text-transform: uppercase;
+                a{
+                    color: $col-white;
+                    text-decoration: none;
+                    transition: 0.2s;
+                    &:hover{
+                        text-decoration: underline;
+                        transition: 0.2s;
+                    }
+                }
                 select{
                     margin-top: 1rem;
                     font-size: 1.5rem;

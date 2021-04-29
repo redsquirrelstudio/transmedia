@@ -14,8 +14,8 @@
                 About
             </a>
         </li>
-        <li>
-            <a href="">
+        <li @if(request()->route()->getPrefix() === '/projects') class="active" @endif>
+            <a href="{{ url('/projects') }}">
                 2021 Projects
             </a>
         </li>

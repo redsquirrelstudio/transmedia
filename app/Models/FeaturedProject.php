@@ -56,7 +56,7 @@ class FeaturedProject extends Model implements HasMedia
 
     public function getThumbnailMediaAttribute(): array
     {
-        $thumbs = $this->getMedia('thumbnails');#
+        $thumbs = $this->getMedia('thumbnails');
         $urls = [];
         foreach($thumbs as $thumb){
             $urls[] = $thumb->getFullUrl();
