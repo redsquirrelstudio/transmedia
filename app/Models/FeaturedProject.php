@@ -34,7 +34,7 @@ class FeaturedProject extends Model implements HasMedia
         'updated_at',
     ];
 
-    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media'];
+    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media', 'user'];
 
     public function user(): BelongsToMany
     {

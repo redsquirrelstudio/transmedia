@@ -8,7 +8,7 @@
         <div class="card">
             <featured-project-form
                 :action="'{{ $featuredProject->resource_url }}'"
-                :data="{{ $featuredProject->with('user')->toJson() }}"
+                :data="{{ $featuredProject }}"
                 v-cloak
                 inline-template>
 
