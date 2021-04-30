@@ -48,10 +48,13 @@ class FeaturedProject extends Model implements HasMedia
         return url('/admin/featured-projects/' . $this->getKey());
     }
 
-    public function getBannerMediaAttribute(): string
+    public function getBannerMediaAttribute(): ?string
     {
         $banners = $this->getMedia('banners');
-        return $banners[0]->getFullUrl();
+        if($banners->count() > 0){
+            return $banners[0]->getFullUrl();
+        }
+        return null;
     }
 
     public function getThumbnailMediaAttribute(): array
