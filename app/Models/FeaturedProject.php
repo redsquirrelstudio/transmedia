@@ -49,7 +49,7 @@ class FeaturedProject extends Model implements HasMedia
     }
 
     public function getUserAttribute(){
-        return $this->user;
+        return $this->user();
     }
 
     public function getBannerMediaAttribute(): ?string
