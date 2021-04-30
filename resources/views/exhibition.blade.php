@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<exhibition model-path="{{ asset('/models') }}"></exhibition>
+    <div class="screen-block">
+        <iframe width="100%" height="100%" allowfullscreen frameborder="0"
+                src=https://orbix360.com/t/DxXXaKtkIkOYXUZApdVHCngHCrA2/5291128492392448/virtual-exhibition?embed=yes">
+        </iframe>
+    </div>
 @endsection

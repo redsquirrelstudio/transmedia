@@ -7,13 +7,13 @@
             <a href="{{ url('/') }}">
                 Home
             </a>
-            <a href="">
+            <a href="{{ url('/about') }}">
                 About
             </a>
-            <a href="">
+            <a href="{{ url('/projects') }}">
                 Projects
             </a>
-            <a href="">
+            <a href="{{ url('/students') }}">
                 Students
             </a>
             <a href="">

@@ -24,8 +24,8 @@
                 Students
             </a>
         </li>
-        <li>
-            <a href="">
+        <li @if(request()->routeIs('page.exhibition')) class="active" @endif>
+            <a href="{{ url('/exhibition') }}">
                 Virtual Exhibition
             </a>
         </li>
