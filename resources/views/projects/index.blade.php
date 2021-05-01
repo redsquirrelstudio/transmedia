@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <hero-slider :slides="{{ json_encode($slides) }}"></hero-slider>
     <div class="screen-block">
+        <img class="wave-top" src="{{ asset('/images/wave_top.svg') }}" alt="wave">
         <div class="students-header">
             <h4>
                 Digital Media Design, Development, 3D and CAD
