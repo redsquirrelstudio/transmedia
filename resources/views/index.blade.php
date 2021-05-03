@@ -30,12 +30,12 @@
             },
             {
             id: 3,
-            title: 'Virtual Exhibition',
-            subtitle: 'Our Hall Of Fame',
+            title: 'Transmedia Exhibition',
+            subtitle: `View Student's work between from 06/05/2021 - 05/06/2021`,
             link_text: 'Get Started',
-            link_href: '/',
-            src: 'https://source.unsplash.com/random',
-            type: 'image',
+            link_href: '{{ url('/students') }}',
+            src: '{{ asset('/video/westdowns.mp4') }}',
+            type: 'video',
             }
             ]"></hero-slider>
     @endif
