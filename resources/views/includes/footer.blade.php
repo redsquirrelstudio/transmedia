@@ -16,9 +16,6 @@
             <a href="{{ url('/students') }}">
                 Students
             </a>
-            <a href="">
-                MERCHANDISE
-            </a>
             @if(Options::get('student-login'))
                 @auth
                     <a href="{{ url('/logout') }}">
@@ -32,7 +29,7 @@
             @endif
         </div>
         <div class="footer-links">
-            <a href="">
+            <a href="mailto:info@transmediawinchester.co.uk">
                 Contact Us
             </a>
             <div class="with-header">

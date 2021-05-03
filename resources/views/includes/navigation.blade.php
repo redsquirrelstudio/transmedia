@@ -39,12 +39,7 @@
             </li>
         @endauth
         <li>
-            <a href="">
-                Shop
-            </a>
-        </li>
-        <li>
-            <a href="">
+            <a href="mailto:info@transmediawinchester.co.uk">
                 Contact
             </a>
         </li>
