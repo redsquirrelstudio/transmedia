@@ -138,12 +138,11 @@
 
 .course-block{
     display: flex;
-    justify-content: space-between;
     padding: 10rem 5rem;
     flex-wrap: wrap;
     .course{
         padding: 0 4rem;
-        max-width: 25%;
+        max-width: 33%;
         h4{
             font-weight: lighter;
             text-transform: uppercase;
@@ -152,7 +151,7 @@
         h2{
             text-transform: uppercase;
             color: $col-white;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
         }
         p{

@@ -93,11 +93,11 @@
                 </div>
                 <div class="carousel-container">
                     <div class="filters">
-                        <h2>Digital Media Department</h2>
+                        <h2>Digital Media Courses</h2>
                         <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
                         <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
-                        <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Designers</a>
-                        <a href="{{ route('students.course', '3d-devs') }}">3D Environments Developers</a>
+                        <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Design</a>
+                        <a href="{{ route('students.course', '3d-devs') }}">3D Environments Development</a>
                         <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                         <a href="{{ route('students.index') }}" class="btn-c2a">
                             View All
@@ -116,65 +116,68 @@
     <div class="screen-block">
         <div class="course-block scroll-anchor">
             <div class="course">
-                <h4>Digital Media Department</h4>
+                <h4>Digital Media Courses</h4>
                 <h2>Designers</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente! <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente!
+                    Our BA (Hons) Digital Media Design programme has been running since its validation in 2007,
+                    gaining in popularity with a growing student cohort for areas such as graphic design, app and
+                    web design, UX/UI and Design Thinking, game/interaction design, VR and AR interface design...
                 </p>
-                <a href="" class="btn-c2a">
+                <a href="{{ url('/about#design') }}" class="btn-c2a">
                     Find Out More
                 </a>
             </div>
             <div class="course">
-                <h4>Digital Media Department</h4>
+                <h4>Digital Media Courses</h4>
                 <h2>Developers</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente! <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente!
+                    Our BSc (Hons) Digital Media Development programme has also been running since its validation in
+                    2007, usually a smaller cohort than designers but just as important for areas such as app and
+                    web development, UX/UI and Design Thinking, game/interaction development, VR and AR development...
                 </p>
-                <a href="" class="btn-c2a">
+                <a href="{{ url('/about#development') }}" class="btn-c2a">
                     Find Out More
                 </a>
             </div>
             <div class="course">
-                <h4>Digital Media Department</h4>
-                <h2>3D</h2>
+                <h4>Digital Media Courses</h4>
+                <h2>3D Visualisation</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente! <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente!
+                    Our BA (Hons) Digital Media Design in 3D Visualisation programme is a new programme now in its
+                    3rd year. In 3D Vis, we learn how to model in 3D for creating models, visualisations,
+                    characters, 3D printing assets for many areas such as AR, VR, game, animations, advertising, and
+                    product visuals...
                 </p>
-                <a href="" class="btn-c2a">
+                <a href="{{ url('/about#3dvis') }}" class="btn-c2a">
                     Find Out More
                 </a>
             </div>
             <div class="course">
-                <h4>Digital Media Department</h4>
+                <h4>Digital Media Courses</h4>
+                <h2>3d Environments</h2>
+                <p>
+                    Our BSc (Hons) Digital Media Development in 3D Environments (Game & Heritage programme is also a
+                    new programme now in its 3rd year. In 3D Environments, we also learn how to model in 3D for
+                    creating models and environments and learn how to use Unity and/or Unreal to create Environments
+                    for use in Game or Heritage applications...
+                </p>
+                <a href="{{ url('/about#3denvironments') }}" class="btn-c2a">
+                    Find Out More
+                </a>
+            </div>
+            <div class="course">
+                <h4>Digital Media Courses</h4>
                 <h2>CAD</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente! <br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at in nobis totam? In minima,
-                    quidem. Architecto at beatae consectetur deleniti facilis fugit maiores minus numquam quasi,
-                    quibusdam quo sapiente!
+                    The BSc (Hons) Computer Aided Design programme is a reasonably new programme, validated as part
+                    of our suite of programmes in 2018. This year is therefore the first in having a cohort in all
+                    three years...
                 </p>
-                <a href="" class="btn-c2a">
+                <a href="{{ url('/about#cad') }}" class="btn-c2a">
                     Find Out More
                 </a>
             </div>
+
         </div>
     </div>
     <div class="screen-block scroll-anchor">
@@ -184,11 +187,11 @@
             </div>
             <div class="carousel-container">
                 <div class="filters">
-                    <h2>Digital Media Department</h2>
+                    <h2>Digital Media Courses</h2>
                     <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
                     <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
-                    <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Designers</a>
-                    <a href="{{ route('students.course', '3d-devs') }}">3D Environments Developers</a>
+                    <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Design</a>
+                    <a href="{{ route('students.course', '3d-devs') }}">3D Environments Development</a>
                     <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                     <a href="{{ route('students.index') }}" class="btn-c2a">
                         View All

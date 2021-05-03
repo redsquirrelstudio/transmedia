@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="about-split-block">
+    <div class="about-split-block" id="design">
         <div class="split-section light">
             <div class="logo-container">
                 <img class="logo" src="{{ asset('/images/design_logo.png') }}" alt="Designers">
@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="about-split-block">
+    <div class="about-split-block" id="development">
         <div class="split-section">
             <div class="indented">
                 <hr class="right">
@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-    <div class="about-split-block">
+    <div class="about-split-block" id="cad">
         <div class="split-section light">
             <div class="logo-container">
                 <img class="logo" src="{{ asset('/images/cad_logo.png') }}" alt="CAD">
@@ -160,7 +160,7 @@
             </div>
         </div>
     </div>
-    <div class="about-split-block">
+    <div class="about-split-block" id="3dvis">
         <div class="split-section">
             <div class="indented">
                 <hr class="right">
@@ -194,7 +194,7 @@
             </div>
         </div>
     </div>
-    <div class="about-split-block">
+    <div class="about-split-block" id="3denvironments">
         <div class="split-section light">
             <div class="logo-container">
                 <img class="logo" src="{{ asset('/images/enviro_logo.png') }}" alt="3D environments">
