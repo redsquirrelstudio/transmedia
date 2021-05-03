@@ -10,20 +10,7 @@ class ProjectController extends Controller
 {
     public function index(): View
     {
-        $projects = FeaturedProject::inRandomOrder();
-        $slides = [];
-        foreach($projects->take(5)->get() as $project){
-            $slides[] = [
-                'id' => $project->id,
-                'title' => $project->title,
-                'link_text' => 'Read More',
-                'link_href' => route('projects.single', $project->id),
-                'src' => $project->banner_media,
-                'type' => 'image'
-            ];
-        }
-
-        return view('projects.index', ['projects' => $projects->get(), 'slides' => $slides]);
+        return view('projects.index', ['projects' => FeaturedProject::orderBy('created_at', 'desc')->get()]);
     }
 
     public function single(int $project_id): View
