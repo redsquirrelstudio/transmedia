@@ -21,6 +21,13 @@
                     </a>
                 @endforeach
             </div>
+            <p class="centered-text">
+                These are our favourite projects of the year but there is much more to see! <br>
+                Meet the rest of our students and view their work using the link below. <br>
+                <a href="{{ url('/students') }}" class="btn-c2a">
+                    Meet our Students
+                </a>
+            </p>
         </div>
     </div>
 @endsection
