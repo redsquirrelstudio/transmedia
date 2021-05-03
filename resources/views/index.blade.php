@@ -31,7 +31,7 @@
             {
             id: 3,
             title: 'Transmedia Exhibition',
-            subtitle: `View Student's work between from 06/05/2021 - 05/06/2021`,
+            subtitle: `View Student's work from 6th May to 5th June`,
             link_text: 'Get Started',
             link_href: '{{ url('/students') }}',
             src: '{{ asset('/video/westdowns.mp4') }}',
