@@ -68,8 +68,11 @@
     </div>
     <div class="about-split-block">
         <div class="split-section light">
-            <div class="logo-small-container">
-                <img class="logo-small" src="{{ asset('/images/design_logo.png') }}" alt="Designers">
+            <div class="logo-container">
+                <img class="logo" src="{{ asset('/images/design_logo.png') }}" alt="Designers">
+                <p class="caption">
+                    Particuless by <a href="{{ url('students/26') }}">Maia McGhee</a>
+                </p>
             </div>
         </div>
         <div class="split-section">
@@ -117,15 +120,21 @@
             </div>
         </div>
         <div class="split-section brand">
-            <div class="logo-small-container">
-                <img class="logo-small" src="{{ asset('/images/dev_logo.png') }}" alt="Developers">
+            <div class="logo-container">
+                <img class="logo" src="{{ asset('/images/dev_logo.png') }}" alt="Developers">
+                <p class="caption">
+                    Transform Aboriculture by <a href="{{ url('students/13') }}">Simon Wesley Jr</a>
+                </p>
             </div>
         </div>
     </div>
     <div class="about-split-block">
         <div class="split-section light">
-            <div class="logo-small-container">
-                <img class="logo-small" src="{{ asset('/images/cad_logo.png') }}" alt="CAD">
+            <div class="logo-container">
+                <img class="logo" src="{{ asset('/images/cad_logo.png') }}" alt="CAD">
+                <p class="caption">
+                    Woodland Residence by <a href="{{ url('students/15') }}">Matt Nugent</a>
+                </p>
             </div>
         </div>
         <div class="split-section">
@@ -170,21 +179,28 @@
                         assessed via our online portfolios, building on this each year to produce a valuable
                         professional portfolio for future employers.
                     </p>
-                    <a class="btn-c2a" href="{{ route('students.course', '3d-artists') }}">Meet our 3D Visualisation
-                        Designers </a>
+                    <a class="btn-c2a" href="{{ route('students.course', '3d-artists') }}">
+                        Meet our 3D Visualisation Designers
+                    </a>
                 </div>
             </div>
         </div>
         <div class="split-section brand">
-            <div class="logo-small-container">
-                <img class="logo-small" src="{{ asset('/images/threed_logo.png') }}" alt="3D">
+            <div class="logo-container">
+                <img class="logo" src="{{ asset('/images/threed_logo.png') }}" alt="3D">
+                <p class="caption">
+                    MiMals by <a href="{{ url('students/19') }}">Cherry Hau</a>
+                </p>
             </div>
         </div>
     </div>
     <div class="about-split-block">
         <div class="split-section light">
-            <div class="logo-small-container">
-                <img class="logo-small" src="{{ asset('/images/cad_logo.png') }}" alt="CAD">
+            <div class="logo-container">
+                <img class="logo" src="{{ asset('/images/enviro_logo.png') }}" alt="3D environments">
+                <p class="caption">
+                    Vacuum Van by <a href="{{ url('students/24') }}">Anna McGurk</a>
+                </p>
             </div>
         </div>
         <div class="split-section">
