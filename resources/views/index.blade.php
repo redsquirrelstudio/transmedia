@@ -32,7 +32,7 @@
             id: 3,
             title: 'Transmedia Exhibition',
             subtitle: `View Student's work from 6th May to 5th June`,
-            link_text: 'Get Started',
+            link_text: 'View The Students',
             link_href: '{{ url('/students') }}',
             src: '{{ asset('/video/westdowns.mp4') }}',
             type: 'video',
@@ -96,7 +96,8 @@
                         <h2>Digital Media Department</h2>
                         <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
                         <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
-                        <a href="{{ route('students.course', '3d-artists') }}">3D Environments and Visualisation</a>
+                        <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Designers</a>
+                        <a href="{{ route('students.course', '3d-devs') }}">3D Environments Developers</a>
                         <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                         <a href="{{ route('students.index') }}" class="btn-c2a">
                             View All
@@ -186,7 +187,8 @@
                     <h2>Digital Media Department</h2>
                     <a href="{{ route('students.course', 'designers') }}">Digital Media Design</a>
                     <a href="{{ route('students.course', 'developers') }}">Digital Media Development</a>
-                    <a href="{{ route('students.course', '3d-artists') }}">3D Environments and Visualisation</a>
+                    <a href="{{ route('students.course', '3d-artists') }}">3D Visualisation Designers</a>
+                    <a href="{{ route('students.course', '3d-devs') }}">3D Environments Developers</a>
                     <a href="{{ route('students.course', 'cad') }}">Computer Aided Design</a>
                     <a href="{{ route('students.index') }}" class="btn-c2a">
                         View All
