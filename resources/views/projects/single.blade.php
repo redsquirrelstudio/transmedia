@@ -27,6 +27,14 @@
                 </div>
             </div>
         </div>
+        @if($project->video_id)
+            <div class="screen-block">
+                <iframe width="100%" height="100%" style="width: 100%; height: 100vh; padding: 10rem 10rem 0 10rem;"
+                        src="https://www.youtube.com/embed/{{ $project->video_id }}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        @endif
         <div class="screen-block">
             <div class="students-header">
                 <h4>{{ $project->title }}</h4>
@@ -35,7 +43,8 @@
                     @foreach($project->user as $key => $student)
                         <a href="{{ route('students.student', $student->id) }}" class="block-link">
                             @if($student->page->avatar_image)
-                                <img v-lazy="'{{ $student->page->avatar_image->file_url }}'" alt="{{ $student->name }} avatar">
+                                <img v-lazy="'{{ $student->page->avatar_image->file_url }}'"
+                                     alt="{{ $student->name }} avatar">
                             @else
                                 <img src="{{ asset('/images/avatar_default.jpg') }}" alt="{{ $student->name }} avatar">
                             @endif

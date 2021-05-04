@@ -34,7 +34,7 @@ class FeaturedProject extends Model implements HasMedia
         'updated_at',
     ];
 
-    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media', 'user'];
+    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media', 'user', 'video_id'];
 
     public function user(): BelongsToMany
     {
@@ -69,6 +69,16 @@ class FeaturedProject extends Model implements HasMedia
             $urls[] = $thumb->getFullUrl();
         }
         return $urls;
+    }
+
+    public function getVideoIdAttribute(): ?string
+    {
+        if($this->youtube_url){
+            $parts = parse_url($this->youtube_url);
+            parse_str($parts['query'], $query);
+            return isset($query['v']) ? $query['v'] : null;
+        }
+        return null;
     }
 
     public function registerMediaCollections(): void
