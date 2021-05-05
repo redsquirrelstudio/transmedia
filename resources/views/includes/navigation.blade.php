@@ -29,6 +29,11 @@
                 Virtual Exhibition
             </a>
         </li>
+        <li @if(request()->routeIs('page.schedule')) class="active" @endif>
+            <a href="{{ url('/schedule') }}">
+                Pitch Your Project
+            </a>
+        </li>
     </ul>
     <ul class="navbar-items right">
         @auth
