@@ -1,6 +1,6 @@
 <template>
-    <div>
-
+    <div class="mobile-nav">
+        <slot name="content"></slot>
     </div>
 </template>
 
@@ -9,7 +9,3 @@ export default {
     name: "MobileNavbar"
 }
 </script>
-
-<style scoped>
-
-</style>

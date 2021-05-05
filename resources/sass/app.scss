@@ -125,22 +125,23 @@ p{
         background-color: $col-brand;
     }
 
-    .wave-bottom{
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 100%;
-        z-index: -1;
-        transition: 0.2s;
-    }
-    .wave-top{
-        position: absolute;
-        left: 0;
-        top: -2px;
-        width: 100%;
-        z-index: -1;
-        transition: 0.2s;
-    }
+}
+
+.wave-bottom{
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    z-index: -1;
+    transition: 0.2s;
+}
+.wave-top{
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 100%;
+    z-index: -1;
+    transition: 0.2s;
 }
 
 .tinted{
