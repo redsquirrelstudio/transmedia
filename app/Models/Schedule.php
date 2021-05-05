@@ -32,6 +32,6 @@ class Schedule extends Model
     }
 
     public function getFormattedDateAttribute(){
-        return \Carbon\Carbon::parse($this->datetime)->addHour()->format('d/m/Y - H:i');
+        return \Carbon\Carbon::parse($this->datetime)->format('d/m/Y - H:i');
     }
 }
