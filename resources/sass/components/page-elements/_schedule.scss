@@ -38,6 +38,13 @@
 @media only screen and (max-width: 1100px) {
     .schedule-heading{
         padding: 5rem 1rem 2rem 1rem;
+        h1{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1rem;
+            max-width: 100%;
+        }
     }
     .schedule {
         padding: 0 1rem;
