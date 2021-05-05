@@ -27,12 +27,17 @@
                 </div>
             </div>
         </div>
-        @if($project->video_id)
+        @if($project->video_platform === 'youtube')
             <div class="screen-block">
                 <iframe width="100%" height="100%" style="width: 100%; height: 100vh; padding: 10rem 10rem 0 10rem;"
                         src="https://www.youtube.com/embed/{{ $project->video_id }}" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
+            </div>
+        @elseif($project->video_platform === 'vimeo')
+            <div class="screen-block">
+                <iframe src="https://player.vimeo.com/video/{{ $project->video_id }}" width="100%" height="100%" style="width: 100%; height: 100vh; padding: 10rem 10rem 0 10rem;" frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         @endif
         <div class="screen-block">

@@ -34,7 +34,7 @@ class FeaturedProject extends Model implements HasMedia
         'updated_at',
     ];
 
-    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media', 'user', 'video_id'];
+    protected $appends = ['resource_url', 'banner_media', 'thumbnail_media', 'user', 'video_id', 'video_platform'];
 
     public function user(): BelongsToMany
     {
@@ -71,15 +71,36 @@ class FeaturedProject extends Model implements HasMedia
         return $urls;
     }
 
+    public function getVideoPlatformAttribute(): ?string
+    {
+        if ($this->youtube_url == null){
+            return null;
+        }
+        if (str_contains($this->youtube_url, 'youtube')){
+            return 'youtube';
+        }
+        else if(str_contains($this->youtube_url, 'vimeo')){
+            return 'vimeo';
+        }
+        else{
+            return null;
+        }
+    }
+
     public function getVideoIdAttribute(): ?string
     {
-        if($this->youtube_url){
+        $type = $this->getVideoPlatformAttribute();
+        if($type === 'youtube'){
             $parts = parse_url($this->youtube_url);
             parse_str($parts['query'], $query);
             return isset($query['v']) ? $query['v'] : null;
         }
+        else if($type === 'vimeo'){
+            return str_replace('https://vimeo.com/', '', $this->youtube_url);
+        }
         return null;
     }
+
 
     public function registerMediaCollections(): void
     {
