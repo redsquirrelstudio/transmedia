@@ -101,5 +101,22 @@ return [
         ],
     ],
 
+    'schedule' => [
+        'title' => 'Schedule',
+
+        'actions' => [
+            'index' => 'Schedule',
+            'create' => 'New Schedule',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'datetime' => 'Date and time',
+            'description' => 'Description',
+
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

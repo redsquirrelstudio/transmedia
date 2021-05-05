@@ -51,3 +51,14 @@ $factory->define(App\Models\FeaturedProject::class, static function (Faker\Gener
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Schedule::class, static function (Faker\Generator $faker) {
+    return [
+        'datetime' => $faker->dateTime,
+        'description' => $faker->text(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

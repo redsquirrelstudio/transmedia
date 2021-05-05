@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FeaturedProject;
+use App\Models\Schedule;
 use Illuminate\Contracts\View\View;
 use App\Models\Course;
 use App\Models\User;
@@ -31,7 +32,7 @@ class PageController extends Controller
 
     public function schedule(): View
     {
-        return view('schedule');
+        return view('schedule', ['schedule' => Schedule::orderBy('datetime', 'asc')->get()]);
     }
 
     public function register(): View

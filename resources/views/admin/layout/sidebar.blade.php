@@ -10,7 +10,8 @@
                         class="nav-icon icon-people"></i> {{ trans('admin.user.title') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('admin/featured-projects') }}"><i
                         class="nav-icon icon-star"></i> {{ trans('admin.featured-project.title') }}</a></li>
-            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
+            <li class="nav-item"><a class="nav-link" href="{{ url('admin/schedules') }}"><i class="nav-icon icon-calendar"></i> {{ trans('admin.schedule.title') }}</a></li>
+           {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.settings') }}</li>
             <li class="nav-item"><a class="nav-link" href="{{ url('admin/admin-users') }}"><i

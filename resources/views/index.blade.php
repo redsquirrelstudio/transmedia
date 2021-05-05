@@ -64,7 +64,7 @@
                         judges in ‘Pitch Your Project’, via Teams. There will be two awards the 3rd years will be
                         competing for: ‘The Best Pitch 2021’ and ‘The Most Commercially Viable Business Idea 2021’. <br><br>
                     </p>
-                    <a href="" class="btn-c2a">
+                    <a href="{{ url('/about') }}" class="btn-c2a">
                         Find Out More
                     </a>
                 </div>
