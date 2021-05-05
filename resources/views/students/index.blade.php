@@ -114,7 +114,6 @@
                     <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 1]) }}">Year One</a>
                     <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 2]) }}">Year Two</a>
                     <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 3]) }}">Year Three</a>
-                    <a href="{{ route('students.year', ['course_slug' => '3d-artists', 'year' => 4]) }}">MA</a>
                     <a href="{{ route('students.course', '3d-artists') }}" class="btn-c2a">
                         View All
                     </a>
