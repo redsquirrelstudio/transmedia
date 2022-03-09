@@ -5,95 +5,81 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Transmedia 2021</title>
+    <title>Transmedia 2022</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800;900&&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<div class="landing scroll-container" id="app">
-    <div class="video-container">
-        @if(Options::get('student-login'))
-            @auth
-                <a href="{{ route('auth.logout') }}" class="student-login">
-                    LOGOUT
-                </a>
-            @else
-                <a href="{{ route('page.login') }}" class="student-login">
-                    STUDENT LOGIN
-                </a>
-            @endif
-        @endif
 
-        <video autoplay muted loop class="video-background">
-            <source src="{{ asset('/video/transmedia_square.mp4') }}" type="video/mp4">
-        </video>
-        <div class="video-title">
-            <h4>
-                Student Virtual Exhibition
-            </h4>
-            <h2>
-                Transmedia
-            </h2>
-            <h3>
-                {{ date('Y') }}
-            </h3>
-        </div>
+<main class="landing-page">
+{{--    @include('components/landing/video')--}}
+
+    <div class="graphic-left">
+        @include('components/landing/left-graphic')
     </div>
-    <div class="block bordered">
-        <div class="flex-container">
-            <div class="half">
-                <div class="image-circle">
-                    <img src="{{ asset('/images/west_downs_birdseye.jpg') }}" alt="">
-                </div>
+    <div class="graphic-right">
+        @include('components/landing/right-graphic')
+    </div>
+
+    @php
+        $days_remaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse('12-05-2022'));
+        if ($days_remaining < 10){
+            $days_remaining = '0'.$days_remaining;
+        }
+        else{
+            $days_remaining = (string)($days_remaining);
+        }
+    @endphp
+
+    <div class="countdown bounces">
+        <div class="days">
+            <div class="number bounces">
+                {{ $days_remaining[0] }}
             </div>
-            <div class="half padded-right">
-                <h2>The Digital Media Department, <br> University of Winchester</h2>
-                <p>
-                    The Transmedia Exhibition is our annual End of Year Exhibition, covering all of our Digital Media
-                    programmes, our platform to showcase our best work.
-                </p>
-                <p>
-                    Please join us on the 6th May 2021, when we can proudly introduce you to our amazing virtual gallery
-                    and our individual student portfolios which will be found on this website.
-                </p>
-                <p>
-                    You will also be able to watch our 3rd year cohort present their business ideas to a panel of judges
-                    in ‘Pitch Your Project’, via Teams. There will be two awards the 3rd years will be competing for:
-                    ‘The Best Pitch 2021’ and ‘The Most Commercially Viable Business Idea 2021’.
-                </p>
+            <div class="number bounces">
+                {{ $days_remaining[1] }}
             </div>
         </div>
+        <h3 class="label">
+            Days
+        </h3>
     </div>
-    <div class="block light bordered">
-        <div class="flex-container">
-            <div class="half padded-left">
-                <h2>
-                    Join the DMD community <br>mailing list!
-                </h2>
-                <p>
-                    We'll share <strong>Transmedia Event & Pitch your project</strong> info if you sign up!
-                </p>
-                <p>
-                    DON'T BE A SQUARE - BE A BILLIONAIRE! <br>
-                    <small>In terms of Transmedia knowledge anyway.</small>
-                </p>
-                <mail-form api-url="{{ route('newsletter.subscribe') }}"></mail-form>
-            </div>
-            <div class="half">
-                <div class="robot">
-                    <img src="{{ asset('/images/robot_outline.png') }}" alt="Transmedia Robot">
-                </div>
-            </div>
+
+    <div class="content">
+        <div>
+            <h1 class="bounces">Transmedia {{ date('Y') }}</h1>
+            <p class="bounces">
+                The Digital Media Courses' Student Exhibition
+            </p>
+            <a class="bounces" target="_blank" href="https://www.google.com/maps/place/The+University+of+Winchester,+West+Downs+Campus/@51.0622172,-1.3347646,17z/data=!3m1!4b1!4m5!3m4!1s0x48740d960a41ad79:0x23add09b67197561!8m2!3d51.0622172!4d-1.3325759">
+                Come see us at the University of <br> Winchester, West Downs Center <br>
+                <i class="fa-solid fa-location-dot"></i>
+            </a>
         </div>
     </div>
-    <div class="block bordered">
-        <countdown start-time="{{ date('M j, Y H:m:s') }}"
-                   end-time="{{ date('M j, Y H:m:s', strtotime('06-05-2021 10:00:00')) }}"></countdown>
+
+    <div class="socials">
+{{--        <a href="">--}}
+{{--            <i class="fa-brands fa-facebook-f"></i>--}}
+{{--        </a>--}}
+        <a href="https://www.instagram.com/transmedia.winchester/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+{{--        <a href="">--}}
+{{--            <i class="fa-brands fa-linkedin-in"></i>--}}
+{{--        </a>--}}
     </div>
-</div>
-<script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
+</main>
+
+<script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+<script>
+    new Vivus('left-graphic', {duration: 200}).play();
+    new Vivus('right-graphic', {duration: 200}).play();
+</script>
+
 </body>
 </html>

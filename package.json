@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
-        "watch": "ENV_FILE=./.env mix watch",
+        "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "ENV_FILE=./.env.production npm run production",
@@ -20,7 +20,7 @@
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.32.6",
         "sass-loader": "^8.0.2",
-        "vue-loader": "15.9.5",
+        "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
