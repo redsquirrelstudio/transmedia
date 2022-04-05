@@ -1,0 +1,97 @@
+.navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $red;
+    color: $white;
+    padding: 0.5rem 0;
+    height: 55px;
+    z-index: 3;
+
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-brand{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+
+        a{
+            color: $white;
+            text-decoration: none;
+        }
+        h1{
+            color: $white;
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-left: 1rem;
+
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.nav-menu{
+    position: absolute;
+    top: 55px;
+    height: calc(100vh - 55px);
+    width: 100vw;
+    background-color: $red;
+    padding: 4rem 0;
+    transition: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+
+    &.enter-start, &.leave-end{
+        transform: translate(0, -100%);
+    }
+
+    &.enter-end, &.leave-start{
+        transform: translate(0, 0);
+    }
+
+    .link-1{
+        font-size: 7rem;
+        color: $white;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    .link-2{
+        font-size: 4rem;
+        color: $white;
+        font-weight: normal;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .link-3{
+        font-size: 12rem;
+        color: $white;
+        font-weight: bold;
+        text-decoration: none;
+
+    }
+
+    .link-4{
+        font-size: 6rem;
+        color: $white;
+        font-weight: 300;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 6rem;
+    }
+
+    .link-5{
+        font-size: 10rem;
+        color: $white;
+        font-weight: normal;
+        text-decoration: none;
+    }
+}

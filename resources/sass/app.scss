@@ -1,274 +1,36 @@
+//Global
 @import 'variables';
 
-* {
-    font-family: 'Montserrat', sans-serif;
+*{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
-.splash{
-    position: fixed;
-    left: 0;
-    top: 0;
+[x-cloak] { display: none !important; }
+
+.site-container{
     width: 100vw;
-    height: 100vh;
-}
-
-.landing-page {
-    background-color: $col-white;
     min-height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-
-    .graphic-left {
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 100vh;
-        transform: scale(1.05);
-        transition: 0.2s;
-
-        svg {
-            height: 100%;
-        }
-
-        .date{
-            opacity: 0;
-            animation: fade-up 1s linear;
-            animation-delay: 1.5s;
-            animation-fill-mode: forwards;
-        }
-
-        @media only screen and (max-width: 1280px) {
-            height: 40vh;
-            transform: scale(1.1);
-            transition: 0.2s;
-        }
-    }
-
-    .graphic-right {
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        transform: scale(1.05);
-        transition: 0.2s;
-
-        svg {
-            height: 100%;
-        }
-
-        @media only screen and (max-width: 1280px) {
-            height: 40vh;
-            top: auto;
-            bottom: 0;
-            transform: scale(1.1);
-            transition: 0.2s;
-        }
-    }
-
-    .countdown {
-        position: absolute;
-        right: 15vw;
-        top: 5rem;
-        opacity: 0;
-        animation: fade-up 1s linear;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-        transition: 0.2s;
-
-        .days {
-            display: flex;
-
-            .number {
-                font-size: 6rem;
-                font-weight: 900;
-                padding: 0.2rem 1rem;
-                border: 1px solid $col-red-light;
-                border-radius: 10px;
-                color: $col-red;
-                margin: 0 0.2rem;
-                transition: 0.2s;
-            }
-        }
-
-        .label {
-            width: 100%;
-            text-align: right;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            font-weight: 500;
-            margin-top: 0.5rem;
-            padding-right: 1rem;
-            color: $col-red;
-            transition: 0.2s;
-        }
-
-
-        @media only screen and (max-width: 1280px) {
-            top: 1rem;
-            right: 5vw;
-            transition: 0.2s;
-
-
-            .days {
-                .number {
-                    font-size: 3rem;
-                    transition: 0.2s;
-                }
-            }
-
-            .label{
-                font-size: 1rem;
-                transition: 0.2s;
-            }
-
-        }
-    }
-
-    .socials{
-        position: fixed;
-        right: 8vw;
-        bottom: 2rem;
-        display: flex;
-        justify-content: center;
-
-        a{
-            opacity: 0;
-            display: block;
-            padding: 0.5rem 1rem;
-            font-size: 2rem;
-            border: 3px solid $col-red;
-            border-radius: 10px;
-            color: $col-red;
-            margin: 0 0.5rem;
-            animation: fade-up 0.2s linear;
-            animation-fill-mode: forwards;
-            transition: 0.2s;
-
-            &:hover{
-                border-radius: 50%;
-                background-color: $col-red;
-                color: $col-white;
-                transition: 0.2s;
-            }
-        }
-
-        a:nth-child(1){
-            animation-delay: 2s;
-        }
-
-        a:nth-child(2){
-            animation-delay: 2.2s;
-        }
-
-        a:nth-child(3){
-            animation-delay: 2.4s;
-        }
-
-        @media only screen and (max-width: 1280px) {
-            left: 2vw;
-            right: auto;
-            bottom: 1rem;
-            flex-direction: column;
-            transition: 0.2s;
-
-            a{
-                font-size: 2rem;
-                margin: 0.5rem 0;
-            }
-        }
-
-    }
-
-    .content {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-
-        div {
-            opacity: 0;
-            animation: fade-up 1s linear;
-            animation-delay: 1.5s;
-            animation-fill-mode: forwards;
-
-            h1 {
-                color: $col-red;
-                font-size: 3rem;
-            }
-
-            p {
-                color: $col-grey;
-                font-size: 1.5rem;
-                margin: 1.5rem 0;
-            }
-
-            a {
-                display: block;
-                color: $col-red;
-                text-decoration: none;
-                font-size: 1.5rem;
-                font-weight: 600;
-                transition: 0.2s;
-
-                i {
-                    margin-top: 1.5rem;
-                    font-size: 3rem;
-                }
-
-                &:hover {
-                    color: $col-grey;
-                    transition: 0.2s;
-                }
-            }
-        }
-
-        @media only screen and (max-width: 1280px) {
-            top: 55%;
-            div{
-                h1 {
-                    font-size: 2.5rem;
-                }
-
-                p {
-                    font-size: 1.2rem;
-                }
-
-                a{
-                    font-size: 1.2rem;
-                }
-            }
-        }
-
-    }
+    font-size: 16px;
 }
 
-.bounces{
-    transition: 0.2s;
-    &:hover{
-        cursor: default;
-        transform: translate(0, -5px);
-        padding-bottom: 5px;
-        transition: 0.2s;
-    }
+.container-fluid{
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }
 
-a.bounces {
-    &:hover{
-        cursor: pointer;
-    }
-}
 
-@keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translate(0, 5px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
+//Packages
+@import 'packages/bootstrap-grid';
+@import 'packages/hamburgers';
+
+//Components
+@import 'components/navbar';
+
+//Pages
+
+
+//Misc
