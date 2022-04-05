@@ -14,6 +14,7 @@ class CreateAdminActivationsTable extends Migration
     public function up(): void
     {
         Schema::create('admin_activations', static function (Blueprint $table) {
+            $table->id();
             $table->string('email')->index();
             $table->string('token');
             $table->boolean('used')->default(false);

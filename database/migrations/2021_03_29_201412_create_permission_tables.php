@@ -21,20 +21,25 @@ class CreatePermissionTables extends Migration
         }
 
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('guard_name');
+            $table->id();
+            $table->string('name');       // For MySQL 8.0 use string('name', 125);
+            $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
             $table->timestamps();
+
+            $table->unique(['name', 'guard_name']);
         });
 
         Schema::create($tableNames['roles'], function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('guard_name');
+            $table->id();
+            $table->string('name');       // For MySQL 8.0 use string('name', 125);
+            $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
             $table->timestamps();
+
+            $table->unique(['name', 'guard_name']);
         });
 
         Schema::create($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames) {
+            $table->id();
             $table->unsignedBigInteger('permission_id');
 
             $table->string('model_type');
@@ -45,12 +50,10 @@ class CreatePermissionTables extends Migration
                 ->references('id')
                 ->on($tableNames['permissions'])
                 ->onDelete('cascade');
-
-            $table->primary(['permission_id', $columnNames['model_morph_key'], 'model_type'],
-                    'model_has_permissions_permission_model_type_primary');
         });
 
         Schema::create($tableNames['model_has_roles'], function (Blueprint $table) use ($tableNames, $columnNames) {
+            $table->id();
             $table->unsignedBigInteger('role_id');
 
             $table->string('model_type');
@@ -62,11 +65,10 @@ class CreatePermissionTables extends Migration
                 ->on($tableNames['roles'])
                 ->onDelete('cascade');
 
-            $table->primary(['role_id', $columnNames['model_morph_key'], 'model_type'],
-                    'model_has_roles_role_model_type_primary');
         });
 
         Schema::create($tableNames['role_has_permissions'], function (Blueprint $table) use ($tableNames) {
+            $table->id();
             $table->unsignedBigInteger('permission_id');
             $table->unsignedBigInteger('role_id');
 
@@ -79,8 +81,6 @@ class CreatePermissionTables extends Migration
                 ->references('id')
                 ->on($tableNames['roles'])
                 ->onDelete('cascade');
-
-            $table->primary(['permission_id', 'role_id'], 'role_has_permissions_permission_id_role_id_primary');
         });
 
         app('cache')
