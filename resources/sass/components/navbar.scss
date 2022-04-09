@@ -7,7 +7,7 @@
     color: $white;
     padding: 0.5rem 0;
     height: 55px;
-    z-index: 3;
+    z-index: 10;
 
     ul{
         list-style: none;
@@ -46,7 +46,7 @@
     padding: 4rem 0;
     transition: 0.5s;
     animation-fill-mode: forwards;
-    z-index: 2;
+    z-index: 9;
 
     &.enter-start, &.leave-end{
         transform: translate(0, -100%);
