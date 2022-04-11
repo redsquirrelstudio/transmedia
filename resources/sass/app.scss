@@ -21,9 +21,9 @@
     padding-left: 2rem !important;
     padding-right: 2rem !important;
 }
-// Sinead styling
-.roundedimg {
-    border-radius: 30px;
+// Sinead starts styling here
+.orangeheadtext {
+    color: $orange;
 }
 .spacer {
     background-color: #000;
@@ -32,15 +32,78 @@
     margin: 1rem 0rem;
     margin-left: -1rem;
 }
+// Images
+.roundedimg {
+    border-radius: 30px;
+}
 // About
 .btn {
     padding: 0.8rem 4rem;
     border: 2px solid #000;
+    background: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn:hover {
+    padding: 0.8rem 4rem;
+    border: 2px solid $orange;
+    background: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $orange;
+}
+.redbtn {
+    padding: 0.8rem 4rem;
+    border: 2px solid $white;
+    background: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $white;
+}
+.redbtn:hover {
+    padding: 0.8rem 4rem;
+    border: 2px solid $white;
+    background: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $orange;
 }
 // Padding
 .padding30 {
     padding: 30px 0px;
 }
+.padding60 {
+    padding: 60px 0px;
+}
+// Ctas
+.redcta {
+    width: 100%;
+    color: #fff;
+    background-color: $red;
+    text-align:center;
+}
+.ctatext {
+    padding: 0px 20%;
+}
+// Lines
+img.linessvg {
+    position: absolute;
+    width: 100%;
+    z-index: -1000!important;
+}
+// Text
+p {
+    margin-top: 1rem!important;
+}
+.textpadding {
+    padding: 10rem 3rem;
+}
+
+//Misc
 
 //Packages
 @import 'packages/bootstrap-grid';
@@ -51,5 +114,6 @@
 
 //Pages
 @import 'about';
+@import 'schedule';
+@import 'student';
 
-//Misc

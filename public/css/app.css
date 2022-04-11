@@ -20,8 +20,8 @@
   padding-right: 2rem !important;
 }
 
-.roundedimg {
-  border-radius: 30px;
+.orangeheadtext {
+  color: #CF6F29;
 }
 
 .spacer {
@@ -32,13 +32,80 @@
   margin-left: -1rem;
 }
 
+.roundedimg {
+  border-radius: 30px;
+}
+
 .btn {
   padding: 0.8rem 4rem;
   border: 2px solid #000;
+  background: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  padding: 0.8rem 4rem;
+  border: 2px solid #CF6F29;
+  background: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #CF6F29;
+}
+
+.redbtn {
+  padding: 0.8rem 4rem;
+  border: 2px solid #FFF;
+  background: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFF;
+}
+
+.redbtn:hover {
+  padding: 0.8rem 4rem;
+  border: 2px solid #FFF;
+  background: #FFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #CF6F29;
 }
 
 .padding30 {
   padding: 30px 0px;
+}
+
+.padding60 {
+  padding: 60px 0px;
+}
+
+.redcta {
+  width: 100%;
+  color: #fff;
+  background-color: #BF2E2D;
+  text-align: center;
+}
+
+.ctatext {
+  padding: 0px 20%;
+}
+
+img.linessvg {
+  position: absolute;
+  width: 100%;
+  z-index: -1000 !important;
+}
+
+p {
+  margin-top: 1rem !important;
+}
+
+.textpadding {
+  padding: 10rem 3rem;
 }
 
 /*!
@@ -5126,7 +5193,7 @@
   color: #FFF;
   padding: 0.5rem 0;
   height: 55px;
-  z-index: 3;
+  z-index: 10;
 }
 .navbar ul {
   list-style: none;
@@ -5162,7 +5229,7 @@
   transition: 0.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  z-index: 2;
+  z-index: 9;
 }
 .nav-menu.enter-start, .nav-menu.leave-end {
   transform: translate(0, -100%);
@@ -5209,14 +5276,17 @@
   background-color: #F3F3F3;
 }
 
-.headertext {
-  padding: 10rem 3rem;
+table, th, td {
+  text-align: center !important;
+  font-size: 1.3rem;
 }
 
-.orangeheadtext {
-  color: #CF6F29;
+.colorcol {
+  background: #CF6F29;
+  padding: 1rem;
+  color: white;
 }
 
-p.lead {
-  padding-top: 0.5rem;
+.midtablecol {
+  background: #f3f3f3;
 }

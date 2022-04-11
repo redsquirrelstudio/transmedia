@@ -29,56 +29,55 @@
 </div>
 <div class="padding60"></div>
 
-<div class="container">
-    <div class="row col-md-7">
-        <h1>The timings.</h1>
-        <p class="lead"> Be sure not to miss the students presenting their work. The 2nd year's wil be presenting
-            their Group Client Project and the 3rd year's thier Pitch your Project.</p>
-    </div>
-    <div class="row col-md-5"></div>
-    <div>
+    <div class="container">
+        <div class="row col-md-7">
+            <h1>The timings.</h1>
+            <p class="lead"> Be sure not to miss the students presenting their work. The 2nd year's wil be presenting
+                their Group Client Project and the 3rd year's thier Pitch your Project.</p>
+        </div>
+        <div class="row col-md-5"></div>
+        <div>
         <table style="width:100%">
-            <tr>
-                <th class="colorcol roundtop">Student</th>
-                <th class="midtablecol">Year</th>
-                <th class="colorcol">Time</th>
-            </tr>
-            <tr>
-                <td class="colorcol">John-Paul</td>
-                <td class="midtablecol">3rd</td>
-                <td class="colorcol">10:30</td>
-            </tr>
-            <tr>
-                <td class="colorcol">Elizabeth</td>
-                <td class="midtablecol">3rd</td>
-                <td class="colorcol">11:0</td>
-            </tr>
-            <tr>
-                <td class="colorcol">Alfreds Futterkiste</td>
-                <td class="midtablecol">2nd</td>
-                <td class="colorcol">10:00</td>
-            </tr>
-            <tr>
-                <td class="colorcol">Sinead Marais</td>
-                <td class="midtablecol">2nd</td>
-                <td class="colorcol">10:10</td>
-            </tr>
-        </table>
+                <tr>
+                    <th class="colorcol roundtop">Student</th>
+                    <th class="midtablecol">Year</th>
+                    <th class="colorcol">Time</th>
+                </tr>
+                <tr>
+                    <td  class="colorcol">John-Paul</td>
+                    <td class="midtablecol">3rd</td>
+                    <td class="colorcol">10:30</td>
+                </tr>
+                <tr>
+                    <td class="colorcol">Elizabeth</td>
+                    <td class="midtablecol">3rd</td>
+                    <td class="colorcol">11:0</td>
+                </tr>
+                <tr>
+                    <td class="colorcol">Alfreds Futterkiste</td>
+                    <td class="midtablecol">2nd</td>
+                    <td class="colorcol">10:00</td>
+                </tr>
+                <tr>
+                    <td class="colorcol">Sinead Marais</td>
+                    <td class="midtablecol">2nd</td>
+                    <td class="colorcol">10:10</td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
 </div>
 
 <div class="padding60"></div>
 <div class="linebackground">
     <img class="linessvg" src="{{ asset('images/lines.svg')}}">
-    <div class="container">
-        <div class="row col-md-7">
-            <h1>The Students.</h1>
-            <p class="lead">Add the 'Students' section here. Get to know the student who will be presenting on the day!
-            </p>
-        </div>
-        <div class="row col-md-5"></div>
+<div class="container">
+    <div class="row col-md-7">
+        <h1>The Students.</h1>
+        <p class="lead">Add the 'Students' section here. Get to know the student who will be presenting on the day!</p>
     </div>
+    <div class="row col-md-5"></div>
+</div>
 </div>
 
 <div class="padding30"></div>
@@ -115,6 +114,7 @@
 
 </div>
 
+<div class="padding60"></div>
 
 </div>
 
