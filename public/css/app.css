@@ -5290,3 +5290,165 @@ table, th, td {
 .midtablecol {
   background: #f3f3f3;
 }
+
+.home-page {
+  padding-top: 55px;
+  width: 100vw;
+  min-height: 100vh;
+}
+.home-page .hero-slider {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 55px);
+  overflow: hidden;
+}
+.home-page .hero-slider .slide-container {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: calc(100vh - 55px);
+}
+.home-page .hero-slider .slide-container .slide {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 55px);
+}
+.home-page .hero-slider .slide-container .slide img, .home-page .hero-slider .slide-container .slide video, .home-page .hero-slider .slide-container .slide source {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 55px);
+  z-index: 1;
+}
+.home-page .rip {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 2;
+}
+.home-page .rip polygon {
+  fill: #f3f3f3;
+  width: 100vw;
+}
+
+.slide-caption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+.slide-caption h1 {
+  color: #FFF;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  font-size: 4rem;
+}
+.slide-caption p {
+  color: #FFF;
+  font-size: 2rem;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  margin: 1rem 0;
+}
+.slide-caption .call-to-action {
+  border: 2px solid #FFF;
+  padding: 0.5rem 1.5rem;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.bg-gray {
+  background-color: #F3F3F3;
+  padding: 4rem 0;
+}
+
+.bg-red {
+  background-color: #BF2E2D;
+  position: relative;
+  padding: 12rem 0;
+  min-height: 100vh;
+}
+.bg-red #graphic-1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.bg-red .content {
+  color: #FFF;
+}
+.bg-red .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.bg-red .content p {
+  margin: 2rem 0 5rem 0;
+}
+.bg-red .rip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 2;
+}
+.bg-red .rip path {
+  fill: #f3f3f3;
+  width: 100vw;
+}
+
+.discipline-card {
+  margin-bottom: 50px;
+  border-radius: 30px;
+  background-color: #FFF;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.discipline-card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+.discipline-card .caption {
+  color: white;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+}
+.discipline-card.large {
+  height: 400px;
+}
+.discipline-card.cad {
+  background-color: #E88DBF;
+}
+.discipline-card.three-d {
+  background-color: #D78232;
+}
+.discipline-card.design {
+  background-color: #9B3237;
+}
+.discipline-card.three-d-vis {
+  background-color: #AD9819;
+}
+.discipline-card.development {
+  background-color: #4EB3C2;
+}
+.discipline-card.game-design {
+  background-color: #2B8B49;
+}

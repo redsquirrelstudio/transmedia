@@ -16,7 +16,7 @@ class PageController extends Controller
             'students' => User::whereHas('page.avatar_image')
                 ->with(['page', 'page.course', 'page.avatar_image'])
                 ->inRandomOrder()
-                ->limit(10)
+                ->limit(16)
                 ->get(),
             'projects' => FeaturedProject::inRandomOrder()
                 ->with('user')

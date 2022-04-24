@@ -52,7 +52,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-4" href="">
+                    <a class="link-4" href="{{ url('/about') }}">
                         About
                     </a>
                     <a class="link-5" href="">
