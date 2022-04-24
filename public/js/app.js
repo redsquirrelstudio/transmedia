@@ -3114,7 +3114,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.load-wrapper[data-v-3b3f7474]{\n    width: 100%;\n    height: 100vh;\n    position: absolute;\n    left: 0;\n    top: 0;\n    z-index: 1;\n}\n.load-fill[data-v-3b3f7474]{\n    width: 100%;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    background-color: #000;\n    transition: 0.5s;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.load-wrapper[data-v-3b3f7474]{\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    z-index: 1;\n}\n.load-fill[data-v-3b3f7474]{\r\n    width: 100%;\r\n    position: absolute;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #000;\r\n    transition: 0.5s;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -21,6 +21,7 @@
 <div class="site-container">
     @include('components/navbar')
     @yield('content')
+    @include('components/footer')
 </div>
 </body>
 </html>

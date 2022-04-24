@@ -9,10 +9,11 @@
   display: none !important;
 }
 
-.site-container {
+body, .site-container {
   width: 100vw;
   min-height: 100vh;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .container-fluid {
@@ -108,6 +109,49 @@ p {
   padding: 10rem 3rem;
 }
 
+.scale-enter, .scale-leave {
+  transition: 0.3s ease-out;
+}
+
+.scale-enter-start, .scale-leave-end {
+  opacity: 0;
+  position: absolute;
+  transform: scale(0);
+}
+
+.scale-enter-end, .scale-leave-start {
+  opacity: 1;
+  position: static;
+  transform: scale(1);
+}
+
+.ken-burns-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ken-burns {
+  position: absolute;
+  animation: kenBurns 20s ease alternate-reverse infinite;
+}
+
+@-webkit-keyframes kenBurns {
+  0% {
+    transform-origin: bottom left;
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+  }
+}
 /*!
  * Bootstrap Grid v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -5271,6 +5315,30 @@ p {
   text-decoration: none;
 }
 
+.footer {
+  background-color: #BF2E2D;
+  width: 100%;
+  padding: 4rem 0;
+}
+.footer ul {
+  list-style: none;
+}
+.footer ul li {
+  color: #FFF;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+.footer ul li a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.footer .copyright {
+  text-align: center;
+  color: #FFF;
+  padding: 4rem 0;
+}
+
 .about_container {
   padding: 55px 0px;
   background-color: #F3F3F3;
@@ -5373,6 +5441,17 @@ table, th, td {
 .bg-gray {
   background-color: #F3F3F3;
   padding: 4rem 0;
+  min-height: 100vh;
+}
+.bg-gray .content {
+  color: #CF6F29;
+}
+.bg-gray .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.bg-gray .content p {
+  margin: 2rem 0 5rem 0;
 }
 
 .bg-red {
@@ -5380,6 +5459,7 @@ table, th, td {
   position: relative;
   padding: 12rem 0;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 .bg-red #graphic-1 {
   position: absolute;
@@ -5417,6 +5497,18 @@ table, th, td {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
+.discipline-card .vector {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  border-radius: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+}
 .discipline-card img {
   width: 100%;
   height: 100%;
@@ -5451,4 +5543,42 @@ table, th, td {
 }
 .discipline-card.game-design {
   background-color: #2B8B49;
+}
+
+.lg-image-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lg-image-container .lg-image {
+  width: 80%;
+  height: 80vh;
+  border-radius: 40px;
+  z-index: 2;
+}
+.lg-image-container .lg-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.lg-image-container .lg-image .caption {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 3;
+  text-align: right;
+}
+.lg-image-container .lg-image .caption h3 {
+  font-size: 4rem;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+.lg-image-container .lg-image .caption p {
+  color: #FFF;
+  text-shadow: 0 5px 15px black;
+  font-size: 2rem;
 }

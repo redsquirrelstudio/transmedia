@@ -20,7 +20,7 @@ class PageController extends Controller
                 ->get(),
             'projects' => FeaturedProject::inRandomOrder()
                 ->with('user')
-                ->limit(10)
+                ->limit(16)
                 ->get()
         ]);
     }
