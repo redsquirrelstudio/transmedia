@@ -38,14 +38,14 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-2" href="">
+                    <a class="link-2" href="{{ url('/schedule') }}">
                         Pitch your project
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-3" href="">
+                    <a class="link-3" href="{{ url('/students') }}">
                         Students
                     </a>
                 </div>

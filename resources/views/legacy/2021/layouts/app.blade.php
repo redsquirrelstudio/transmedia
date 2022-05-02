@@ -18,6 +18,7 @@
         @yield('content')
         @include('includes/merch-block')
         @include('includes/instagram-block')
+
         @include('includes/footer')
     </main>
 

@@ -20,6 +20,7 @@ class User extends Authenticatable
         'year',
         'email',
         'password',
+        'slug',
         'verified'
     ];
 

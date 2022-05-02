@@ -21,6 +21,20 @@
 <div class="site-container">
     @include('components/navbar')
     @yield('content')
+    <section class="bg-gray lg-image-container">
+        <div class="lg-image ken-burns-container">
+            <img class="ken-burns" src="{{ asset('/images/west_downs_large.jpg') }}" alt="">
+            <div class="caption">
+                <h3>
+                    Thursday 12th May
+                </h3>
+                <p>
+                    The University of, Romsey Rd, Winchester SO22 5FT
+                </p>
+            </div>
+        </div>
+    </section>
+
     @include('components/footer')
 </div>
 </body>

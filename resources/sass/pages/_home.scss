@@ -85,12 +85,17 @@
 
 
 .bg-gray{
+    position: relative;
     background-color: $grey;
     padding: 4rem 0;
     min-height: 100vh;
+    overflow-y: hidden;
+
 
     .content{
+        position: relative;
         color: $orange;
+        z-index: 2;
 
         h2{
             font-size: 2.5rem;
@@ -100,6 +105,14 @@
             margin: 2rem 0 5rem 0;
         }
     }
+}
+
+#graphic-2{
+    position: absolute;
+    left: 0;
+    bottom: -40%;
+    z-index: 1;
+    width: 100vw;
 }
 
 .bg-red{
@@ -113,30 +126,58 @@
         position: absolute;
         right: 0;
         top: 0;
+        z-index: 1;
     }
+
 
     .content{
         color: $white;
+        position: relative;
+        z-index: 2;
 
         h2{
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
         p{
-            margin: 2rem 0 5rem 0;
+            margin: 2rem 0;
         }
     }
+}
 
-    .rip{
-        position: absolute;
-        top: 0;
-        bottom: 0;
+
+.top-rip{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+    path, polygon {
+        fill: #f3f3f3;
         width: 100vw;
-        z-index: 2;
-        path {
-            fill: #f3f3f3;
-            width: 100vw;
-        }
+    }
+}
+
+.bottom-rip{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 2;
+    path, polygon {
+        fill: #f3f3f3;
+        width: 100vw;
+    }
+}
+
+.discipline-card-caption{
+    margin-top: -4.5rem;
+    z-index: 10;
+    position: relative;
+    color: $orange;
+    h2{
+        font-size: 2.5rem;
+        text-shadow: 0 5px 15px rgba(0,0,0,0.4);
     }
 }
 
@@ -148,6 +189,7 @@
     height: 300px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     position: relative;
+    display: inline-block;
 
     .vector{
         width: 70%;
