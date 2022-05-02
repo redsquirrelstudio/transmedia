@@ -5395,6 +5395,7 @@ table, th, td {
 
 .midtablecol {
   background: #f3f3f3;
+  padding: 1rem;
 }
 
 .home-page {

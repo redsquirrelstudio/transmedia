@@ -32,7 +32,7 @@ class PageController extends Controller
 
     public function schedule(): View
     {
-        return view('schedule', ['schedule' => Schedule::orderBy('datetime', 'asc')->get()]);
+        return view('schedule', ['schedule' => Schedule::orderBy('datetime', 'asc')->get(), 'students' => User::where('year', 3)->get()]);
     }
 
     public function register(): View
