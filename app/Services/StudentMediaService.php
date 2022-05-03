@@ -16,7 +16,7 @@ class StudentMediaService
         $media = new StudentMedia([
             'description' => $description,
             'file_name' => $filename,
-            'file_url' => url($path),
+            'file_url' => Storage::url($path),
         ]);
         $media->save();
         return $media->id;

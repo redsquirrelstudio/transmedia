@@ -13,11 +13,7 @@ class StudentMedia extends Model
     protected $table = 'student_media';
     protected $primaryKey = 'id';
     protected $fillable = ['description', 'file_name', 'file_url'];
-
-    public function getFileUrlAttribute()
-    {
-        return str_replace('https://www.transmediawinchester.co.uk', env('APP_URL'), $this->attributes['file_url']);
-    }
+    
 
     public function page(): BelongsToMany
     {
