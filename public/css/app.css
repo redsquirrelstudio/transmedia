@@ -43,6 +43,7 @@ body, .site-container {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -101,6 +102,14 @@ body, .site-container {
   text-align: right;
 }
 
+.mr-4 {
+  margin-right: 1.5rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 .padding30 {
   padding: 30px 0px;
 }
@@ -145,6 +154,44 @@ p {
 
 .mt-6 {
   margin-top: 2rem !important;
+}
+
+.form-control {
+  display: block;
+  margin: 0.5rem 0;
+}
+.form-control span {
+  display: block;
+}
+.form-control input, .form-control select {
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #FFF;
+  padding: 1rem 0;
+  width: 100%;
+  color: #FFF;
+}
+.form-control input option, .form-control select option {
+  color: #000;
+}
+.form-control input::-moz-placeholder, .form-control select::-moz-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+.form-control input:-ms-input-placeholder, .form-control select:-ms-input-placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+.form-control input::placeholder, .form-control select::placeholder {
+  color: #FFF;
+  opacity: 0.6;
+}
+
+.error {
+  color: #FFF;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .scale-enter, .scale-leave {
@@ -5516,11 +5563,22 @@ table, th, td {
   min-height: 100vh;
   overflow-y: hidden;
 }
+.bg-red a {
+  color: #FFF;
+}
 .bg-red #graphic-1 {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
+}
+.bg-red #graphic-3 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 25vw;
+  height: 100%;
 }
 .bg-red .content {
   color: #FFF;
@@ -5664,4 +5722,99 @@ table, th, td {
   color: #FFF;
   text-shadow: 0 5px 15px black;
   font-size: 2rem;
+}
+
+.student-banner {
+  height: 400px;
+  width: 100%;
+  border-radius: 20px;
+}
+.student-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.student-avatar-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -100px;
+  z-index: 2;
+}
+.student-avatar-container .student-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+.student-avatar-container .student-avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+}
+
+.student-details {
+  margin-top: 1.5rem;
+  color: #BF2E2D;
+}
+.student-details h2 {
+  font-weight: normal;
+}
+.student-details strong {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #000;
+}
+.student-details p {
+  color: #000;
+}
+
+.student-links {
+  margin-top: 1rem;
+}
+.student-links a {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.student-links a:hover i {
+  color: #CF6F29;
+}
+.student-links a i {
+  font-size: 2.5rem;
+  color: #BF2E2D;
+}
+
+.student-projects {
+  padding-left: 4rem;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.student-projects .student-project h2 {
+  color: #BF2E2D;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+.student-projects .student-project .project-image {
+  width: 100%;
+  max-height: 700px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+}
+.student-projects .student-project .project-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+.student-projects .student-project .description {
+  margin-bottom: 4rem;
 }

@@ -20,7 +20,7 @@ class StudentController extends Controller
             $category = [];
             foreach ($course->page as $page) {
                 $user = $page->user()->with(['page', 'page.avatar_image'])->first();
-                if (isset($user['page']['avatar_image'])){
+                if (isset($user['page']['avatar_image'])) {
                     $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image', 'page.course'])->first();
                 }
             }
@@ -29,21 +29,24 @@ class StudentController extends Controller
         return view('students.index', ['students' => $students]);
     }
 
-    public function student(int $student_id)
+    public function student(string $slug)
     {
-        if ($student_id === auth()->id() && Option::get('student-login')) {
+        if ($slug === auth()->user()->slug && Option::get('student-login')) {
             return redirect('/my-page');
         } else {
-            $student = User::find($student_id);
-            if ($student){
-                if (\Options::get('count-views')){
+            $student = User::where('slug', $slug)->first();
+            if ($student) {
+                if (\Options::get('count-views')) {
                     $page = $student->page;
                     $page->page_views++;
                     $page->save();
                 }
-                return view('students.student', ['student' => $student, 'courses' => Course::all()]);
-            }
-            else{
+                return view('students.student', ['student' => $student, 'courses' => Course::all(), 'students' => User::whereHas('page.avatar_image')
+                    ->with(['page', 'page.course', 'page.avatar_image'])
+                    ->inRandomOrder()
+                    ->limit(16)
+                    ->get(),]);
+            } else {
                 abort(404);
             }
         }
@@ -51,11 +54,10 @@ class StudentController extends Controller
 
     public function students_course(string $course_slug)
     {
-        $course = Course::with('page', 'page.user','page.avatar_image', 'page.course')->where('slug', $course_slug)->first();
-        if (!$course){
+        $course = Course::with('page', 'page.user', 'page.avatar_image', 'page.course')->where('slug', $course_slug)->first();
+        if (!$course) {
             return redirect('/students');
-        }
-        else{
+        } else {
             return view('students.course',
                 ['course' => $course]);
         }
@@ -64,10 +66,9 @@ class StudentController extends Controller
     public function students_year(string $course_slug, int $year)
     {
         $course = Course::with(['page', 'page.user', 'page.avatar_image', 'page.course'])->where('slug', $course_slug)->first();
-        if (!$course){
+        if (!$course) {
             return redirect('/students');
-        }
-        else{
+        } else {
             return view('students.course',
                 ['course' => $course, 'year' => $year]);
         }
@@ -165,15 +166,14 @@ class StudentController extends Controller
     public function student_portfolio(int $student_id)
     {
         $student = User::find($student_id);
-        if ($student){
-            if (\Options::get('count-views')){
+        if ($student) {
+            if (\Options::get('count-views')) {
                 $page = $student->page;
                 $page->portfolio_views++;
                 $page->save();
             }
             return redirect()->away($student->page->portfolio_url);
-        }
-        else{
+        } else {
             abort(404);
         }
     }

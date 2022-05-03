@@ -1,0 +1,108 @@
+.student-banner {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+
+.student-avatar-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    z-index: 2;
+
+    .student-avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid $white;
+        }
+    }
+}
+
+.student-details {
+    margin-top: 1.5rem;
+    color: $red;
+
+    h2 {
+        font-weight: normal;
+    }
+
+    strong {
+        display: inline-block;
+        margin-top: 1rem;
+        color: $black;
+    }
+
+    p {
+        color: $black;
+    }
+}
+
+.student-links {
+    margin-top: 1rem;
+
+    a {
+        display: inline-block;
+        margin-right: 0.5rem;
+
+        &:hover{
+            i{
+                color: $orange;
+            }
+        }
+
+        i {
+            font-size: 2.5rem;
+            color: $red;
+        }
+    }
+}
+
+.student-projects{
+    padding-left: 4rem;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+    .student-project{
+        h2{
+            color: $red;
+            font-weight: normal;
+            margin-bottom: 1rem;
+        }
+
+        .project-image{
+            width: 100%;
+            max-height: 700px;
+            margin-bottom: 1rem;
+            border-radius: 20px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
+
+        .description{
+            margin-bottom: 4rem;
+        }
+    }
+}

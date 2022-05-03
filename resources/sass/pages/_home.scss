@@ -122,11 +122,24 @@
     min-height: 100vh;
     overflow-y: hidden;
 
+    a{
+        color: $white;
+    }
+
     #graphic-1{
         position: absolute;
         right: 0;
         top: 0;
         z-index: 1;
+    }
+
+    #graphic-3{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 25vw;
+        height: 100%;
     }
 
 

@@ -1,98 +1,178 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="screen-block">
-        <div class="student-profile">
-            <div class="banner">
-                @if($student->page->banner_image)
-                    <img v-lazy="'{{ $student->page->banner_image->file_url }}'" alt="{{ $student->name }} hero">
-                @else
-                    <img src="{{ asset('/images/banner_default.jpg') }}" alt="{{ $student->name }} hero">
-                @endif
-            </div>
-            <div class="profile-details">
-                <div class="avatar">
-                    @if($student->page->avatar_image)
-                        <img v-lazy="'{{ $student->page->avatar_image->file_url }}'" alt="{{ $student->name }} avatar">
-                    @else
-                        <img src="{{ asset('/images/avatar_default.jpg') }}" alt="{{ $student->name }} avatar">
-                    @endif
+    <div id="app">
+        <br><br>
+        <div class="bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="student-banner ken-burns-container">
+                            @if($student->page->banner_image)
+                                <img class="ken-burns" v-lazy="'{{ $student->page->banner_image->file_url }}'"
+                                     alt="{{ $student->name }} banner"
+                                     error="{{ asset('/images/banner_default.jpg') }}">
+                            @else
+                                <img src="{{ asset('/images/banner_default.jpg') }}" alt="{{ $student->name }} banner">
+                            @endif
+                        </div>
+                        <div class="student-avatar-container">
+                            <div class="student-avatar">
+                                @if($student->page->avatar_image)
+                                    <img v-lazy="'{{ $student->page->avatar_image->file_url }}'"
+                                         alt="{{ $student->name }} avatar">
+                                @else
+                                    <img src="{{ asset('/images/avatar_default.jpg') }}"
+                                         alt="{{ $student->name }} avatar">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="student-details">
+                            <h1>
+                                {{ $student->name }}
+                            </h1>
+                            <h2>
+                                @if($student->year === 1)
+                                    First Year
+                                @elseif($student->year === 2)
+                                    Second Year
+                                @elseif($student->year === 3)
+                                    Third Year
+                                @elseif($student->year === 4)
+                                    MA
+                                @endif
+                                @if($student->page->course_id)
+                                    {{ $student->page->course->name }}
+                                @endif
+                            </h2>
+                            <strong>
+                                {{ $student->page->tagline }}
+                            </strong>
+                            <p>
+                                {{ $student->page->bio }}
+                            </p>
+
+                            <div class="student-links">
+                                <a href="mailto:{{ $student->email }}">
+                                    <i class="las la-envelope"></i>
+                                </a>
+                                @if($student->page->instagram_url)
+                                    <a target="_blank" href="{{ $student->page->instagram_url }}">
+                                        <i class="lab la-instagram"></i>
+                                    </a>
+                                @endif
+                                @if($student->page->portfolio_url)
+                                    <a target="_blank" href="{{ route('students.portfolio', $student->id) }}">
+                                        <i class="las la-laptop"></i>
+                                    </a>
+                                @endif
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="student-projects">
+                            @foreach($student->projects as $key => $project)
+                                <div id="{{ $project->id }}" class="student-project">
+                                    <h2>
+                                        {{ $project->title }}
+                                    </h2>
+                                    @if($project->image)
+                                        <div class="project-image">
+                                            <img src="{{ $project->image_url->file_url }}" alt="{{ $project->title }}">
+                                        </div>
+                                    @endif
+                                    @if($project->description)
+                                        <div class="description">
+                                            {{ $project->description }}
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-                <div class="details">
-                    <h2>
-                        {{ $student->name }}
-                    </h2>
-                    <h4>
-                        @if($student->year === 1)
-                            1st Year
-                        @elseif($student->year === 2)
-                            2nd Year
-                        @elseif($student->year === 3)
-                            3rd Year
-                        @elseif($student->year === 4)
-                            MA
-                        @endif
-                        @if($student->page->course_id)
-                            {{ $student->page->course->name }}; <br>
-                        @endif
-                        {{ $student->page->tagline }}
-                    </h4>
-                </div>
-            </div>
-            <div class="profile-projects">
-                <div class="projects">
-                    @foreach($student->projects as $project)
-                        @if($project->image)
-                            <a href="#{{ $project->id }}" class="project-thumbnail">
-                                <img v-lazy="'{{ $project->image_url->file_url }}'" alt="{{ $project->title }}">
-                            </a>
-                        @endif
-                    @endforeach
-                </div>
-                <div class="bio">
-                    {{ $student->page->bio }}
-                </div>
-            </div>
-            <div class="socials">
-                <a href="mailto:{{ $student->email }}">
-                    <hover-icon open-class="las la-envelope-open" close-class="las la-envelope"></hover-icon>
-                </a>
-                @if($student->page->instagram_url)
-                    <a target="_blank" href="{{ $student->page->instagram_url }}">
-                        <hover-icon open-class="las la-caret-square-right" close-class="lab la-instagram"></hover-icon>
-                    </a>
-                @endif
-                @if($student->page->portfolio_url)
-                    <a target="_blank" href="{{ route('students.portfolio', $student->id) }}">
-                        <hover-icon open-class="las la-laptop-code" close-class="las la-laptop"></hover-icon>
-                    </a>
-                @endif
             </div>
         </div>
+
     </div>
-    @if($student->projects->count() > 0)
-        <h2 class="projects-title">
-            {{ explode(' ', $student->name)[0] }}{{ explode(' ', $student->name)[0][strlen(explode(' ', $student->name)[0]) - 1] === 's' ? "'" : "'s"  }}
-            Projects
-        </h2>
-    @endif
-    @foreach($student->projects as $key => $project)
-        <div id="{{ $project->id }}" class="project-block">
-            <h2>
-                {{ $project->title }}
-            </h2>
-            <div class="project-content @if($key === 1) flipped @endif">
-                @if($project->image)
-                    <div class="project-image">
-                        <img src="{{ $project->image_url->file_url }}" alt="{{ $project->title }}">
+    <script src="{{ asset('/js/app.js') }}"></script>
+
+    <section class="bg-red">
+        @include('components/top-rip')
+
+        @include('components/red-graphic')
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content">
+                        <h2>Meet Our Students</h2>
+                        <p>
+                            Our talented students have a wide variety of skill sets which they use to create some
+                            amazing pieces of work.
+                            This wide diversity allows for students to work in a work-place like environment so that
+                            they can develop their
+                            team working skills.
+                        </p>
+                        <a class="btn btn-primary" href="{{ url('/students') }}">
+                            Meet them All
+                        </a>
                     </div>
-                @endif
-                @if($project->description)
-                    <div class="description">
-                        {{ $project->description }}
-                    </div>
-                @endif
+                </div>
             </div>
+            <div class="row" x-data="studentSlider()">
+                @foreach($students as $key => $student)
+                    <div x-show="slide == {{ floor($key / 4) }}"
+                         x-transition:enter="scale-enter"
+                         x-transition:enter-start="scale-enter-start"
+                         x-transition:enter-end="scale-enter-end"
+                         x-transition:leave="scale-leave"
+                         x-transition:leave-start="scale-leave-start"
+                         x-transition:leave-end="scale-leave-end"
+                         class="col-sm-3">
+                        <div class="discipline-card">
+                            <img src="{{ $student->page->avatar_image->file_url }}" alt="">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <script>
+                function studentSlider() {
+                    return {
+                        slide: 0,
+                        interval: null,
+                        init() {
+                            this.resetInterval();
+                        },
+                        resetInterval() {
+                            clearInterval(this.interval);
+                            this.interval = setInterval(() => {
+                                this.forward();
+                            }, 5000);
+                        },
+                        forward() {
+                            if (this.slide === {{ floor(count($students) / 4) - 1 }}) {
+                                this.slide = 0;
+                            } else {
+                                this.slide++;
+                            }
+                            this.resetInterval();
+                        },
+                        backward() {
+                            this.slide = this.slide - (this.slide === 0 ? -{{ (count($students) / 4) - 1 }} : 1);
+                            this.resetInterval();
+                        },
+                        goTo(index) {
+                            this.slide = index;
+                            this.resetInterval();
+                        }
+                    };
+                }
+            </script>
         </div>
-    @endforeach
+        @include('components/bottom-rip')
+    </section>
+
 @endsection

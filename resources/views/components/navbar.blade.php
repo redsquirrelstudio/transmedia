@@ -20,11 +20,22 @@
                             </a>
                         </li>
                     </ul>
-                    <li class="nav-right nav-brand">
-                        <a href="{{ url('/login') }}">
-                            Student Login
-                        </a>
-                    </li>
+                    @auth
+                        <li class="nav-right nav-brand">
+                            <a class="mr-4 inline-block" href="{{ url('/my-page') }}">
+                                My Page
+                            </a>
+                            <a href="{{ url('/logout') }}">
+                                Sign Out
+                            </a>
+                        </li>
+                    @else
+                        <li class="nav-right nav-brand">
+                            <a href="{{ url('/login') }}">
+                                Student Login
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
 
