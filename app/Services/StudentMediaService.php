@@ -13,6 +13,7 @@ class StudentMediaService
     {
         $filename = $file->getClientOriginalName();
         $path = $file->storeAs('uploads',   date("d_m_h").$filename);
+        Storage::setVisibility($path, 'public');
         $media = new StudentMedia([
             'description' => $description,
             'file_name' => $filename,
