@@ -28,8 +28,20 @@ class AuthController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
-            'year' => $request->get('year')
+            'year' => $request->get('year'),
         ]);
+
+        $parts = [];
+        $name = str_replace(' ', '', $user->name);
+        $split = explode(' ',  $name);
+        if (isset($split[0])){
+            $parts[] = $split[0];
+        }
+        if(isset($split[1])){
+            $parts[] = $split[1];
+        }
+        $user->slug = utf8_encode(strtolower(implode('', $parts)));
+
         $user->save();
 
         $page = new Page([
