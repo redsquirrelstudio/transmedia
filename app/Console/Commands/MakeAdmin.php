@@ -41,17 +41,17 @@ class MakeAdmin extends Command
     {
         DB::table('admin_users')->insert([
             [
-                'email'=>'sinead.marais98@gmail.com',
-                 'password'=>Hash::make($this->argument('password')),
-                 'first_name'=>'sinead',
-                 'last_name'=>'marais',
-                 'activated'=>true,
-                 'forbidden'=>false,
-                 'language'=>'en',
+                'email' => 'lewisraggett17@gmail.com',
+                'password' => Hash::make($this->argument('password')),
+                'first_name' => 'Lewis',
+                'last_name' => 'Raggett',
+                'activated' => true,
+                'forbidden' => false,
+                'language' => 'en',
 
             ]
-            ]);
-            $this->info('user created');
+        ]);
+        $this->info('user created');
         return 0;
     }
 }
