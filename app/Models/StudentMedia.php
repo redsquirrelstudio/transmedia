@@ -13,7 +13,7 @@ class StudentMedia extends Model
     protected $table = 'student_media';
     protected $primaryKey = 'id';
     protected $fillable = ['description', 'file_name', 'file_url'];
-    
+
 
     public function page(): BelongsToMany
     {

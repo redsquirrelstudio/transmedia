@@ -52,6 +52,7 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'root' => '/transmedia',
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'visibility' => 'public',
         ],
 
     ],
