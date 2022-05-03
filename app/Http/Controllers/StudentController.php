@@ -31,7 +31,7 @@ class StudentController extends Controller
 
     public function student(string $slug)
     {
-        if ($slug === auth()->user()->slug && Option::get('student-login')) {
+        if (auth()->user() && $slug === auth()->user()->slug && \Options::get('student-login')) {
             return redirect('/my-page');
         } else {
             $student = User::where('slug', $slug)->first();

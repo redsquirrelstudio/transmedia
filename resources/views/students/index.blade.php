@@ -55,7 +55,7 @@
                     <a href="#games-designers" class="discipline-card game-design">
                         <img class="vector" src="{{ asset('images/2022/game_design_ident.svg') }}" alt="">
                         <div class="caption">
-                            Game Designers
+                            Games Designers and Developers
                         </div>
                     </a>
                 </div>
@@ -507,7 +507,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-red"  id="games-designers">
+    <section class="bg-red" id="games-designers">
         @include('components/top-rip')
         <div class="container">
             <div class="row">
@@ -515,13 +515,14 @@
                 <div class="col-md-6">
                     <div class="content">
                         <h2>
-                            Games Design
+                            Games Designers and Developers
                         </h2>
                         <p>
-                            Our BA (Hons) Digital Media Design in 3D Visualisation programme is a new programme now in
-                            its 3rd year. In 3D Vis, we learn how to model in 3D for creating models, visualisations,
-                            characters, 3D printing assets for many areas such as AR, VR, game, animations, advertising,
-                            and product visuals...
+                            Our BSc (Hons) Computer Game Design & Development is our latest programme to add to the
+                            Digital Media suite, and is just completing its first year. We have been learning Unity and
+                            Unreal Game Engines, the mechanics of Game play, and art styles. We are encouraged to work
+                            collaboratively with our peers and develop individual approaches to gaming and serious game
+                            play/gamification.
                         </p>
                     </div>
                 </div>
@@ -536,7 +537,8 @@
                     <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/3') }}">Year Three</a>
+                    <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/3') }}">Year
+                        Three</a>
                 </div>
             </div>
             <div class="row mt-6">

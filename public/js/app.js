@@ -2147,7 +2147,6 @@ __webpack_require__.r(__webpack_exports__);
     generateUrl: function generateUrl(e) {
       this.error = false;
       var file = e.target.files[0];
-      console.log(file.size);
 
       if (file.size > 2000000) {
         this.error = true;

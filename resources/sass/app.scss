@@ -217,6 +217,22 @@ p {
     transform: scale(1);
 }
 
+#graphic-1{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#graphic-3{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 25vw;
+    height: 100%;
+}
+
 .ken-burns-container {
     position: relative;
     overflow: hidden;
@@ -258,6 +274,7 @@ p {
 //Components
 @import 'components/navbar';
 @import 'components/footer';
+@import 'components/image-upload';
 
 //Pages
 @import 'about';

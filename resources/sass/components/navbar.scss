@@ -48,10 +48,16 @@
     height: calc(100vh - 55px);
     width: 100vw;
     background-color: $red;
-    padding: 4rem 0;
+    padding: 8rem 0 4rem 0;
     transition: 0.5s;
     animation-fill-mode: forwards;
     z-index: 999999;
+    overflow-y: hidden;
+
+    #graphic-1{
+        top: -30px;
+        z-index: 1;
+    }
 
     &.enter-start, &.leave-end{
         transform: translate(0, -100%);
@@ -61,42 +67,15 @@
         transform: translate(0, 0);
     }
 
-    .link-1{
-        font-size: 7rem;
-        color: $white;
-        font-weight: normal;
-        text-decoration: none;
-    }
-
-    .link-2{
+    .nav-link{
+        display: inline-block;
         font-size: 4rem;
         color: $white;
         font-weight: normal;
         text-decoration: none;
         text-transform: uppercase;
-    }
-
-    .link-3{
-        font-size: 12rem;
-        color: $white;
-        font-weight: bold;
-        text-decoration: none;
-
-    }
-
-    .link-4{
-        font-size: 6rem;
-        color: $white;
-        font-weight: 300;
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 6rem;
-    }
-
-    .link-5{
-        font-size: 10rem;
-        color: $white;
-        font-weight: normal;
-        text-decoration: none;
+        margin-bottom: 2rem;
+        z-index: 2;
+        position: relative;
     }
 }

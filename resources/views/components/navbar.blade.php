@@ -49,34 +49,39 @@
          x-transition:leave-start="leave-start"
          x-transition:leave-end="leave-end"
          class="nav-menu">
+        @include('components/red-graphic')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <a class="link-1" href="{{ url('/exhibition') }}">
+                    <a class="nav-link" href="{{ url('/exhibition') }}">
                         Virtual Exhibition
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-2" href="{{ url('/schedule') }}">
+                    <a class="nav-link" href="{{ url('/schedule') }}">
                         Pitch your project
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-3" href="{{ url('/students') }}">
+                    <a class="nav-link" href="{{ url('/students') }}">
                         Students
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a class="link-4" href="{{ url('/about') }}">
+                    <a class="nav-link" href="{{ url('/about') }}">
                         About
                     </a>
-                    <a class="link-5" href="{{ url('/projects') }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a class="nav-link" href="{{ url('/projects') }}">
                         {{ date('Y') }} Projects
                     </a>
                 </div>

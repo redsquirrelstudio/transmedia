@@ -57,7 +57,7 @@ export default {
         generateUrl(e) {
             this.error = false;
             const file = e.target.files[0];
-            console.log(file.size);
+
             if (file.size > 2000000){
                 this.error = true;
                 this.$refs['file'].value = null;
