@@ -170,7 +170,7 @@
                              x-transition:leave-end="scale-leave-end"
                              class="col-sm-3">
                             <div class="discipline-card">
-                                <img src="{{ $project->thumbnail_media[0] }}" alt="">
+                                <img src="{{ $project->thumbnail_media[0] ?? asset('/images/banner_default.jpg') }}" alt="{{ $project->title }}">
                             </div>
                         </div>
                     @endforeach
