@@ -12,7 +12,7 @@
                             </strong> <br>
                             <span class="font-normal">
                                 To create a physical and virtual exhibition to
-                            showcase our students work
+                                showcase our students work
                             </span>
                         </h2>
                         <div class="spacer"></div>
@@ -36,13 +36,11 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
-                    <img
-                        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
                         width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
                 </div>
             </div>
             @include('components/bottom-rip')
-
         </div>
     </div>
     <div class="bg-gray">
@@ -56,7 +54,8 @@
                         <p>
                             We're excited to be inviting guests to come visit us in person this year! We run this
                             exhibition to allow students from all four years to display their work for you all. We
-                            encourage family and friends to come and support as well as businesses from the Winchester area to attend.
+                            encourage family and friends to come and support as well as businesses from the Winchester
+                            area to attend.
                         </p>
                     </div>
                 </div>

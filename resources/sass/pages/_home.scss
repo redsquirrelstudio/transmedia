@@ -149,7 +149,7 @@
 .top-rip{
     position: absolute;
     left: 0;
-    top: 0;
+    top: -2px;
     width: 100vw;
     z-index: 2;
     path, polygon {
@@ -161,7 +161,7 @@
 .bottom-rip{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -2px;
     width: 100vw;
     z-index: 2;
     path, polygon {
