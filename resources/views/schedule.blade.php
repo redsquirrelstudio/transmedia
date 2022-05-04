@@ -54,7 +54,7 @@
                     <table style="width:100%">
                         <thead>
                             <tr>
-                                <th class="colorcol roundtop" >Student - Presentation</th>
+                                <th class="colorcol roundtop" style="text-align: left !important;">Student - Presentation</th>
                                 <th class="colorcol" style="text-align: center;">Time</th>
                             </tr>
                         </thead>
