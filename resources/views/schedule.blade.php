@@ -54,17 +54,17 @@
                     <table style="width:100%">
                         <thead>
                             <tr>
-                                <th class="colorcol roundtop" style="text-align: left;">Student - Presentation</th>
-                                <th class="colorcol">Time</th>
+                                <th class="colorcol roundtop" >Student - Presentation</th>
+                                <th class="colorcol" style="text-align: center;">Time</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($schedule as $key => $slot)
                                 <tr>
-                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}">
+                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}"  style="text-align: left;">
                                         {{ $slot->description }}
                                     </td>
-                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}">
+                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: center;">
                                         {{ $slot->formatted_date }}
                                     </td>
                                 </tr>
