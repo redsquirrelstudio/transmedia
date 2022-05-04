@@ -30,7 +30,7 @@
                     Thursday 12th May
                 </h3>
                 <p>
-                    The University of, Romsey Rd, Winchester SO22 5FT
+                    The University of Winchester, Romsey Rd, Winchester SO22 5FT
                 </p>
             </div>
         </div>
