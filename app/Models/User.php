@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function getPageUrlAttribute(): string
     {
-        return route('students.student', $this->slug);
+        return url('/students/'.$this->slug);
     }
 
     public function getPageViewsAttribute(): int
