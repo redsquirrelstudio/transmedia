@@ -131,9 +131,9 @@
                          x-transition:leave-start="scale-leave-start"
                          x-transition:leave-end="scale-leave-end"
                          class="col-sm-3">
-                        <div class="discipline-card">
-                            <img src="{{ $student->page->avatar_image->file_url }}" alt="">
-                        </div>
+                        <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
+                            <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }}">
+                        </a>
                     </div>
                 @endforeach
             </div>
