@@ -18,7 +18,7 @@ class StudentController extends Controller
         $courses = Course::with(['page', 'page.user'])->get();
         foreach ($courses as $course) {
             $category = [];
-            foreach ($course->page as $page) {
+            foreach ($course->page->inRandomOrder() as $page) {
                 $user = $page->user()->with(['page', 'page.avatar_image'])->first();
                 if (isset($user['page']['avatar_image'])) {
                     $category[] = $page->user()->whereHas('page.avatar_image')->with(['page', 'page.avatar_image', 'page.course'])->first();
@@ -41,7 +41,8 @@ class StudentController extends Controller
                     $page->page_views++;
                     $page->save();
                 }
-                return view('students.student', ['student' => $student, 'courses' => Course::all(), 'students' => User::whereHas('page.avatar_image')
+                return view('students.student', ['student' => $student, 'courses' => Course::all(),
+                    'students' => User::whereHas('page.avatar_image')
                     ->with(['page', 'page.course', 'page.avatar_image'])
                     ->inRandomOrder()
                     ->limit(16)
