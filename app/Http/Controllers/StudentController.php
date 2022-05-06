@@ -66,7 +66,7 @@ class StudentController extends Controller
 
     public function students_year(string $course_slug, int $year)
     {
-        $course = Course::with(['page', 'page.user', 'page.avatar_image', 'page.course'])->whereHas('page.avatar_image')
+        $course = Course::whereHas('page.avatar_image')->with(['page', 'page.user', 'page.avatar_image', 'page.course'])
             ->where('slug', $course_slug)->first();
         if (!$course) {
             return redirect('/students');
