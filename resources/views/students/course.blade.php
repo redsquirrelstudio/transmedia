@@ -29,8 +29,8 @@
             <div class="row">
                 @foreach($course->page as $key => $page)
                     <div class="col-sm-3">
-                        <a href="{{ url('/students/'.$page->student->slug) }}" class="discipline-card">
-                            <img src="{{ $page->avatar_image->file_url }}" alt="{{ $page->student->name }}">
+                        <a href="{{ url('/students/'.$page->user->slug) }}" class="discipline-card">
+                            <img src="{{ $page->avatar_image->file_url }}" alt="{{ $page->user->name }}">
                         </a>
                     </div>
                 @endforeach
