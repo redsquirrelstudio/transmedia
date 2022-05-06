@@ -21,7 +21,7 @@
                         </li>
                     </ul>
                     @auth
-                        <li class="nav-right nav-brand">
+                        <li class="nav-right nav-brand mobile-hidden">
                             <a class="mr-4 inline-block" href="{{ url('/my-page') }}">
                                 My Page
                             </a>
@@ -30,7 +30,7 @@
                             </a>
                         </li>
                     @else
-                        <li class="nav-right nav-brand">
+                        <li class="nav-right nav-brand mobile-hidden">
                             <a href="{{ url('/login') }}">
                                 Student Login
                             </a>
