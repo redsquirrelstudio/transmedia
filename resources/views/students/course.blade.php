@@ -35,7 +35,7 @@
                             </a>
                         </div>
                     @endif
-                    
+
                 @endforeach
             </div>
         </div>
