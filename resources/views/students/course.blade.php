@@ -3,26 +3,37 @@
 @section('content')
     <section class="bg-red">
         @include('components/bottom-rip')
-        <div class="container">
-            <div class="content">
-                <h2>
-                    Meet Our
-                    @isset($year)
-                        @if($year === 1)
-                            1st Year
-                        @elseif($year === 2)
-                            2nd Year
-                        @elseif($year === 3)
-                            Third Year
-                        @elseif($year === 4)
-                            MA
-                        @endif
-                    @endisset
-                    {{ $course->plural }}
-                </h2>
-                <a href="{{ url('/students') }}" class="btn btn-primary">
-                    Back to all students
-                </a>
+        <div class="container content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>
+                        Meet Our
+                        @isset($year)
+                            @if($year === 1)
+                                1st Year
+                            @elseif($year === 2)
+                                2nd Year
+                            @elseif($year === 3)
+                                Third Year
+                            @elseif($year === 4)
+                                MA
+                            @endif
+                        @endisset
+                        {{ $course->plural }}
+                    </h2>
+                    <a href="{{ url('/students') }}" class="btn btn-primary">
+                        Back to all students
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($students as $key => $student)
+                    <div class="col-sm-3">
+                        <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
+                            <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }}">
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
