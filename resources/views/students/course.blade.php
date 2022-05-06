@@ -27,10 +27,10 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($students as $key => $student)
+                @foreach($course->page as $key => $page)
                     <div class="col-sm-3">
-                        <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
-                            <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }}">
+                        <a href="{{ url('/students/'.$page->student->slug) }}" class="discipline-card">
+                            <img src="{{ $page->avatar_image->file_url }}" alt="{{ $page->student->name }}">
                         </a>
                     </div>
                 @endforeach
