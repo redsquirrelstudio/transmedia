@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 @foreach($course->page()->whereHas('avatar_image')->get() as $key => $page)
-                    @if($course->page->user->year === $year)
+                    @if($page->user->year === $year)
                         <div class="col-sm-3">
                             <a href="{{ url('/students/'.$page->user->slug) }}" class="discipline-card">
                                 <img src="{{ $page->avatar_image->file_url }}" alt="{{ $page->user->name }}">
