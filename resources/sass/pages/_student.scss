@@ -120,6 +120,11 @@
     height: 100vh;
     overflow-y: scroll;
 
+
+    @media only screen and (max-width: 600px) {
+        padding-left: 0;
+    }
+
     input, select, textarea{
         background-color: transparent;
         border: 0;

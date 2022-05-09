@@ -8,14 +8,6 @@
     <title>Transmedia {{ date('Y') }} - This Year We're Breaking Out</title>
     <meta name="description"
           content="The official website for {{ date('Y') }}'s Transmedia exhibition hosted by the students of the University of Winchester's digital courses.">
-
-    <link rel="stylesheet" href="{{ asset('/css/app.css?v='.time()) }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/icons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/icons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/icons/favicon-16x16.png') }}">
@@ -23,6 +15,13 @@
     <link rel="mask-icon" href="{{ asset('/icons/safari-pinned-tab.svg') }}" color="#c02e2e">
     <meta name="msapplication-TileColor" content="#c02e2e">
     <meta name="theme-color" content="#c02e2e">
+    <link rel="stylesheet" href="{{ asset('/css/app.css?v='.time()) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
