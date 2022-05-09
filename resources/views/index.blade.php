@@ -94,7 +94,7 @@
                 </div>
                 <div class="row" x-data="studentSlider()">
                     @foreach($students as $key => $student)
-                        <a x-show="slide == {{ floor($key / 4) }}"
+                        <div x-show="slide == {{ floor($key / 4) }}"
                              x-transition:enter="scale-enter"
                              x-transition:enter-start="scale-enter-start"
                              x-transition:enter-end="scale-enter-end"
