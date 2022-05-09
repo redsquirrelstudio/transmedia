@@ -14,8 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/icons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('/icons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('/icons/safari-pinned-tab.svg') }}" color="#c02e2e">
+    <meta name="msapplication-TileColor" content="#c02e2e">
+    <meta name="theme-color" content="#c02e2e">
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
