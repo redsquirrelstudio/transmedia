@@ -86,6 +86,17 @@ class UserController extends Controller
         // Store the User
         $user = User::create($sanitized);
 
+        $name = str_replace(' ', '', $user->name);
+        $split = explode(' ',  $name);
+        if (isset($split[0])){
+            $parts[] = $split[0];
+        }
+        if(isset($split[1])){
+            $parts[] = $split[1];
+        }
+        $user->slug = utf8_encode(strtolower(implode('', $parts)));
+        $user->save();
+
         $page = new Page([
            'user_id' => $user->id,
         ]);
