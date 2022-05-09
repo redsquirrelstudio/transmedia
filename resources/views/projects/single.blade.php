@@ -8,7 +8,7 @@
                 <div class="col-md-4">
                     <div class="student-banner ken-burns-container">
                         @if($project->thumbnail_media[0])
-                            <img class="ken-burns" src="'{{ $project->thumbnail_media[0] }}'"
+                            <img class="ken-burns" src="{{ $project->thumbnail_media[0] }}"
                                  alt="{{ $project->thumbnail_media[0] }} banner">
                         @else
                             <img src="{{ asset('/images/banner_default.jpg?v='.date('d-m-Y')) }}"
