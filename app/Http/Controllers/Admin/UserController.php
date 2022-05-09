@@ -81,7 +81,7 @@ class UserController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        $sanitized->password = Hash::make($sanitized->password);
+        $sanitized['password'] = Hash::make($sanitized['password']);
 
         // Store the User
         $user = User::create($sanitized);
