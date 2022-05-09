@@ -159,56 +159,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" x-data="projectSlider()">
+                <div class="row">
                     @foreach($projects as $key => $project)
-                        <div x-show="slide == {{ floor($key / 8) }}"
-                             x-transition:enter="scale-enter"
-                             x-transition:enter-start="scale-enter-start"
-                             x-transition:enter-end="scale-enter-end"
-                             x-transition:leave="scale-leave"
-                             x-transition:leave-start="scale-leave-start"
-                             x-transition:leave-end="scale-leave-end"
-                             class="col-sm-3">
+                        <div class="col-sm-3">
                             <a href="{{ url('/projects/'.$project->id) }}" class="discipline-card">
                                 <img src="{{ $project->thumbnail_media[0] ?? asset('/images/banner_default.jpg') }}" alt="{{ $project->title }}">
                             </a>
                         </div>
                     @endforeach
                 </div>
-
-                <script>
-                    function projectSlider() {
-                        return {
-                            slide: 0,
-                            interval: null,
-                            init() {
-                                this.resetInterval();
-                            },
-                            resetInterval() {
-                                clearInterval(this.interval);
-                                this.interval = setInterval(() => {
-                                    this.forward();
-                                }, 5000);
-                            },
-                            forward() {
-                                if (this.slide === {{ floor(count($projects) / 8) - 1 }}) {
-                                    this.slide = 0;
-                                } else {
-                                    this.slide++;
-                                }
-                                this.resetInterval();
-                            },
-                            backward() {
-                                this.slide = this.slide - (this.slide === 0 ? -{{ (count($projects) / 8) - 1 }} : 1);
-                                this.resetInterval();
-                            },
-                            goTo(index) {
-                                this.slide = index;
-                                this.resetInterval();
-                            }
-                        };
-                    }
-                </script>
             </div>
         </section>
 
