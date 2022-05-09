@@ -152,6 +152,7 @@ class UserController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
+        $sanitized['password'] = Hash::make($sanitized['password']);
         // Update changed values User
         $user->update($sanitized);
 
