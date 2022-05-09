@@ -11,9 +11,9 @@
                             @if($student->page->banner_image)
                                 <img class="ken-burns" v-lazy="'{{ $student->page->banner_image->file_url }}'"
                                      alt="{{ $student->name }} banner"
-                                     error="{{ asset('/images/banner_default.jpg') }}">
+                                     error="{{ asset('/images/banner_default.jpg?v='.date('d-m-Y')) }}">
                             @else
-                                <img src="{{ asset('/images/banner_default.jpg') }}" alt="{{ $student->name }} banner">
+                                <img src="{{ asset('/images/banner_default.jpg?v='.date('d-m-Y')) }}" alt="{{ $student->name }} banner">
                             @endif
                         </div>
                         <div class="student-avatar-container">
@@ -22,7 +22,7 @@
                                     <img v-lazy="'{{ $student->page->avatar_image->file_url }}'"
                                          alt="{{ $student->name }} avatar">
                                 @else
-                                    <img src="{{ asset('/images/avatar_default.jpg') }}"
+                                    <img src="{{ asset('/images/avatar_default.jpg?v='.date('d-m-Y')) }}"
                                          alt="{{ $student->name }} avatar">
                                 @endif
                             </div>

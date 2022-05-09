@@ -179,6 +179,9 @@
 }
 
 .discipline-card{
+    @media only screen and (max-width: 600px) {
+        margin-top:2rem;
+    }
     margin-bottom: 50px;
     border-radius: 30px;
     background-color: $white;
@@ -188,6 +191,10 @@
     position: relative;
     display: inline-block;
     z-index: 3;
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+    }
 
     .vector{
         width: 70%;
@@ -269,11 +276,27 @@
                 color: $white;
                 font-weight: bold;
                 text-shadow: 0 5px 15px rgba(0,0,0,0.7);
+                @media only screen and (max-width: 600px) {
+                    font-size: 2.8rem;
+                }
             }
             p{
                 color: $white;
                 text-shadow: 0 5px 15px rgba(0,0,0,1);
                 font-size: 2rem;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            @media only screen and (max-width: 600px) {
+                text-align: center;
+                right: auto;
+                bottom: auto;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
 
         }

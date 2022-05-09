@@ -52,7 +52,7 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#games-designers" class="discipline-card game-design">
+                    <a href="#game-designers" class="discipline-card game-design">
                         <img class="vector" src="{{ asset('images/2022/game_design_ident.svg') }}" alt="">
                         <div class="caption">
                             Games Designers and Developers
@@ -507,7 +507,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-red" id="games-designers">
+    <section class="bg-red" id="game-designers">
         @include('components/top-rip')
         <div class="container">
             <div class="row">
@@ -531,13 +531,13 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/1') }}">Year One</a>
+                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/2') }}">Year Two</a>
+                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/games-designers/year/3') }}">Year
+                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/3') }}">Year
                         Three</a>
                 </div>
             </div>
