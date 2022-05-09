@@ -143,10 +143,6 @@
                                     }
                                     this.resetInterval();
                                 },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['designers']) / 4) - 1 }} : 1);
-                                    this.resetInterval();
-                                },
                                 goTo(index) {
                                     this.slide = index;
                                     this.resetInterval();
@@ -233,10 +229,6 @@
                                     }
                                     this.resetInterval();
                                 },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['developers']) / 4) - 1 }} : 1);
-                                    this.resetInterval();
-                                },
                                 goTo(index) {
                                     this.slide = index;
                                     this.resetInterval();
@@ -317,10 +309,6 @@
                                     } else {
                                         this.slide++;
                                     }
-                                    this.resetInterval();
-                                },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['cad']) / 4) - 1 }} : 1);
                                     this.resetInterval();
                                 },
                                 goTo(index) {
@@ -407,10 +395,6 @@
                                     }
                                     this.resetInterval();
                                 },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['3d-artists']) / 4) - 1 }} : 1);
-                                    this.resetInterval();
-                                },
                                 goTo(index) {
                                     this.slide = index;
                                     this.resetInterval();
@@ -490,10 +474,6 @@
                                     } else {
                                         this.slide++;
                                     }
-                                    this.resetInterval();
-                                },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['3d-devs']) / 4) - 1 }} : 1);
                                     this.resetInterval();
                                 },
                                 goTo(index) {
@@ -580,10 +560,6 @@
                                     } else {
                                         this.slide++;
                                     }
-                                    this.resetInterval();
-                                },
-                                backward() {
-                                    this.slide = this.slide - (this.slide === 0 ? -{{ (count($students['game-designers']) / 4) - 1 }} : 1);
                                     this.resetInterval();
                                 },
                                 goTo(index) {
