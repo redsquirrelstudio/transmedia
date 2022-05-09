@@ -53,22 +53,23 @@
                 <div class="col-md-12">
                     <table style="width:100%">
                         <thead>
-                            <tr>
-                                <th class="colorcol roundtop" style="text-align: left !important;">Student - Presentation</th>
-                                <th class="colorcol" style="text-align: center;">Time</th>
-                            </tr>
+                        <tr>
+                            <th class="colorcol roundtop" style="text-align: left !important;">Student - Presentation
+                            </th>
+                            <th class="colorcol" style="text-align: center;">Time</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @foreach($schedule as $key => $slot)
-                                <tr>
-                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}"  style="text-align: left;">
-                                        {{ $slot->description }}
-                                    </td>
-                                    <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: center;">
-                                        {{ $slot->formatted_date }}
-                                    </td>
-                                </tr>
-                            @endforeach
+                        @foreach($schedule as $key => $slot)
+                            <tr>
+                                <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: left;">
+                                    {{ $slot->description }}
+                                </td>
+                                <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: center;">
+                                    {{ $slot->formatted_date }}
+                                </td>
+                            </tr>
+                        @endforeach
 
                         </tbody>
                     </table>
@@ -86,7 +87,8 @@
                     <div class="content">
                         <h2>The Students</h2>
                         <p>
-                            Familiarise yourself with these faces, you'll recognise them up on the stage as they present their final projects.
+                            Familiarise yourself with these faces, you'll recognise them up on the stage as they present
+                            their final projects.
                             Click below to view each of their pages and see what they've been up to this year.
                         </p>
                         <a class="btn btn-primary" href="{{ url('/students') }}">
@@ -105,9 +107,9 @@
                          x-transition:leave-start="scale-leave-start"
                          x-transition:leave-end="scale-leave-end"
                          class="col-sm-3">
-                        <div class="discipline-card">
+                        <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
                             <img src="{{ $student->page->avatar_image->file_url }}" alt="">
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -127,7 +129,7 @@
                             }, 5000);
                         },
                         forward() {
-                            if (this.slide === {{ floor(count($students) / 4) - 1 }}) {
+                            if (this.slide === {{ floor(count($students) - 1 / 4) }}) {
                                 this.slide = 0;
                             } else {
                                 this.slide++;

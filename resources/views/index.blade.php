@@ -94,7 +94,7 @@
                 </div>
                 <div class="row" x-data="studentSlider()">
                     @foreach($students as $key => $student)
-                        <div x-show="slide == {{ floor($key / 4) }}"
+                        <a x-show="slide == {{ floor($key / 4) }}"
                              x-transition:enter="scale-enter"
                              x-transition:enter-start="scale-enter-start"
                              x-transition:enter-end="scale-enter-end"
@@ -102,9 +102,9 @@
                              x-transition:leave-start="scale-leave-start"
                              x-transition:leave-end="scale-leave-end"
                              class="col-sm-3">
-                            <div class="discipline-card">
+                            <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
                                 <img src="{{ $student->page->avatar_image->file_url }}" alt="">
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -169,9 +169,9 @@
                              x-transition:leave-start="scale-leave-start"
                              x-transition:leave-end="scale-leave-end"
                              class="col-sm-3">
-                            <div class="discipline-card">
+                            <a href="{{ url('/projects/'.$project->id) }}" class="discipline-card">
                                 <img src="{{ $project->thumbnail_media[0] ?? asset('/images/banner_default.jpg') }}" alt="{{ $project->title }}">
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

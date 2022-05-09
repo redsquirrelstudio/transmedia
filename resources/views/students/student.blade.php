@@ -161,7 +161,7 @@
                             this.resetInterval();
                         },
                         backward() {
-                            this.slide = this.slide - (this.slide === 0 ? -{{ (count($students) / 4) - 1 }} : 1);
+                            this.slide = this.slide - (this.slide === 0 ? -{{ (count($students) - 1 / 4) }} : 1);
                             this.resetInterval();
                         },
                         goTo(index) {
