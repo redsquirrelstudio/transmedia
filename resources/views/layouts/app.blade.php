@@ -8,11 +8,11 @@
     <title>Transmedia {{ date('Y') }} - This Year We're Breaking Out</title>
     <meta name="description"
           content="The official website for {{ date('Y') }}'s Transmedia exhibition hosted by the students of the University of Winchester's digital courses.">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/icons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/icons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/icons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('/icons/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('/icons/safari-pinned-tab.svg') }}" color="#c02e2e">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('/images/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('/images/safari-pinned-tab.svg') }}" color="#c02e2e">
     <meta name="msapplication-TileColor" content="#c02e2e">
     <meta name="theme-color" content="#c02e2e">
     <link rel="stylesheet" href="{{ asset('/css/app.css?v='.time()) }}">
