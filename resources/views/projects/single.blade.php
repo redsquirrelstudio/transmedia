@@ -68,9 +68,16 @@
                          x-transition:leave-start="scale-leave-start"
                          x-transition:leave-end="scale-leave-end"
                          class="col-sm-3">
+
                         <a href="{{ url('/students/'.$student->slug) }}" class="discipline-card">
-                            <img src="{{ $student->page->avatar_image->file_url }}" alt="">
+                            @if($student->page->avatar_image->file_url)
+                            <img src="{{ $student->page->avatar_image->file_url }}" alt="{{ $student->name }}">
+                            @else
+                                <img src="{{ asset('/images/avatar_default.jpg?v='.date('d-m-Y')) }}"
+                                     alt="{{ $student->name }} avatar">
+                            @endif
                         </a>
+
                     </div>
                 @endforeach
             </div>
