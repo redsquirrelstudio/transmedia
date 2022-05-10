@@ -9,10 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="discipline-card large">
+                        <div data-aos="fade-up" class="discipline-card large">
                             <img src="{{ asset('/images/west_downs_birdseye.jpg') }}" alt="West Downs">
                         </div>
-                        <div class="discipline-card-caption">
+                        <div data-aos="fade-up" data-aos-delay="100" class="discipline-card-caption">
                             <h2>
                                 12/05/2022
                             </h2>
@@ -24,13 +24,14 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <a href="{{ url('/students#designers') }}" class="discipline-card design">
+                        <a data-aos="fade-up" data-aos-delay="100" href="{{ url('/students#designers') }}" class="discipline-card design">
                             <img class="vector" src="{{ asset('images/2022/designer_ident.svg') }}" alt="">
                             <div class="caption">
                                 Designers
                             </div>
                         </a>
-                        <a href="{{ url('/students#3d-environments-developers') }}" class="discipline-card three-d">
+                        <a data-aos="fade-up" data-aos-delay="400" href="{{ url('/students#3d-environments-developers') }}"
+                           class="discipline-card three-d">
                             <img class="vector" src="{{ asset('images/2022/3d_dev_ident.svg') }}" alt="">
                             <div class="caption">
                                 3D Environments Developers
@@ -38,13 +39,15 @@
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="{{ url('/students#developers') }}" class="discipline-card development">
+                        <a data-aos="fade-up" data-aos-delay="200" href="{{ url('/students#developers') }}"
+                           class="discipline-card development">
                             <img class="vector" src="{{ asset('images/2022/dev_ident.svg') }}" alt="">
                             <div class="caption">
                                 Developers
                             </div>
                         </a>
-                        <a href="{{ url('/students#3d-visualisation-artists') }}" class="discipline-card three-d-vis">
+                        <a data-aos="fade-up" data-aos-delay="500" href="{{ url('/students#3d-visualisation-artists') }}"
+                           class="discipline-card three-d-vis">
                             <img class="vector" src="{{ asset('images/2022/3d_vis_ident.svg') }}" alt="">
                             <div class="caption">
                                 3D Visualisation <br>Artists
@@ -52,13 +55,14 @@
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="{{ url('/students#games-designers') }}" class="discipline-card game-design">
+                        <a data-aos="fade-up" data-aos-delay="300" href="{{ url('/students#games-designers') }}"
+                           class="discipline-card game-design">
                             <img class="vector" src="{{ asset('images/2022/game_design_ident.svg') }}" alt="">
                             <div class="caption">
                                 Game Designers
                             </div>
                         </a>
-                        <a href="{{ url('/students#cad') }}" class="discipline-card cad">
+                        <a data-aos="fade-up" data-aos-delay="600" href="{{ url('/students#cad') }}" class="discipline-card cad">
                             <img class="vector" src="{{ asset('images/2022/cad_ident.svg') }}" alt="">
                             <div class="caption">
                                 Computer Aided Designers
@@ -78,15 +82,15 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="content">
-                            <h2>Meet Our Students</h2>
-                            <p>
+                            <h2 data-aos="fade-right">Meet Our Students</h2>
+                            <p data-aos="fade-right" data-aos-delay="100">
                                 Our talented students have a wide variety of skill sets which they use to create some
                                 amazing pieces of work.
                                 This wide diversity allows for students to work in a work-place like environment so that
                                 they can develop their
                                 team working skills.
                             </p>
-                            <a class="btn btn-primary" href="{{ url('/students') }}">
+                            <a data-aos="fade-right" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students') }}">
                                 Meet them All
                             </a>
                         </div>
@@ -151,8 +155,8 @@
                     <div class="col-md-8"></div>
                     <div class="col-md-4">
                         <div class="content">
-                            <h2>{{ date('Y') }} Projects</h2>
-                            <p>
+                            <h2 data-aos="fade-left">{{ date('Y') }} Projects</h2>
+                            <p data-aos="fade-left" data-aos-delay="100">
                                 We're proud to present {{ date('Y') }}'s featured projects.
                                 A set of work that has really stood out and we know you'll want to see.
                             </p>
@@ -161,9 +165,10 @@
                 </div>
                 <div class="row">
                     @foreach($projects as $key => $project)
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" data-aos="fade-up" data-aos-delay="{{ $key * 100 }}">
                             <a href="{{ url('/projects/'.$project->id) }}" class="discipline-card">
-                                <img src="{{ $project->thumbnail_media[0] ?? asset('/images/banner_default.jpg') }}" alt="{{ $project->title }}">
+                                <img src="{{ $project->thumbnail_media[0] ?? asset('/images/banner_default.jpg') }}"
+                                     alt="{{ $project->title }}">
                             </a>
                         </div>
                     @endforeach

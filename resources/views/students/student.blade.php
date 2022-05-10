@@ -28,10 +28,10 @@
                             </div>
                         </div>
                         <div class="student-details">
-                            <h1>
+                            <h1 data-aos="fade-right">
                                 {{ $student->name }}
                             </h1>
-                            <h2>
+                            <h2 data-aos="fade-right" data-aos-delay="100">
                                 @if($student->year === 1)
                                     First Year
                                 @elseif($student->year === 2)
@@ -45,10 +45,10 @@
                                     {{ $student->page->course->name }}
                                 @endif
                             </h2>
-                            <strong>
+                            <strong data-aos="fade-right" data-aos-delay="200">
                                 {{ $student->page->tagline }}
                             </strong>
-                            <p>
+                            <p data-aos="fade-right" data-aos-delay="300">
                                 {{ $student->page->bio }}
                             </p>
 
@@ -107,15 +107,15 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="content">
-                        <h2>Meet Our Students</h2>
-                        <p>
+                        <h2 data-aos="fade-right">Meet Our Students</h2>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             Our talented students have a wide variety of skill sets which they use to create some
                             amazing pieces of work.
                             This wide diversity allows for students to work in a work-place like environment so that
                             they can develop their
                             team working skills.
                         </p>
-                        <a class="btn btn-primary" href="{{ url('/students') }}">
+                        <a data-aos="fade-right" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students') }}">
                             Meet them All
                         </a>
                     </div>

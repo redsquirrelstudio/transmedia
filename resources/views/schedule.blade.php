@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             <strong>
                                 Pitch your project.
                             </strong> <br>
@@ -16,7 +16,7 @@
                             </span>
                         </h2>
                         <div class="spacer"></div>
-                        <p class="lead">
+                        <p data-aos="fade-right" data-aos-delay="100" class="lead">
                             The pitch your project event is an opportunity for our third year students to present their
                             creative business plan to a panel of judges. You'll be able to watch each presentation and
                             how they
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
-                    <img
+                    <img data-aos="fade" data-aos-delay="200"
                         class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
                         width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
                 </div>
@@ -42,8 +42,8 @@
                 <div class="col-md-7">
 
                 </div>
-                <h1>The Timings.</h1>
-                <p class="lead">
+                <h1 data-aos="fade-right">The Timings.</h1>
+                <p data-aos="fade-right" class="lead">
                     Be sure not to miss the student you want to see! Each third year has a designated time slot in which
                     they'll
                     be presenting their idea, so plan accordingly!
@@ -53,7 +53,7 @@
                 <div class="col-md-12">
                     <table style="width:100%">
                         <thead>
-                        <tr>
+                        <tr data-aos="fade">
                             <th class="colorcol roundtop" style="text-align: left !important;">Student - Presentation
                             </th>
                             <th class="colorcol" style="text-align: center;">Time</th>
@@ -62,10 +62,10 @@
                         <tbody>
                         @foreach($schedule as $key => $slot)
                             <tr>
-                                <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: left;">
+                                <td data-aos="fade-left" class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: left;">
                                     {{ $slot->description }}
                                 </td>
-                                <td class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: center;">
+                                <td data-aos="fade-right" class="{{ $key % 2 ? 'colorcol' : 'midtablecol' }}" style="text-align: center;">
                                     {{ $slot->formatted_date }}
                                 </td>
                             </tr>
@@ -85,13 +85,13 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="content">
-                        <h2>The Students</h2>
-                        <p>
+                        <h2 data-aos="fade-right">The Students</h2>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             Familiarise yourself with these faces, you'll recognise them up on the stage as they present
                             their final projects.
                             Click below to view each of their pages and see what they've been up to this year.
                         </p>
-                        <a class="btn btn-primary" href="{{ url('/students') }}">
+                        <a data-aos="fade-right" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students') }}">
                             Meet all of the DMD Students
                         </a>
                     </div>

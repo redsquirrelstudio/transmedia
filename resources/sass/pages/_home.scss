@@ -1,15 +1,15 @@
-.home-page{
+.home-page {
     padding-top: 55px;
     width: 100vw;
     min-height: 100vh;
 
-    .hero-slider{
+    .hero-slider {
         position: relative;
         width: 100vw;
         height: calc(100vh - 55px);
         overflow: hidden;
 
-        .slide-container{
+        .slide-container {
             display: flex;
             position: absolute;
             left: 0;
@@ -17,11 +17,12 @@
             width: 100vw;
             height: calc(100vh - 55px);
 
-            .slide{
+            .slide {
                 position: relative;
                 width: 100vw;
                 height: calc(100vh - 55px);
-                img, video, source{
+
+                img, video, source {
                     position: absolute;
                     object-fit: cover;
                     top: 0;
@@ -35,19 +36,21 @@
 
     }
 
-    .rip{
+    .rip {
         position: absolute;
         left: 0;
         bottom: 0;
         width: 100vw;
         z-index: 2;
+
         polygon {
             fill: #f3f3f3;
             width: 100vw;
         }
     }
 }
-.slide-caption{
+
+.slide-caption {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -55,20 +58,20 @@
     text-align: center;
     z-index: 2;
 
-    h1{
+    h1 {
         color: $white;
-        text-shadow: 0 5px 10px rgba(0,0,0,0.8);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
         font-size: 4rem;
     }
 
-    p{
+    p {
         color: $white;
         font-size: 2rem;
-        text-shadow: 0 5px 10px rgba(0,0,0,0.8);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
         margin: 1rem 0;
     }
 
-    .call-to-action{
+    .call-to-action {
         border: 2px solid $white;
         padding: 0.5rem 1.5rem;
         color: #FFF;
@@ -77,14 +80,14 @@
         font-weight: bold;
         margin-top: 2rem;
         font-size: 1.5rem;
-        text-shadow: 0 5px 10px rgba(0,0,0,0.8);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
         border-radius: 10px;
     }
 }
 
 
-.bg-gray{
+.bg-gray {
     position: relative;
     background-color: $grey;
     padding: 4rem 0;
@@ -92,22 +95,23 @@
     overflow-y: hidden;
 
 
-    .content{
+    .content {
         position: relative;
         color: $orange;
         z-index: 2;
 
-        h2{
+        h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-        p{
+
+        p {
             margin: 2rem 0 5rem 0;
         }
     }
 }
 
-#graphic-2{
+#graphic-2 {
     position: absolute;
     left: 0;
     bottom: -40%;
@@ -115,79 +119,83 @@
     width: 100vw;
 }
 
-.bg-red{
+.bg-red {
     background-color: $red;
     position: relative;
     padding: 12rem 0;
     min-height: 100vh;
     overflow-y: hidden;
 
-    a{
+    a {
         color: $white;
     }
 
 
-    .content{
+    .content {
         color: $white;
         position: relative;
         z-index: 2;
 
-        h2{
+        h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-        p{
+
+        p {
             margin: 2rem 0;
         }
     }
 }
 
 
-.top-rip{
+.top-rip {
     position: absolute;
     left: 0;
     top: -2px;
     width: 100vw;
     z-index: 2;
+
     path, polygon {
         fill: #f3f3f3;
         width: 100vw;
     }
 }
 
-.bottom-rip{
+.bottom-rip {
     position: absolute;
     left: 0;
     bottom: -2px;
     width: 100vw;
     z-index: 2;
+
     path, polygon {
         fill: #f3f3f3;
         width: 100vw;
     }
 }
 
-.discipline-card-caption{
+.discipline-card-caption {
     margin-top: -4.5rem;
     z-index: 10;
     position: relative;
     color: $orange;
-    h2{
+
+    h2 {
         font-size: 2.5rem;
-        text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
 }
 
-.discipline-card{
+.discipline-card {
     @media only screen and (max-width: 600px) {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
     margin-bottom: 50px;
     border-radius: 30px;
     background-color: $white;
     width: 300px;
     height: 300px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     display: inline-block;
     z-index: 3;
@@ -196,7 +204,7 @@
         width: 100%;
     }
 
-    .vector{
+    .vector {
         width: 70%;
         height: 70%;
         margin: auto;
@@ -208,14 +216,14 @@
         transform: translate(-50%, -60%);
     }
 
-    img{
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 30px;
     }
 
-    .caption{
+    .caption {
         color: white;
         position: absolute;
         bottom: 1rem;
@@ -223,66 +231,74 @@
         font-size: 1.5rem;
     }
 
-    &.large{
+    &.large {
         height: 400px;
     }
 
-    &.cad{
+    &.cad {
         background-color: #E88DBF;
     }
-    &.three-d{
+
+    &.three-d {
         background-color: #D78232;
     }
-    &.design{
+
+    &.design {
         background-color: #9B3237;
     }
-    &.three-d-vis{
+
+    &.three-d-vis {
         background-color: #AD9819;
     }
-    &.development{
+
+    &.development {
         background-color: #4EB3C2;
     }
-    &.game-design{
+
+    &.game-design {
         background-color: #2B8B49;
     }
 }
 
-.lg-image-container{
+.lg-image-container {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .lg-image{
+    .lg-image {
         width: 80%;
         height: 80vh;
         border-radius: 40px;
         z-index: 2;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             border-radius: 40px;
             object-fit: cover;
         }
 
-        .caption{
+        .caption {
             position: absolute;
             right: 2rem;
             bottom: 2rem;
             z-index: 3;
             text-align: right;
-            h3{
+
+            h3 {
                 font-size: 4rem;
                 color: $white;
                 font-weight: bold;
-                text-shadow: 0 5px 15px rgba(0,0,0,0.7);
+                text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
                 @media only screen and (max-width: 600px) {
                     font-size: 2.8rem;
                 }
             }
-            p{
+
+            p {
                 color: $white;
-                text-shadow: 0 5px 15px rgba(0,0,0,1);
+                text-shadow: 0 5px 15px rgba(0, 0, 0, 1);
                 font-size: 2rem;
 
                 @media only screen and (max-width: 600px) {
@@ -304,4 +320,44 @@
     }
 
 
+}
+
+.yearbook-container {
+    width: 100%;
+    max-height: 600px;
+
+    .yearbook {
+        width: 100%;
+        max-height: 600px;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+        margin-bottom: 3rem;
+        object-fit: contain;
+        transition: 0.2s;
+
+        &:hover{
+            transform: translate(0, -10px);
+            filter: drop-shadow(0 15px 5px rgba(0, 0, 0, 0.3));
+            transition: 0.2s;
+        }
+    }
+
+}
+
+.yearbook-advert {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $white;
+
+    h2 {
+        font-size: 3rem;
+        color: $white;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $white;
+    }
 }

@@ -6,7 +6,7 @@
         <div class="container content">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>
+                    <h2 data-aos="fade-right">
                         Meet Our
                         @isset($year)
                             @if($year === 1)
@@ -21,7 +21,7 @@
                         @endisset
                         {{ $course->plural }}
                     </h2>
-                    <a href="{{ url('/students') }}" class="btn btn-primary">
+                    <a data-aos="fade-right" data-aos-delay="100" href="{{ url('/students') }}" class="btn btn-primary">
                         Back to all students
                     </a>
                 </div>
@@ -30,7 +30,7 @@
                 @foreach($course->page()->whereHas('avatar_image')->get() as $key => $page)
                     @if($page->user->year === $year)
                         <div class="col-sm-3">
-                            <a href="{{ url('/students/'.$page->user->slug) }}" class="discipline-card">
+                            <a data-aos="fade-up" href="{{ url('/students/'.$page->user->slug) }}" class="discipline-card">
                                 <img src="{{ $page->avatar_image->file_url }}" alt="{{ $page->user->name }}">
                             </a>
                         </div>

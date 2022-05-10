@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="content">
-                        <h2>Meet Our Students</h2>
-                        <p>
+                        <h2 data-aos="fade-right">Meet Our Students</h2>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             Our talented students have a wide variety of skill sets which they use to create some
                             amazing pieces of work.
                             This wide diversity allows for students to work in a work-place like environment so that
@@ -20,7 +20,7 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-3">
-                    <a href="#designers" class="discipline-card design">
+                    <a data-aos="fade-up" data-aos-delay="200" href="#designers" class="discipline-card design">
                         <img class="vector" src="{{ asset('images/2022/designer_ident.svg') }}" alt="">
                         <div class="caption">
                             Designers
@@ -28,7 +28,8 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#3d-environments-developers" class="discipline-card three-d">
+                    <a data-aos="fade-up" data-aos-delay="300" href="#3d-environments-developers"
+                       class="discipline-card three-d">
                         <img class="vector" src="{{ asset('images/2022/3d_dev_ident.svg') }}" alt="">
                         <div class="caption">
                             3D Environments Developers
@@ -36,7 +37,7 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#developers" class="discipline-card development">
+                    <a data-aos="fade-up" data-aos-delay="300" href="#developers" class="discipline-card development">
                         <img class="vector" src="{{ asset('images/2022/dev_ident.svg') }}" alt="">
                         <div class="caption">
                             Developers
@@ -44,7 +45,8 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#3d-visualisation-artists" class="discipline-card three-d-vis">
+                    <a data-aos="fade-up" data-aos-delay="400" href="#3d-visualisation-artists"
+                       class="discipline-card three-d-vis">
                         <img class="vector" src="{{ asset('images/2022/3d_vis_ident.svg') }}" alt="">
                         <div class="caption">
                             3D Visualisation <br>Artists
@@ -52,7 +54,8 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#game-designers" class="discipline-card game-design">
+                    <a data-aos="fade-up" data-aos-delay="500" href="#game-designers"
+                       class="discipline-card game-design">
                         <img class="vector" src="{{ asset('images/2022/game_design_ident.svg') }}" alt="">
                         <div class="caption">
                             Games Designers and Developers
@@ -60,7 +63,7 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#cad" class="discipline-card cad">
+                    <a data-aos="fade-up" data-aos-delay="600" href="#cad" class="discipline-card cad">
                         <img class="vector" src="{{ asset('images/2022/cad_ident.svg') }}" alt="">
                         <div class="caption">
                             Computer Aided Designers
@@ -78,10 +81,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             Designers
                         </h2>
-                        <p>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             Our BA (Hons) Digital Media Design programme has been running since its validation in 2007,
                             gaining in popularity with a growing student cohort for areas such as graphic design, app
                             and
@@ -93,13 +96,13 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/designers/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-secondary" href="{{ url('/students/course/designers/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/designers/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300"  class="btn btn-secondary" href="{{ url('/students/course/designers/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/designers/year/3') }}">Year Three</a>
+                    <a data-aos="fade-up" data-aos-delay="400"  class="btn btn-secondary" href="{{ url('/students/course/designers/year/3') }}">Year Three</a>
                 </div>
             </div>
             <div class="row mt-6">
@@ -162,10 +165,10 @@
                 <div class="col-md-6"></div>
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-left">
                             Developers
                         </h2>
-                        <p>
+                        <p data-aos="fade-left" data-aos-delay="100">
                             Our BSc (Hons) Digital Media Development programme has also been running since its
                             validation in 2007, usually a smaller cohort than designers but just as important for areas
                             such as app and web development, UX/UI and Design Thinking, game/interaction development, VR
@@ -178,13 +181,13 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/developers/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="400" class="btn btn-primary" href="{{ url('/students/course/developers/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/developers/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300" class="btn btn-primary" href="{{ url('/students/course/developers/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/developers/year/3') }}">Year Three</a>
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students/course/developers/year/3') }}">Year Three</a>
                 </div>
             </div>
 
@@ -247,10 +250,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             Computer Aided Designers
                         </h2>
-                        <p>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             The BSc (Hons) Computer Aided Design programme is a reasonably new programme, validated as
                             part of our suite of programmes in 2018. This year is therefore the first in having a cohort
                             in all three years...
@@ -260,13 +263,13 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/cad/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-secondary" href="{{ url('/students/course/cad/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/cad/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300" class="btn btn-secondary" href="{{ url('/students/course/cad/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/cad/year/3') }}">Year Three</a>
+                    <a data-aos="fade-up" data-aos-delay="400" class="btn btn-secondary" href="{{ url('/students/course/cad/year/3') }}">Year Three</a>
                 </div>
             </div>
 
@@ -329,10 +332,10 @@
                 <div class="col-md-6"></div>
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-left">
                             3D Visualisation Artists
                         </h2>
-                        <p>
+                        <p data-aos="fade-left" data-aos-delay="100">
                             Our BA (Hons) Digital Media Design in 3D Visualisation programme is a new programme now in
                             its 3rd year. In 3D Vis, we learn how to model in 3D for creating models, visualisations,
                             characters, 3D printing assets for many areas such as AR, VR, game, animations, advertising,
@@ -345,13 +348,13 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="400" class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300" class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/3') }}">Year Three</a>
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students/course/3d-artists/year/3') }}">Year Three</a>
                 </div>
             </div>
             <div class="row mt-6">
@@ -412,10 +415,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             3D Environments Developers
                         </h2>
-                        <p>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             Our BSc (Hons) Digital Media Development in 3D Environments (Game & Heritage programme is
                             also a new programme now in its 3rd year. In 3D Environments, we also learn how to model in
                             3D for creating models and environments and learn how to use Unity and/or Unreal to create
@@ -426,13 +429,13 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300" class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/3') }}">Year Three</a>
+                    <a data-aos="fade-up" data-aos-delay="400" class="btn btn-secondary" href="{{ url('/students/course/3d-devs/year/3') }}">Year Three</a>
                 </div>
             </div>
             <div class="row mt-6">
@@ -494,10 +497,10 @@
                 <div class="col-md-6"></div>
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-left">
                             Games Designers and Developers
                         </h2>
-                        <p>
+                        <p data-aos="fade-left" data-aos-delay="100">
                             Our BSc (Hons) Computer Game Design & Development is our latest programme to add to the
                             Digital Media suite, and is just completing its first year. We have been learning Unity and
                             Unreal Game Engines, the mechanics of Game play, and art styles. We are encouraged to work
@@ -511,13 +514,13 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/1') }}">Year One</a>
+                    <a data-aos="fade-up" data-aos-delay="400" class="btn btn-primary" href="{{ url('/students/course/game-designers/year/1') }}">Year One</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/2') }}">Year Two</a>
+                    <a data-aos="fade-up" data-aos-delay="300" class="btn btn-primary" href="{{ url('/students/course/game-designers/year/2') }}">Year Two</a>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary" href="{{ url('/students/course/game-designers/year/3') }}">Year
+                    <a data-aos="fade-up" data-aos-delay="200" class="btn btn-primary" href="{{ url('/students/course/game-designers/year/3') }}">Year
                         Three</a>
                 </div>
             </div>

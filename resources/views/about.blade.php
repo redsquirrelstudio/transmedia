@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             <strong>
                                 Our Mission.
                             </strong> <br>
@@ -16,7 +16,7 @@
                             </span>
                         </h2>
                         <div class="spacer"></div>
-                        <p class="lead">
+                        <p data-aos="fade-right" data-aos-delay="100" class="lead">
                             Welcome to the annual End of Year Exhibition ‘Transmedia 2021 & Pitch your Project Event’.
                             <br><br>
                             We are really excited to be able to share with you the work of all our students from the
@@ -36,8 +36,9 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
-                        width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
+                    <img data-aos="fade" data-aos-delay="200"
+                         class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
+                         width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
                 </div>
             </div>
             @include('components/bottom-rip')
@@ -48,10 +49,10 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="content">
-                        <h2>
+                        <h2 data-aos="fade-right">
                             The Exhibition.
                         </h2>
-                        <p>
+                        <p data-aos="fade-right" data-aos-delay="100">
                             We're excited to be inviting guests to come visit us in person this year! We run this
                             exhibition to allow students from all four years to display their work for you all. We
                             encourage family and friends to come and support as well as businesses from the Winchester
@@ -62,27 +63,27 @@
             </div>
             <div class="row content">
                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a data-aos="fade-right" href="LinkT">
+                        <img alt="AltText" src="https://via.placeholder.com/250"
+                             class="img-fluid mx-auto roundedimg img-responsive">
+                    </a>
+                </div>
+
+                <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
                     <a href="LinkT">
                         <img alt="AltText" src="https://via.placeholder.com/250"
                              class="img-fluid mx-auto roundedimg img-responsive">
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
                     <a href="LinkT">
                         <img alt="AltText" src="https://via.placeholder.com/250"
                              class="img-fluid mx-auto roundedimg img-responsive">
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="LinkT">
-                        <img alt="AltText" src="https://via.placeholder.com/250"
-                             class="img-fluid mx-auto roundedimg img-responsive">
-                    </a>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
                     <a href="LinkT">
                         <img alt="AltText" src="https://via.placeholder.com/250"
                              class="img-fluid mx-auto roundedimg img-responsive">
@@ -96,16 +97,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mx-auto">
-                    <h1>
+                    <h1 data-aos="fade-up">
                         Got any questions?
                     </h1>
-                    <p class="lead">
+                    <p data-aos="fade-up" data-aos-delay="100" class="lead">
                         Feel free to send us a message via email and we'll get back to you as soon as possible with
                         what you need to know about the exhibition.
                     </p>
                 </div>
             </div>
-            <a href="mailto:info@transmediawinchester.co.uk" type="button" class="btn btn-primary">
+            <a data-aos="fade" data-aos-delay="300" href="mailto:info@transmediawinchester.co.uk" type="button" class="btn btn-primary">
                 Contact
             </a>
         </div>
