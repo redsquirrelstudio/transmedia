@@ -19,6 +19,8 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Page;
 
 class UserController extends Controller
 {
@@ -79,8 +81,26 @@ class UserController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
+        $sanitized['password'] = Hash::make($sanitized['password']);
+
         // Store the User
         $user = User::create($sanitized);
+
+        $name = str_replace(' ', '', $user->name);
+        $split = explode(' ',  $name);
+        if (isset($split[0])){
+            $parts[] = $split[0];
+        }
+        if(isset($split[1])){
+            $parts[] = $split[1];
+        }
+        $user->slug = utf8_encode(strtolower(implode('', $parts)));
+        $user->save();
+
+        $page = new Page([
+           'user_id' => $user->id,
+        ]);
+        $page->save();
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/users'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
@@ -132,6 +152,7 @@ class UserController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
+        $sanitized['password'] = Hash::make($sanitized['password']);
         // Update changed values User
         $user->update($sanitized);
 

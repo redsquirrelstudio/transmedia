@@ -64,12 +64,24 @@ class User extends Authenticatable
 
     public function getPageViewsAttribute(): int
     {
-        return $this->page->page_views;
+        if ($this->page){
+            return $this->page->page_views;
+        }
+        else{
+            return 0;
+        }
+
     }
 
     public function getPortfolioViewsAttribute(): int
     {
-        return $this->page->portfolio_views;
+        if ($this->page){
+            return $this->page->portfolio_views;
+        }
+        else{
+            return 0;
+        }
+
     }
 
     public function projects(): HasMany
