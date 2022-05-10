@@ -17,7 +17,7 @@
                         </h2>
                         <div class="spacer"></div>
                         <p data-aos="fade-right" data-aos-delay="100" class="lead">
-                            Welcome to the annual End of Year Exhibition ‘Transmedia 2021 & Pitch your Project Event’.
+                            Welcome to the annual End of Year Exhibition ‘Transmedia 2022 & Pitch your Project Event’.
                             <br><br>
                             We are really excited to be able to share with you the work of all our students from the
                             DMD, 3D & CAD undergraduate programmes, including the MA Digital Media Practice & Pathways’
@@ -27,8 +27,9 @@
                             Menu bar.
                             <br><br>
                             The Transmedia Exhibition has been planned, shaped and organised by us, the 2nd years, under
-                            the guidance of our Project Focus Lecturer, Marina Brkljac. The Virtual Exhibition and this
-                            website as been designed and developed by two of the 3rd years.
+                            the guidance of the programme leader Dr Debs Wilson and Our Project Focus Lecturer, Marina Brkljac.
+                            The Virtual Exhibition and this website as been designed and developed by our Games Development Lecturer Lewis Raggett
+                            with the help of our second year developer - Sinead Marais.
                             <br><br>
                             We hope you enjoy exploring the work we have all been doing over the past year.
                         </p>
