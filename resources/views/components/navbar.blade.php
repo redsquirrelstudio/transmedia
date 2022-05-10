@@ -20,22 +20,24 @@
                             </a>
                         </li>
                     </ul>
-                    @auth
-                        <li class="nav-right nav-brand mobile-hidden">
-                            <a class="mr-4 inline-block" href="{{ url('/my-page') }}">
-                                My Page
-                            </a>
-                            <a href="{{ url('/logout') }}">
-                                Sign Out
-                            </a>
-                        </li>
-                    @else
-                        <li class="nav-right nav-brand mobile-hidden">
-                            <a href="{{ url('/login') }}">
-                                Student Login
-                            </a>
-                        </li>
-                    @endauth
+                    @if(Options::get('student-login'))
+                        @auth
+                            <li class="nav-right nav-brand mobile-hidden">
+                                <a class="mr-4 inline-block" href="{{ url('/my-page') }}">
+                                    My Page
+                                </a>
+                                <a href="{{ url('/logout') }}">
+                                    Sign Out
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-right nav-brand mobile-hidden">
+                                <a href="{{ url('/login') }}">
+                                    Student Login
+                                </a>
+                            </li>
+                        @endauth
+                    @endif
                 </ul>
             </div>
 
