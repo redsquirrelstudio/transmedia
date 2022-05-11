@@ -1,18 +1,18 @@
 <section class="hero-slider">
     <div class="slide">
         <video autoplay muted loop>
-            <source src="{{ asset('/video/transmedia_virtual_expo.mp4') }}" type="video/mp4"/>
+            <source src="{{ asset('/video/building_intro_seamlessloop.mp4') }}" type="video/mp4"/>
         </video>
 
         <div class="slide-caption">
             <h1>
-                Virtual Exhibition
+               Transmedia 2022 Exhbition
             </h1>
             <p>
-                Our Hall Of Fame
+                This year, we're breaking out
             </p>
-            <a href="" class="call-to-action">
-                Explore The Exhibition
+            <a href="{{ url('/exhibition') }}" class="call-to-action">
+                Explore The Virtual Exhibition
             </a>
         </div>
     </div>

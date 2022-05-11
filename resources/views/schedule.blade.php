@@ -30,7 +30,7 @@
                 <div class="col-md-5">
                     <img data-aos="fade" data-aos-delay="200"
                         class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
-                        width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
+                        width="500" height="500" src="{{ asset('images/west_downs_5.png')}}" alt="aboutheadimg">
                 </div>
             </div>
         </div>

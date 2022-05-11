@@ -38,7 +38,7 @@
                 <div class="col-md-5">
                     <img data-aos="fade" data-aos-delay="200"
                          class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto roundedimg aboutheadimg"
-                         width="500" height="500" src="{{ asset('images/library.jpg')}}" alt="aboutheadimg">
+                         width="500" height="500" src="{{ asset('images/exhibition.jpg')}}" alt="aboutheadimg">
                 </div>
             </div>
             @include('components/bottom-rip')
@@ -62,32 +62,24 @@
                 </div>
             </div>
             <div class="row content">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a data-aos="fade-right" href="LinkT">
-                        <img alt="AltText" src="https://via.placeholder.com/250"
-                             class="img-fluid mx-auto roundedimg img-responsive">
-                    </a>
+                <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
+                        <img alt="West Downs Center" src="{{ asset('/images/west_downs.jpg') }}"
+                             class="img-fluid mx-auto roundedimg-small img-responsive">
                 </div>
 
                 <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="LinkT">
-                        <img alt="AltText" src="https://via.placeholder.com/250"
-                             class="img-fluid mx-auto roundedimg img-responsive">
-                    </a>
+                    <img alt="West Downs Center" src="{{ asset('/images/west_downs_3.png') }}"
+                         class="img-fluid mx-auto roundedimg-small img-responsive">
                 </div>
 
                 <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="LinkT">
-                        <img alt="AltText" src="https://via.placeholder.com/250"
-                             class="img-fluid mx-auto roundedimg img-responsive">
-                    </a>
+                    <img alt="West Downs Center" src="{{ asset('/images/west_downs_4.png') }}"
+                         class="img-fluid mx-auto roundedimg-small img-responsive">
                 </div>
 
                 <div data-aos="fade-right" class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="LinkT">
-                        <img alt="AltText" src="https://via.placeholder.com/250"
-                             class="img-fluid mx-auto roundedimg img-responsive">
-                    </a>
+                    <img alt="West Downs Center" src="{{ asset('/images/west_downs_5.png') }}"
+                         class="img-fluid mx-auto roundedimg-small img-responsive">
                 </div>
             </div>
             @include('components/red-graphic-2')
@@ -106,7 +98,8 @@
                     </p>
                 </div>
             </div>
-            <a data-aos="fade" data-aos-delay="300" href="mailto:info@transmediawinchester.co.uk" type="button" class="btn btn-primary">
+            <a data-aos="fade" data-aos-delay="300" href="mailto:info@transmediawinchester.co.uk" type="button"
+               class="btn btn-primary">
                 Contact
             </a>
         </div>

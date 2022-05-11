@@ -42,6 +42,13 @@ body, .site-container {
     border-radius: 30px;
 }
 
+.roundedimg-small {
+    border-radius: 30px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
 // About
 .btn {
     padding: 0.8rem 4rem;
