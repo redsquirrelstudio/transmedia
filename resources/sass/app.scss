@@ -116,11 +116,11 @@ body, .site-container {
     text-align: right;
 }
 
-.mr-4{
+.mr-4 {
     margin-right: 1.5rem;
 }
 
-.inline-block{
+.inline-block {
     display: inline-block;
 }
 
@@ -182,7 +182,8 @@ p {
     span {
         display: block;
     }
-    input, select{
+
+    input, select {
         outline: 0;
         border: 0;
         background-color: transparent;
@@ -191,18 +192,18 @@ p {
         width: 100%;
         color: $white;
 
-        option{
+        option {
             color: $black;
         }
 
-        &::placeholder{
+        &::placeholder {
             color: $white;
             opacity: 0.6;
         }
     }
 }
 
-.error{
+.error {
     color: $white;
     font-size: 0.8rem;
     font-weight: bold;
@@ -224,14 +225,14 @@ p {
     transform: scale(1);
 }
 
-#graphic-1{
+#graphic-1 {
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
 }
 
-#graphic-3{
+#graphic-3 {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -248,6 +249,47 @@ p {
 .ken-burns {
     position: absolute;
     animation: kenBurns 20s ease alternate-reverse infinite;
+}
+
+.schedule-table {
+    width: 100%;
+
+    .center{
+        text-align: center;
+    }
+
+    th{
+        text-align: left;
+        padding: 0.5rem;
+    }
+    td{
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .table-red {
+        background-color: #f4d9d7;
+    }
+
+    .table-yellow {
+        background-color: #faefcc;
+    }
+
+    .table-green {
+        background-color: #d0e8d6;
+    }
+
+    .table-blue {
+        background-color: #d8ebf0;
+    }
+
+    .table-cyan {
+        background-color: #BEE3E9;
+    }
+
+    .table-purple {
+        background-color: #b69ac8;
+    }
 }
 
 @-webkit-keyframes kenBurns {
@@ -273,7 +315,7 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-    .mobile-hidden{
+    .mobile-hidden {
         display: none;
     }
 }

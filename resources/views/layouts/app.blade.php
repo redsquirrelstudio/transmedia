@@ -49,7 +49,8 @@
         <div class="container content">
             <div class="row">
                 <div class="col-md-6">
-                    <a data-aos="zoom-out-up" class="yearbook-container" download href="{{ asset('/images/TransmediaYearBook2022.pdf') }}">
+                    <a data-aos="zoom-out-up" class="yearbook-container" download
+                       href="{{ asset('/images/TransmediaYearBook2022.pdf') }}">
                         <img class="yearbook" src="{{ asset('/images/yearbook.jpg') }}" alt="Year Book 2022">
                     </a>
                 </div>
@@ -71,6 +72,348 @@
             </div>
 
         </div>
+        @include('components/bottom-rip')
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content">
+                        <h2 data-aos="fade-right">The Schedule</h2>
+                        <p data-aos="fade-right" data-aos-delay="100">
+                            Make sure you don't miss out anything on the day! <br> The full schedule for the day is
+                            below so that
+                            you know when the student you want to see is presenting or when to plan to eat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="schedule-table">
+                        <thead>
+                        <tr>
+                            <th data-aos="fade-down" class="table-green">
+                                Sessions
+                            </th>
+                            <th data-aos="fade-down" data-aos-delay="100" class="table-yellow">
+                                Events
+                            </th>
+                            <th data-aos="fade-down" data-aos-delay="200" class="table-red">
+                                Exhibition Rooms
+                            </th>
+                            <th data-aos="fade-down" data-aos-delay="300" class="table-purple">
+                                Pitch Your Project
+                            </th>
+                            <th data-aos="fade-down" data-aos-delay="400" class="table-cyan">
+                                Pitching Students
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-aos="fade-right" class="table-blue">
+                                    10:30am Panel Arrives
+                                </td>
+                                <td data-aos="zoom-in" rowspan="6" class="table-yellow">
+                                    Final Student Setup
+                                </td>
+                                <td rowspan="6" class="table-red" data-aos="zoom-in">
+                                    Final Student Setup
+                                </td>
+                                <td class="table-blue" data-aos="zoom-in">
+                                    Each student has a 5min pitch with
+                                    5min of questions/feedback
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Pitching Starts at 10:40am
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    10:40 - 11:00
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x 3D Environment Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Will Cramb - Robyn Harvest <br>
+                                    James Palmer - VR Auditorium
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    11:00 - 11:20
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x CAD Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Albert Ignatscu - Help came on a boat <br>
+                                    Emily Hellwege - Home - A Sketchy Place
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    11:20 - 11:40
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x Design Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Jan Pelagio - Memoria<br>
+                                    Cat Phongsinual - Magimote
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    11:40 - 12:00
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x Development Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Alfie Smith - Atlas - Big Worlds Made Small <br>
+                                    Alex Wardle - Swype
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    12:00 - 12:20
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x 3D Environments Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Tomos Jackson - Digital asset creation site, with AR format inclusion<br>
+                                    Alex Stickland - OddShoe Studios
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    12:20 - 13:00
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="100" class="table-green">
+                                    LUNCH
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="200" class="table-green">
+                                    LUNCH
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="300" class="table-green">
+                                    LUNCH
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="400" class="table-green">
+                                    LUNCH
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    13:00 - 13:20
+                                </td>
+                                <td data-aos="zoom-in" class="table-yellow" rowspan="6">
+                                    Industry Networking 13:00 - 19:00
+                                </td>
+                                <td class="table-red" rowspan="6">
+                                    2nd Year Client Project Presentations 13:15 Start
+                                </td>
+                                <td class="table-purple">
+                                    2X CAD Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Alex Pritchett - Protectorch <br>
+                                    Lucy Hopkins - Community Canvas
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    13:20 - 13:40
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x Design Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Sammi Masson - Youthforic <br>
+                                    Maia McGhee - WhichRug
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    13:40 - 14:00
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x Development Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Luke Allisstone - STITCH.LDN <br>
+                                    Marcus Marszalek - Cryptocurrency Trading and
+                                    Social Platform
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    14:00 - 14:20
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x 3D Environment Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Charlie Holland - C.H Lighting <br>
+                                    Joe Walsh - Zephyr NFT
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    14:20 - 14:40
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x Design Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Kristine Berg Evensen - Wellbeing <br>
+                                    Kat Evans - Solo Ring
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    14:40 - 15:00
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    1x 3D Environment Student <br><br>
+                                    1x 3D Vis Student
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Anna McGurk - The Smartbrolly <br>
+                                    Yurie Shigemura - Biophil Design
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  data-aos="fade-right" class="table-green">
+                                    15:00 - 15:20
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="100" class="table-green">
+                                    BREAK
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="200" class="table-green">
+                                    BREAK
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="300" class="table-green">
+                                    BREAK
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="400" class="table-green">
+                                    BREAK
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    15:20 - 15:40
+                                </td>
+                                <td data-aos="zoom-in" class="table-yellow" rowspan="4">
+                                    Industry Networking 13:00 - 19:00
+                                </td>
+                                <td data-aos="zoom-in" class="table-red" rowspan="4">
+                                    1st Year Interactive Project Presentations 15:30 Start
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x CAD Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Hugo Willis - Live Logos <br>
+                                    Dean Collins - Customisable Bubbleheads
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    15:40 - 16:00
+                                </td>
+                                <td data-aos="zoom-in"  class="table-purple">
+                                    2x Design Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Luke Wesley - Fitted for You <br>
+                                    Oliver Pullar - Gradecase
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    16:00 - 16:20
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2x CAD Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Lewis Ainsworth - Charged <br>
+                                    Jack Day - Parallel Printing
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    16:20 - 16:40
+                                </td>
+                                <td data-aos="zoom-in" class="table-purple">
+                                    2 Design Students
+                                </td>
+                                <td class="table-blue" data-aos="fade-left">
+                                    Michael Foster-Reed - Holo Games <br>
+                                    Aidan Waldron - StoneyTiger
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-green">
+                                    16:40 - 17:00
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="100" class="table-green">
+                                    PANEL
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="200" class="table-green">
+                                    PANEL
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="300" class="table-green">
+                                    PANEL
+                                </td>
+                                <td data-aos="zoom-in" data-aos-delay="400" class="table-green">
+                                    CONSIDERATION OF AWARDS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-blue">
+                                    17:00
+                                </td>
+                                <td data-aos="zoom-in" colspan="4" class="table-blue center">
+                                    <strong>
+                                        ANNOUNCEMENT OF AWARDS
+                                    </strong>
+                                    <p>
+                                        <strong>
+                                            Pitch your project:
+                                        </strong>
+                                        Most commercially Viable Award & Best Pitch Award
+                                    </p>
+                                    <p>
+                                        <strong>
+                                            Exhibition
+                                        </strong>
+                                        Most Popular Stand, Most Interactive Stand and Best Virtual Exhibit
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-aos="fade-right" class="table-blue">
+                                    17:30 - 19:00
+                                </td>
+                                <td data-aos="zoom-in" colspan="4" class="table-blue center">
+                                    <strong>
+                                        NETWORKING
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     @include('components/footer')
