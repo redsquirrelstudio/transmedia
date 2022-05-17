@@ -2,8 +2,14 @@
 
 @section('content')
     <div class="screen-block">
-        <iframe width="100%" height="100%" style="width: 100%; height: 100vh;" allowfullscreen frameborder="0"
-                src=https://orbix360.com/t/DxXXaKtkIkOYXUZApdVHCngHCrA2/5291128492392448/virtual-exhibition?embed=yes">
-        </iframe>
+       <div class="twinmotion-embed-wrapper">
+            <iframe style="height: 100%; width: 100%; min-height: 375px; min-width: 375px;"
+                    title="Embedded presentation 'Transmedia Exhibition 2022'" frameborder="0"
+                    allow="fullscreen; gyroscope; accelerometer; magnetometer; execution-while-out-of-viewport; execution-while-not-rendered;"
+                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    src="https://twinmotion.unrealengine.com/presentation/E8ioLEvFV0vh0v2C?embed"
+            >
+            </iframe>
+        </div>
     </div>
 @endsection
